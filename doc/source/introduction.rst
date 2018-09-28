@@ -207,7 +207,7 @@ runs |ParaView|'s Python scripts. You can think of this as the equivalent of the
 
 Similar to **pvpython**, **pvbatch** is also a Python
 interpreter that runs Python scripts for |ParaView|. The one difference is that, while
-\pvpython is meant to run interactive scripts, **pvbatch**
+**pvpython** is meant to run interactive scripts, **pvbatch**
 is designed for batch processing. Additionally, when running on computing
 resources with MPI capabilities, **pvbatch** can be run in parallel. We
 will cover this in more detail in Section \fixme{reference}.
@@ -297,14 +297,14 @@ area. By default, a 3D view is created, which is one of the most commonly used
 views in |ParaView|.
 
 Understanding the visualization process
----------------------------------------
+.......................................
 \label{sec:UnderstandingVisualizationGUI}
 
 To gain a better understanding of how to use the application interface, let's
 consider a simple example: creating a data source and applying a filter to it.
 
 Creating a source
-.................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The visualization process in |ParaView| begins by bringing your data into the
 application. Chapter~\ref{chapter:LoadingData} explains how to read data from
@@ -327,7 +327,7 @@ Figure~\ref{fig:CreateSphere1}.
    :width: 100%
    :align: center
 
-    Visualization in **paraview**: Step 1.
+   Visualization in **paraview**: Step 1.
 .. \label{fig:CreateSphere1}
 
 A few of things to note:
@@ -363,24 +363,22 @@ system yet, there's nothing to show. Therefore, the 3D view remains unaffected.
 Let's assume we are okay with the default values for all of the properties on the
 \ui{Sphere1}. Next, click on the \ui{Apply} button.
 
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=0.8\linewidth]{Images/GUIStep2.png}
-\caption{Visualization in **paraview**: Step 2.}
-\label{fig:CreateSphere2}
-\end{center}
-\end{figure}
+.. figure:: images/GUIStep2.png
+   :width: 100%
+   :align: center
+
+   Visualization in **paraview**: Step 2.
+.. \label{fig:CreateSphere2}
 
 The following will ensue (Figure~\ref{fig:CreateSphere2}):
-\begin{enumerate}
-\item The \ui{Apply} button goes back to its old disabled/un-highlighted state.
-\item A spherical surface is rendered in the 3D view.
-\item The \ui{Display} section on the \ui{Properties} panel now shows new
-parameters or properties.
-\item Certain toolbars update, and you can see that toolbars with text, such as
-\ui{Solid Color} and \ui{Surface}, now become enabled. \fixme{Need to add
-labels to the image to show what's changed}
-\end{enumerate}
+
+* The \ui{Apply} button goes back to its old disabled/un-highlighted state.
+* A spherical surface is rendered in the 3D view.
+* The \ui{Display} section on the \ui{Properties} panel now shows new
+  parameters or properties.
+* Certain toolbars update, and you can see that toolbars with text, such as
+  \ui{Solid Color} and \ui{Surface}, now become enabled. \fixme{Need to add
+  labels to the image to show what's changed}
 
 By clicking \ui{Apply}, we told **paraview** to apply the properties
 shown on the \ui{Properties} panel. When a new source (or filter) is
@@ -401,7 +399,8 @@ toolbar. These properties include the data array with which the surface is color
 type. These are the changes in the toolbar that allow you to quickly change some
 display properties.
 
-\subsubsection{Changing properties}
+Changing properties
+^^^^^^^^^^^^^^^^^^^
 
 If you change any of the properties on the sphere source, such as the properties
 under the \ui{Properties}\fixme{should we rename this section to Module or
@@ -424,16 +423,19 @@ filter) properties causes that algorithm to re-execute, while changing display
 properties, in most cases, only triggers a fresh render with an updated graphics
 state.
 
-\begin{didyouknow}
-For some workflows with smaller data sizes, it may be more convenient
-if the \ui{Apply} button was automatically applied even after changes are made to the
-pipeline module properties. You can change this from the application settings dialog, which is
-accessible from the \menu{Edit > Settings} menu. The setting is called \ui{Auto
-Apply}. You can also change the \ui{Auto Apply} state using the
-\icon{Images/AutoApplyIcon.png} button from the toolbar.
-\end{didyouknow}
+.. admonition:: **Did you know?**
 
-\subsubsection{Applying filters}
+   For some workflows with smaller data sizes, it may be more convenient
+   if the \ui{Apply} button was automatically applied even after changes are made to the
+   pipeline module properties. You can change this from the application settings dialog, which is
+   accessible from the \menu{Edit > Settings} menu. The setting is called \ui{Auto
+   Apply}. You can also change the \ui{Auto Apply} state using the
+   |AutoApplyIcon| button from the toolbar.
+
+.. |AutoApplyIcon| image:: images/AutoApplyIcon.png
+
+Applying filters
+^^^^^^^^^^^^^^^^
 
 As per the data-flow paradigm, one creates pipelines with
 filters to transform data. Similar to the \menu{Sources} menu, which allows us to
@@ -444,16 +446,18 @@ disabled. Filters that can work with the data type being produced by the sphere
 source are enabled, while others are disabled. You can click on any of the
 enabled filters to create a new instance of that filter type.
 
-\begin{didyouknow}
-To figure out why a particular filter doesn't work with the current source,
-simply move your mouse over the disabled item in the \menu{Filters} menu. On
-Linux and Windows (not OS X, however), the status bar will provide a brief
-explanation of why that filter is not available.
-\vspace{1em}
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/StatusBarFilterInfo.png}
-\end{center}
-\end{didyouknow}
+.. admonition:: **Did you know?**
+
+   To figure out why a particular filter doesn't work with the current source,
+   simply move your mouse over the disabled item in the \menu{Filters} menu. On
+   Linux and Windows (not OS X, however), the status bar will provide a brief
+   explanation of why that filter is not available.
+
+   |StatusBarFilterInfo|
+
+
+.. |StatusBarFilterInfo| image:: images/StatusBarFilterInfo.png
+
 
 For example, if you click on \menu{Filters > Shrink}, it will create a filter
 that shrinks each of the mesh cells by a fixed factor. Exactly as before, when we
@@ -485,22 +489,24 @@ this guide, we will cover various types of filters and data processing that you
 can do. We will also cover different types of views that can help you produce a wide array of 2D
 and 3D visualizations, as well as inspect your data and drill down into it.
 
-\begin{commonerrors}
-Beginners often forget to hit the \ui{Apply} button after creating sources or
-filters or after changing properties. This is one of the most common pitfalls for
-users new to the |ParaView| workflow.
-\end{commonerrors}
+.. error::
 
-\section{Getting started with \texttt{pvpython}}
+   Beginners often forget to hit the \ui{Apply} button after creating sources or
+   filters or after changing properties. This is one of the most common pitfalls for
+   users new to the |ParaView| workflow.
 
-While this section refers to \pvpython, everything that we discuss
+Getting started with **pvpython**
+---------------------------------
+
+While this section refers to **pvpython**, everything that we discuss
 here is applicable to \pvbatch as well. Until we start looking into
 parallel processing, the only difference between the two executables is that
-\pvpython provides an interactive shell wherein you can type your
+**pvpython** provides an interactive shell wherein you can type your
 commands, while \pvbatch expects the Python script to be specified
 on the command line argument.
 
-\subsection{\texttt{pvpython} scripting interface}
+**pvpython** scripting interface
+................................
 
 |ParaView| provides a scripting interface to write scripts for performing the
 tasks that you could do using the GUI. The scripting interface can be
@@ -514,55 +520,57 @@ about |ParaView| scripting even without much Python exposure.
 various functionalities. The primary scripting interface is provided by the
 \py{simple} module.
 
-When you start \pvpython, you should see a prompt in a terminal
+When you start **pvpython**, you should see a prompt in a terminal
 window as follows (with some platform specific differences).
 
-\begin{python}
-Python 2.7.5 (default, Sep  2 2013, 05:24:04)
-[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
-Type "help", "copyright", "credits" or "license" for more information
->>>
-\end{python}
+.. code-block:: python
+
+   Python 2.7.5 (default, Sep  2 2013, 05:24:04)
+   [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+   Type "help", "copyright", "credits" or "license" for more information
+   >>>
 
 You can now type commands at this prompt, and |ParaView| will execute them. To
 bring in the |ParaView| scripting API, you first need to import the \py{simple}
 module from the \ui{paraview} package as follows:
 
-\begin{python}
->>> from paraview.simple import *
-\end{python}
+.. code-block:: python
 
-\begin{commonerrors}
-Remember to hit the \ui{Enter} or \ui{Return} key after every command to execute
-it. Any Python interpreter will not execute the command until \ui{Enter} is hit.
-\end{commonerrors}
+   >>> from paraview.simple import *
 
-If the module is loaded correctly, \pvpython will present a prompt for the next
+.. error::
+
+   Remember to hit the \ui{Enter} or \ui{Return} key after every command to execute
+   it. Any Python interpreter will not execute the command until \ui{Enter} is hit.
+
+If the module is loaded correctly, **pvpython** will present a prompt for the next
 command.
 
-\begin{python}
->>> from paraview.simple import *
->>>
-\end{python}
+.. code-block:: python
+
+   >>> from paraview.simple import *
+   >>>
 
 You can consider this as in the same state as when **paraview** was
 started (with some differences that we can ignore for now). The application is
 ready to ingest data and start processing.
 
-\subsection{Understanding the visualization process}
+Understanding the visualization process
+.......................................
 
 Let's try to understand the workflow by looking at the same use-case as we did
 in Section~\ref{sec:UnderstandingVisualizationGUI}.
 
-\subsubsection{Creating a source}
+Creating a source
+^^^^^^^^^^^^^^^^^
 
 In **paraview**, we created the data source by using the \menu{Sources}
 menu. In the scripting environment, this maps to simply typing the name of the
 source to create.
 
-\begin{python}
->>> Sphere()
-\end{python}
+.. code-block:: python
+
+   >>> Sphere()
 
 This will create the sphere source with a default set of properties. Just like
 with **paraview**, as soon as a new pipeline module is created, it
@@ -570,49 +578,47 @@ becomes the \emph{active source}.
 
 Now, to show the active source in a view, try:
 
-\begin{python}
->>> Show()
->>> Render()
-\end{python}
+.. code-block:: python
+
+   >>> Show()
+   >>> Render()
 
 The \py{Show} call will prepare the display, while the \py{Render} call will
-cause the rendering to occur. In addition, a new window will popup, showing the result
-(Figure~\ref{fig:PythonRendering}). This is similar to the state after hitting
-\ui{Apply} in the UI.
+cause the rendering to occur. In addition, a new window will popup, showing the following
+result which is similar to the state after hitting \ui{Apply} in the UI.
 
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=0.4\linewidth]{Images/PythonSphere.png}
-\caption{Window showing result from the Python code.}
-\label{fig:PythonRendering}
-\end{center}
-\end{figure}
+.. figure:: images/PythonSphere.png
+   :width: 40%
+   :align: center
 
-\subsubsection{Changing properties}
+   Window showing result from the Python code.
+
+Changing properties
+^^^^^^^^^^^^^^^^^^^
 
 To change the properties on the sphere source, you can use the \py{SetProperties}
 function.
 
-\begin{python}
-# Set a single property on the active source.
->>> SetProperties(Radius=1.0)
+.. code-block:: python
 
-# You can also set multiple properties.
->>> SetProperties(Center=[1, 0, 0], StartTheta=100)
-\end{python}
+   # Set a single property on the active source.
+   >>> SetProperties(Radius=1.0)
+
+   # You can also set multiple properties.
+   >>> SetProperties(Center=[1, 0, 0], StartTheta=100)
 
 Similar to the \ui{Properties} panel, \py{SetProperties} affects the active
 source. To query the current value of any property on the active source, use
 \py{GetProperty}.
 
-\begin{python}
->>> radius = GetProperty("Radius")
->>> print radius
-1.0
->>> center = GetProperty("Center")
->>> print center
-[1.0, 0.0, 0.0]
-\end{python}
+.. code-block:: python
+
+   >>> radius = GetProperty("Radius")
+   >>> print(radius)
+   1.0
+   >>> center = GetProperty("Center")
+   >>> print(center)
+   [1.0, 0.0, 0.0]
 
 \py{SetProperties} and \py{GetProperty} functions serve the same function as the
 \ui{Properties} section of the \ui{Properties} panel -- they allow you to set
@@ -622,19 +628,19 @@ we have the \py{SetDisplayProperties} and
 \py{GetDisplayProperty}\fixme{inconsistency in API. Need to add
 GetDisplayProperty API. No such method exists right now :p} functions.
 
-\begin{python}
->>> SetDisplayProperties(Opacity=0.5)
+.. code-block:: python
 
-# FIXME: this function is not available yet, but here for completeness.
->>> GetDisplayProperty("Opacity")
-0.5
-\end{python}
+   >>> SetDisplayProperties(Opacity=0.5)
 
-\begin{commonerrors}
-Note how the property names for the \py{SetProperties} and
-\py{SetDisplayProperties} functions are not enclosed in double-quotes, while
-those for the \py{GetProperty} and \py{GetDisplayProperty} methods are.
-\end{commonerrors}
+   # FIXME: this function is not available yet, but here for completeness.
+   >>> GetDisplayProperty("Opacity")
+   0.5
+
+.. error::
+
+   Note how the property names for the \py{SetProperties} and
+   \py{SetDisplayProperties} functions are not enclosed in double-quotes, while
+   those for the \py{GetProperty} and \py{GetDisplayProperty} methods are.
 
 In **paraview**, every time you hit \ui{Apply} or change a display
 property, the UI automatically re-renders the view. In the scripting environment,
@@ -643,23 +649,24 @@ to re-render and look at the updated result.
 
 \fixme{we're missing blurb about reset camera}.
 
-\subsubsection{Applying filters}
+Applying filters
+^^^^^^^^^^^^^^^^
 
 Similar to creating a source, to apply a filter, you can simply create the filter by
 name.
 
-\begin{python}
-# Create the `Shrink' filter and connect it to the active source
-# which is the `Sphere' instance.
->>> Shrink()
-# As soon as the Shrink filter is created, it will now become the new active
-# source. All methods acting on active source now act on this filter instance
-# and not the Sphere instance created earlier.
+.. code-block:: python
 
-# Show the resulting data and render it.
->>> Show()
->>> Render()
-\end{python}
+   # Create the `Shrink' filter and connect it to the active source
+   # which is the `Sphere' instance.
+   >>> Shrink()
+   # As soon as the Shrink filter is created, it will now become the new active
+   # source. All methods acting on active source now act on this filter instance
+   # and not the Sphere instance created earlier.
+
+   # Show the resulting data and render it.
+   >>> Show()
+   >>> Render()
 
 If you tried the above script, you'll notice the result isn't exactly what we
 expected. For some reason, the shrank cells are not visible. This is because we
@@ -674,94 +681,93 @@ an optional first argument, which is the source or filter instance on which to o
 If provided, that instance is used instead of the active source.
 The solution is as follows:
 
-\begin{python}
-# Get the input property for the active source, i.e. the input for the shrink.
->>> shrinksInput = GetProperty("Input")
+.. code-block:: python
 
-# This is indeed the sphere instance we created earlier.
->>> print shrinksInput
-<paraview.servermanager.Sphere object at 0x11d731e90>
+   # Get the input property for the active source, i.e. the input for the shrink.
+   >>> shrinksInput = GetProperty("Input")
 
-# Hide the sphere instance explicitly.
->>> Hide(shrinksInput)
+   # This is indeed the sphere instance we created earlier.
+   >>> print shrinksInput
+   <paraview.servermanager.Sphere object at 0x11d731e90>
 
-# Re-render the result.
->>> Render()
-\end{python}
+   # Hide the sphere instance explicitly.
+   >>> Hide(shrinksInput)
+
+   # Re-render the result.
+   >>> Render()
 
 Alternatively, you could also get/set the active source using the
 \py{GetActiveSource} and \\* \py{SetActiveSource} functions.
 
-\begin{python}
->>> shrinkInstance = GetActiveSource()
->>> print shrinkInstance
-<paraview.servermanager.Shrink object at 0x11d731ed0>
+.. code-block:: python
 
-# Get the input property for the active source, i.e. the input
-# for the shrink.
->>> sphereInstance = GetProperty("Input")
+   >>> shrinkInstance = GetActiveSource()
+   >>> print shrinkInstance
+   <paraview.servermanager.Shrink object at 0x11d731ed0>
 
-# This is indeed the sphere instance we created earlier.
->>> print sphereInstance
-<paraview.servermanager.Sphere object at 0x11d731e90>
+   # Get the input property for the active source, i.e. the input
+   # for the shrink.
+   >>> sphereInstance = GetProperty("Input")
 
-# Change active source to sphere and hide it.
->>> SetActiveSource(sphereInstance)
->>> Hide()
+   # This is indeed the sphere instance we created earlier.
+   >>> print sphereInstance
+   <paraview.servermanager.Sphere object at 0x11d731e90>
 
-# Now restore the active source back to the shrink instance.
->>> SetActiveSource(shrinkInstance)
+   # Change active source to sphere and hide it.
+   >>> SetActiveSource(sphereInstance)
+   >>> Hide()
 
-# Re-render the result
->>> Render()
-\end{python}
+   # Now restore the active source back to the shrink instance.
+   >>> SetActiveSource(shrinkInstance)
 
-The result is shown in Figure~\ref{fig:PythonRenderingShrink}.
+   # Re-render the result
+   >>> Render()
 
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=0.4\linewidth]{Images/PythonShrink.png}
-\caption{Window showing result from the Python code after applying the shrink
-filter.}
-\label{fig:PythonRenderingShrink}
-\end{center}
-\end{figure}
+The result is shown below:
+
+.. figure:: images/PythonShrink.png
+   :width: 40%
+   :align: center
+
+   Window showing result from the Python code after applying the shrink filter.
 
 \py{SetActiveSource} has same effect as changing the pipeline module, highlighted
 in the \py{Pipeline Browser}, by clicking on a different module.
 
-\subsubsection{Alternative approach}
+Alternative approach
+^^^^^^^^^^^^^^^^^^^^
 
 Here's another way of doing something similar to what we did in the previous
 section for those familiar with Python and/or object-oriented programming.
 It's totally okay to stick with the previous approach.
 
-\begin{python}
->>> from paraview.simple import *
->>> sphereInstance = Sphere()
->>> sphereInstance.Radius = 1.0
->>> sphereInstance.Center[1] = 1.0
->>> print sphereInstance.Center
-[0.0, 1.0, 0.0]
+.. code-block:: python
 
->>> sphereDisplay = Show(sphereInstance)
->>> view = Render()
->>> sphereDisplay.Opacity = 0.5
+   >>> from paraview.simple import *
+   >>> sphereInstance = Sphere()
+   >>> sphereInstance.Radius = 1.0
+   >>> sphereInstance.Center[1] = 1.0
+   >>> print sphereInstance.Center
+   [0.0, 1.0, 0.0]
 
-# Render function can take in an optional view argument, otherwise it
-# will simply use the active view.
->>> Render(view)
+   >>> sphereDisplay = Show(sphereInstance)
+   >>> view = Render()
+   >>> sphereDisplay.Opacity = 0.5
 
->>> shrinkInstance = Shrink(Input=sphereInstance,
-                            ShrinkFactor=1.0)
->>> print shrinkInstance.ShrinkFactor
-1.0
->>> Hide(sphereInstance)
->>> shrinkDisplay = Show(shrinkInstance)
->>> Render()
-\end{python}
+   # Render function can take in an optional view argument, otherwise it
+   # will simply use the active view.
+   >>> Render(view)
 
-\subsection{Updating the pipeline}
+   >>> shrinkInstance = Shrink(Input=sphereInstance,
+                               ShrinkFactor=1.0)
+   >>> print shrinkInstance.ShrinkFactor
+   1.0
+   >>> Hide(sphereInstance)
+   >>> shrinkDisplay = Show(shrinkInstance)
+   >>> Render()
+
+Updating the pipeline
+^^^^^^^^^^^^^^^^^^^^^^
 
 When changing properties on the \ui{Properties} panel in
 **paraview**, we noticed that the algorithm doesn't re-execute until
@@ -780,7 +786,7 @@ update and execute the pipeline. This is often referred to as
 unnecessary module executions.
 
 In **paraview**, you can get by without ever noticing this since the
-application manages pipeline updates automatically. In \pvpython
+application manages pipeline updates automatically. In **pvpython**
 too, if your scripts are producing renderings in views, you'd never
 notice this as long as you remember to call \py{Render}. However, you may want
 to write scripts to produce transformed datasets or to determine data
@@ -792,44 +798,44 @@ Accordingly, you must use the \py{UpdatePipeline} function.
 \py{UpdatePipeline} updates the pipeline connected to the active source (or only
 until the active source, i.e., anything downstream from it, won't be updated).
 
-\begin{python}
->>> from paraview.simple import *
->>> sphere = Sphere()
+.. code-block:: python
 
-# Print the bounds for the data produced by sphere.
->>> print sphere.GetDataInformation().GetBounds()
-(1e+299, -1e+299, 1e+299, -1e+299, 1e+299, -1e+299)
-# The bounds are invalid -- no data has been produced yet.
+   >>> from paraview.simple import *
+   >>> sphere = Sphere()
 
-# Update the pipeline explicitly on the active source.
->>> UpdatePipeline()
+   # Print the bounds for the data produced by sphere.
+   >>> print sphere.GetDataInformation().GetBounds()
+   (1e+299, -1e+299, 1e+299, -1e+299, 1e+299, -1e+299)
+   # The bounds are invalid -- no data has been produced yet.
 
-# Alternative way of doing the same but specifying the source
-# to update explicitly.
->>> UpdatePipeline(proxy=sphere)
+   # Update the pipeline explicitly on the active source.
+   >>> UpdatePipeline()
 
-# Let's check the bounds again.
->>> sphere.GetDataInformation().GetBounds()
-(-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
+   # Alternative way of doing the same but specifying the source
+   # to update explicitly.
+   >>> UpdatePipeline(proxy=sphere)
 
-# If we call UpdatePipeline() again, this will have no effect since
-# the pipeline hasn't been modified, so there's no need to re-execute.
->>> UpdatePipeline()
->>> sphere.GetDataInformation().GetBounds()
-(-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
+   # Let's check the bounds again.
+   >>> sphere.GetDataInformation().GetBounds()
+   (-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
 
-# Now let's change a property.
->>> sphere.Radius = 10
+   # If we call UpdatePipeline() again, this will have no effect since
+   # the pipeline hasn't been modified, so there's no need to re-execute.
+   >>> UpdatePipeline()
+   >>> sphere.GetDataInformation().GetBounds()
+   (-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
 
-# The bounds won't change since the pipeline hasn't re-executed.
->>> sphere.GetDataInformation().GetBounds()
-(-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
+   # Now let's change a property.
+   >>> sphere.Radius = 10
 
-# Let's update and see:
->>> UpdatePipeline()
->>> sphere.GetDataInformation().GetBounds()
-(-9.749279022216797, 9.749279022216797, -9.749279022216797, 9.749279022216797, -10.0, 10.0)
-\end{python}
+   # The bounds won't change since the pipeline hasn't re-executed.
+   >>> sphere.GetDataInformation().GetBounds()
+   (-0.48746395111083984, 0.48746395111083984, -0.48746395111083984, 0.48746395111083984, -0.5, 0.5)
+
+   # Let's update and see:
+   >>> UpdatePipeline()
+   >>> sphere.GetDataInformation().GetBounds()
+   (-9.749279022216797, 9.749279022216797, -9.749279022216797, 9.749279022216797, -10.0, 10.0)
 
 We will look at the \py{sphere.GetDataInformation} API in
 Section~\ref{sec:DataInformationInPython} in more detail.
@@ -837,27 +843,29 @@ Section~\ref{sec:DataInformationInPython} in more detail.
 For temporal datasets, \py{UpdatePipeline} takes in a time argument, which is the
 time for which the pipeline must be updated.
 
-\begin{python}
-# To update to time 10.0:
->>> UpdatePipeline(10.0)
+.. code-block:: python
 
-# Alternative way of doing the same:
->>> UpdatePipeline(time=10.0)
+   # To update to time 10.0:
+   >>> UpdatePipeline(10.0)
 
-# If not using the active source:
->>> UpdatePipeline(10.0, source)
->>> UpdatePipeline(time=10.0, proxy=source)
-\end{python}
+   # Alternative way of doing the same:
+   >>> UpdatePipeline(time=10.0)
 
-\section{Scripting in \texttt{paraview}}
+   # If not using the active source:
+   >>> UpdatePipeline(10.0, source)
+   >>> UpdatePipeline(time=10.0, proxy=source)
 
-\subsection{The \ui{Python shell}}
+Scripting in **paraview**
+-------------------------
+
+**Python shell**
+................
 
 The **paraview** application also provides access to an internal shell, in which
 you can enter Python commands and scripts exactly as with
-\pvpython. To access the Python shell in the GUI, use the
+**pvpython**. To access the Python shell in the GUI, use the
 \menu{Tools > Python Shell} menu option. A dialog will pop up with a
-prompt exactly like \pvpython. You can try inputting commands from
+prompt exactly like **pvpython**. You can try inputting commands from
 the earlier section into this shell. As you type each of the commands, you will
 see the user interface update after each command, e.g., when you create the
 sphere source instance, it will be shown in the \ui{Pipeline Browser}. If you
@@ -865,23 +873,21 @@ change the active source, the \ui{Pipeline Browser} and other UI components will
 update to reflect the change. If you change any properties or display properties, the
 \ui{Properties} panel will update to reflect the change as well!
 
-\begin{figure}[htb]
-\begin{center}
-\includegraphics[width=0.7\linewidth]{Images/PythonShell.png}
-\caption{Python shell in **paraview** provides access to the scripting
-interface in the GUI.}
-\label{fig:PythonShell}
-\end{center}
-\end{figure}
+.. figure:: images/PythonShell.png
+   :width: 100%
+   :align: center
 
-\begin{didyouknow}
-The Python shell in **paraview** supports auto-completion for functions
-and instance methods. Try hitting the \ui{Tab} key after partially typing any
-command (as shown in Figure~\ref{fig:PythonShell}).
-\end{didyouknow}
+   Python shell in **paraview** provides access to the scripting
+   interface in the GUI.
 
-\subsection{Tracing actions for scripting}
-\label{sec:PythonTracing}
+.. admonition:: **Did you know?**
+
+   The Python shell in **paraview** supports auto-completion for functions
+   and instance methods. Try hitting the \ui{Tab} key after partially typing any
+   command (as shown in Figure~\ref{fig:PythonShell}).
+
+Tracing actions for scripting
+.............................
 
 This guide provides a fair overview of |ParaView|'s Python API. However, there
 will be cases when you just want to know how to complete a particular action or
@@ -899,25 +905,19 @@ window with the generated trace. This will be the Python script equivalent for
 the actions you performed. You can now save this as a script to use for batch
 processing.
 
-\begin{TODO}
-\begin{itemize}
-
-\item put a ``did you know'' blurb about undo-redo, save-restore window layout.
-
-\item we could add information about state/saving restore in this chapter
-itself.
-
-\item we are missing a place to document arbitrary UI features like copy/paste
-in panels, search in tree widgets. Maybe we do that in didyouknow blurbs the
-first time we discuss the UI widget.
-
-\item After discussing the use-case, we may want to add a section about
-  terminology explaining what the terminology we use in this guide -- notions
-  like active, view, representation/display, property, maybe even proxy and
-  vtkobject. Add a note to the contributors section to read the terminology
-  section before adding new text.
-
-\item What about saving/loading state? Suppose we should cover that here too.
-\end{itemize}
-\end{TODO}
-
+.. \begin{TODO}
+.. \begin{itemize}
+.. \item put a ``did you know'' blurb about undo-redo, save-restore window layout.
+.. \item we could add information about state/saving restore in this chapter
+.. itself.
+.. \item we are missing a place to document arbitrary UI features like copy/paste
+.. in panels, search in tree widgets. Maybe we do that in didyouknow blurbs the
+.. first time we discuss the UI widget.
+.. \item After discussing the use-case, we may want to add a section about
+..   terminology explaining what the terminology we use in this guide -- notions
+..   like active, view, representation/display, property, maybe even proxy and
+..   vtkobject. Add a note to the contributors section to read the terminology
+..   section before adding new text.
+.. \item What about saving/loading state? Suppose we should cover that here too.
+.. \end{itemize}
+.. \end{TODO}
