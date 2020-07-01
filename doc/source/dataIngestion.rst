@@ -73,22 +73,25 @@ If you selected multiple files using the :kbd:`\ctrl` (or :kbd:`\cmdmac`) key,
 
 
 .. figure:: images/OpenFileGroupSelect.png
-    :width: 100%
+    :width: 80%
+    :align: center
 
 .. figure:: images/OpenFileMultiSelect.png
-    :width: 100%
+    :width: 80%
+    :align: center
     :name: fig:OpenFileSelectingMultipleFiles
 
     The  ``Open File`` :index:`\ <Open File>`\  dialog can be used to select a
     temporal file series (top) or select multiple files to open separately (bottom).
 
-\begin{didyouknow}
-This ability to hit the  ``Apply`` :index:`\ <Apply>`\  button once to accept changes on multiple
-readers applies to other pipeline modules, including sources and filters.
-In general, you can change properties for multiple modules in a pipeline, and
-hit  ``Apply`` :index:`\ <Apply>`\  to accept all of the changes at once. It is possible to
-override this behavior from the  ``Settings`` :index:`\ <Settings>`\  dialog.
-\end{didyouknow}
+.. admonition:: **Did you know?**
+  :class: tip
+
+  This ability to hit the  ``Apply`` :index:`\ <Apply>`\  button once to accept changes on multiple
+  readers applies to other pipeline modules, including sources and filters.
+  In general, you can change properties for multiple modules in a pipeline, and
+  hit  ``Apply`` :index:`\ <Apply>`\  to accept all of the changes at once. It is possible to
+  override this behavior from the  ``Settings`` :index:`\ <Settings>`\  dialog.
 
 Dealing with unknown extensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
