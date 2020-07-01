@@ -1,8 +1,13 @@
 .. include:: macros.hrst
 .. include:: abbreviations.hrst
 
+.. _chapter:Introduction:
+
+Introduction to |ParaView|
+##########################
+
 Introduction
-############
+============
 
 |ParaView| is an open-source, multi-platform scientific data analysis and
 visualization tool that enables analysis and visualization of extremely large
@@ -111,9 +116,10 @@ Providing details of how to build |ParaView| using the source files is beyond th
 of this guide. Refer to the |ParaView| Wiki (http://paraview.org/Wiki/ParaView)
 for more information.
 
+.. _sec:BasicsOfVisualization:
+
 Basics of visualization in |ParaView|
 =====================================
-.. _sec:BasicsOfVisualization:
 
 
 .. figure:: images/VTKPipeline.png
@@ -311,9 +317,10 @@ several different types of views, all of which are laid out in this viewport
 area. By default, a 3D view is created, which is one of the most commonly used
 views in |ParaView|.
 
+.. _sec:UnderstandingVisualizationGUI:
+
 Understanding the visualization process
 ---------------------------------------
-.. _sec:UnderstandingVisualizationGUI:
 
 To gain a better understanding of how to use the application interface, let's
 consider a simple example: creating a data source and applying a filter to it.
@@ -920,9 +927,10 @@ update to reflect the change. If you change any properties or display properties
   and instance methods. Try hitting the ``Tab`` key after partially typing any
   command (as shown in :numref:`fig-PythonShell`).
 
+.. _sec:PythonTracing:
+
 Tracing actions for scripting
 -----------------------------
-.. _sec:PythonTracing:
 
 This guide provides a fair overview of |ParaView|'s Python API. However, there
 will be cases when you just want to know how to complete a particular action or

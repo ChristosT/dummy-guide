@@ -12,6 +12,7 @@ Welcome to ParaView Users Guide!
    :caption: Contents:
 
    introduction
+   dataIngestion
 
 
 

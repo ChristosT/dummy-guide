@@ -25,8 +25,11 @@ Opening data files in |paraview|
 
 To open a data file in |paraview|, you use the  ``Open File`` :index:`\ <Open File>`\  dialog.
 This dialog can be accessed from the :guilabel:`File > Open` menu or by using the
-\icon{Images/OpenFileIcon.png} button in the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar. You can
+|OpenFileIcon| button in the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar. You can
 also use the keyboard shortcut :kbd:`\ctrl+O` (or :kbd:`\cmdmac+O`) to open this dialog.
+
+.. |OpenFileIcon| image:: images/OpenFileIcon.png
+                  :width: 0.5cm
 
 .. figure:: images/OpenFileDialog.png
     :name: fig-OpenFileDialog
@@ -159,9 +162,10 @@ naming patterns used for indicating a file series. These include:
 where *foo* could be any filename, *N* is a numeral sequence (with
 any number of leading zeros), and *vtk* could be any extension.
 
+.. _sec:DealingWithTime:
+
 Dealing with time
 ^^^^^^^^^^^^^^^^^
-.. _sec:DealingWithTime:
 
 When you open a dataset with time, either as a file series or in a file format
 that natively supports time, |paraview| will automatically setup an
@@ -217,10 +221,10 @@ read and can vary greatly depending on the capabilities of the file format
 itself or the particular reader implementation. Let's look at some of the
 properties commonly available in readers.
 
+.. _sec:SelectingDataArrays:
+
 Selecting data arrays
 ---------------------
-
-.. _sec:SelectingDataArrays:
 
 .. figure:: images/ArraySelectionWidget.png
     :name: fig:ArrayStatusWidget
@@ -250,10 +254,16 @@ the filters in the pipeline do not have to process them.
 
 The user interface for selecting the arrays to load is simply a list with the names of the
 arrays and a checkbox indicating whether that array is to be loaded or not
-(:numref:`fig:ArrayStatusWidget`). Icons, such as
-\icon{Images/pqCellData16.png} and \icon{Images/pqNodalData16.png} are often
+(:numref:`fig:ArrayStatusWidget`). Icons, such as |CellDataIcon| and |NodalDataIcon| 
+are often
 used in this widget to give you an indication of whether the array is
 cell-centered or point-centered, respectively.
+
+.. |CellDataIcon| image:: images/pqCellData16.png
+                  :width: 0.5cm
+
+.. |NodalDataIcon| image:: images/pqNodalData16.png
+                   :width: 0.5cm
 
 If you initially de-select an array, but then as you're setting up your visualization pipeline
 realize that you need that data array, you can always go back to the
@@ -296,21 +306,22 @@ try using :kbd:`\ctrl+F` (or :kbd:`\cmdmac+F`).
    %Just like selecting of arrays, certain readers such as those for Exodus or Xdmf
    %files, allow users to the data blocks.
 
+.. _sec:OpeningDataFilesInPython:
+
 Opening data files in |pvpython|
 ==================================
-.. _sec:OpeningDataFilesInPython:
 
 To open data files using the scripting interface, |ParaView| provides the
 ``OpenDataFile`` :index:`\ <OpenDataFile>`\  function.
 
 .. code-block:: python
 
-  >>>>> reader = OpenDataFile(".../ParaViewData/Data/can.ex2")
-  >>>>> if reader:
-  >>...   print("Success")
-  >>... else:
-  >>...   print("Failed")
-  >>...
+  >>> reader = OpenDataFile(".../ParaViewData/Data/can.ex2")
+  >>> if reader:
+  ...   print("Success")
+  ... else:
+  ...   print("Failed")
+  ...
 
 ``OpenDataFile`` :index:`\ <OpenDataFile>`\  will try to determine an appropriate reader based on the file
 extension, just like |paraview|. If no reader is determined,
