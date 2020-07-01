@@ -1,1 +1,7 @@
 .. |ParaView| replace:: **ParaView**
+.. |paraview| replace:: ``paraview``
+.. |pvpython| replace:: ``pvpython``
+.. |pvbatch| replace:: ``pvbatch``
+.. |pvserver| replace:: ``pvserver``
+.. |pvdataserver| replace:: ``pvdataserver``
+.. |pvrenderserver| replace:: ``pvrenderserver``

@@ -197,7 +197,7 @@ of views for generating various types of renderings including 3D surface views,
 
 |ParaView| comes with several executables that serve different purposes.
 
-``paraview``
+|paraview|
 ------------
 This is the main |ParaView| graphical user interface
 (GUI). In most cases, when we refer to |ParaView|, we are indeed talking about
@@ -205,58 +205,58 @@ this application. It is a Qt-based, cross-platform UI that provides access to th
 |ParaView| computing capabilities. Major parts of this guide are dedicated to
 understanding and using this application.
 
-``pvpython``
+|pvpython|
 ------------
-``pvpython`` is the Python interpreter that
+|pvpython| is the Python interpreter that
 runs |ParaView|'s Python scripts. You can think of this as the equivalent of the
-``paraview`` for scripting.
+|paraview| for scripting.
 
-``pvbatch``
+|pvbatch|
 ------------
-Similar to ``pvpython``, ``pvbatch`` is also a Python
+Similar to |pvpython|, |pvbatch| is also a Python
 interpreter that runs Python scripts for |ParaView|. The one difference is that, while
-``pvpython`` is meant to run interactive scripts, ``pvbatch``
+|pvpython| is meant to run interactive scripts, |pvbatch|
 is designed for batch processing. Additionally, when running on computing
-resources with MPI capabilities, ``pvbatch`` can be run in parallel. We
+resources with MPI capabilities, |pvbatch| can be run in parallel. We
 will cover this in more detail in Section :ref:`sec:UsingPVBatch`.
 
-``pvserver``
+|pvserver|
 ------------
 For remote visualization, this executable represents the server that does all
 of the data processing and, potentially, the rendering.
-You can make ``paraview`` connect to
-``pvserver`` running remotely on an HPC resource. This allows you to
+You can make |paraview| connect to
+|pvserver| running remotely on an HPC resource. This allows you to
 build and control visualization and analysis on the HPC resource from your
 desktop as if you were simply processing it locally on your desktop!
 
-``pvdataserver`` and ``pvrenderserver``
+|pvdataserver| and |pvrenderserver|
 ---------------------------------------
-These can be thought of as the ``pvserver`` split into two separate
-executables: one for the data processing part, ``pvdataserver``, and
-one for the rendering part, ``pvrenderserver``. Splitting these into
+These can be thought of as the |pvserver| split into two separate
+executables: one for the data processing part, |pvdataserver|, and
+one for the rendering part, |pvrenderserver|. Splitting these into
 separate processes makes it possible to perform data processing and rendering on
 separate sets of nodes with appropriate computing capabilities suitable for the
-two tasks. Just as with ``pvserver``, ``paraview`` can
-connect to a ``pvdataserver``- ``pvrenderserver`` pair for
+two tasks. Just as with |pvserver|, |paraview| can
+connect to a |pvdataserver|- |pvrenderserver| pair for
 remote visualization. Unless otherwise noted, all discussion of remote visualization or
 client-server visualization in this guide is applicable to both
-``pvserver`` and ``pvdataserver``- ``pvrenderserver`` configurations.
+|pvserver| and |pvdataserver| - |pvrenderserver| configurations.
 
-Getting started with ``paraview``
+Getting started with |paraview|
 ==================================
 
 ..
   \begin{didyouknow}
-  ``paraview`` also includes a Python shell that you can use to enter
+  |paraview| also includes a Python shell that you can use to enter
   Python code for programmatically setting up the visualization. You can use the
   Python shell to interactively see the visualization pipeline and UI update as
   you execute commands. The shell supports auto-completion to assist developers.
   \end{didyouknow}
 
-``paraview`` graphical user interface
+|paraview| graphical user interface
 --------------------------------------
 
-``paraview`` is the graphical front-end to the |ParaView| application. The
+|paraview| is the graphical front-end to the |ParaView| application. The
 UI is designed to allow you to easily create pipelines for data processing with
 arbitrary complexity. The UI provides panels for you to inspect and modify
 the pipelines, to change parameters that in turn affect the processing pipelines,
@@ -265,7 +265,7 @@ and to generate renderings. We will cover various aspects of the UI
 for the better part of this guide.
 
 Let's start by looking at the various components of the UI. If you run
-``paraview`` for the first time, you will see something similar to the
+|paraview| for the first time, you will see something similar to the
 :numref:`fig-GUIOverview`. The UI is comprised of menus,
 dockable panels, toolbars, and the viewport -- the central portion of the
 application window.
@@ -275,7 +275,7 @@ application window.
   :width: 100%
   :align: center
 
-  ``paraview`` application window.
+  |paraview| application window.
 
 
 Menus provide the standard set of options typical with a desktop application
@@ -284,7 +284,7 @@ menu), for undo/redo (:guilabel:`Edit` menu), for the toggle panel, and for tool
 (:guilabel:`View` menu). Additionally, the menus provide ways to create sources that
 generate test datasets of various types (:guilabel:`Sources` menu), as well new
 filters for processing data (:guilabel:`Filters` menu). The :guilabel:`Tools` menu
-provides access to some of the advanced features in ``paraview`` such as
+provides access to some of the advanced features in |paraview| such as
 managing plugins and favorites.
 
 Panels provide you with the ability to peek into the application's state. For example, you can
@@ -304,7 +304,7 @@ including menus or panels. Similar to panels, some of the toolbar buttons are
 context sensitive and will become enabled or disabled based on the selected
 module or view.
 
-The viewport or the central portion of the ``paraview`` window is the
+The viewport or the central portion of the |paraview| window is the
 area where |ParaView| renders results generated from the data. The containers in
 which data can be rendered or shown are called *views*. You can create
 several different types of views, all of which are laid out in this viewport
@@ -345,7 +345,7 @@ you'll create a producer algorithm that generates a spherical surface, as shown 
     :width: 100%
     :align: center
 
-    Visualization in ``paraview``: Step 1.
+    Visualization in |paraview|: Step 1.
 
 
 A few things to note:
@@ -372,7 +372,7 @@ modules such as sources and filters have parameters on them that you can change
 that affect that module's behavior. We call them *properties*. The
 ``Properties`` :index:`\ <Properties>`\  panel shows these properties and allows you to change them.
 Since the ingestion of data into the system can be a time-consuming process,
-``paraview`` allows you to change the properties before the module
+|paraview| allows you to change the properties before the module
 executes or performs the actual processing to ingest the data. Hence, the
 ``Apply`` :index:`\ <Apply>`\  button is highlighted to indicate that you need to accept the
 properties before the application will proceed. Since no data has entered the
@@ -389,7 +389,7 @@ Let's assume we are okay with the default values for all of the properties on th
     :width: 100%
     :align: center
 
-    Visualization in ``paraview``: Step 2.
+    Visualization in |paraview|: Step 2.
 
 The following will ensue ( :numref:`fig-CreateSphere2` ):
 
@@ -404,9 +404,9 @@ The following will ensue ( :numref:`fig-CreateSphere2` ):
 .. \fixme{Need to add labels to the image to show what's changed}
 
 
-By clicking  ``Apply`` :index:`\ <Apply>`\ , we told ``paraview`` to apply the properties
+By clicking  ``Apply`` :index:`\ <Apply>`\ , we told |paraview| to apply the properties
 shown on the  ``Properties`` :index:`\ <Properties>`\  panel. When a new source (or filter) is
-applied for the first time, ``paraview`` will automatically show
+applied for the first time, |paraview| will automatically show
 the data that the pipeline module produces in the current view, if possible.
 In this case, the sphere source produces a surface mesh, which is then shown or
 displayed in the 3D view.
@@ -434,7 +434,7 @@ section on the  ``Properties`` :index:`\ <Properties>`\  panel, including the  `
 for the spherical mesh or its  ``Center`` :index:`\ <Center>`\ , the  ``Apply`` :index:`\ <Apply>`\  button will be
 highlighted again. Once you are finished with all of the property changes, you can
 hit  ``Apply`` :index:`\ <Apply>`\  to apply the changes. Once the changes are applied,
-``paraview`` will re-execute the sphere source to produce a new mesh,
+|paraview| will re-execute the sphere source to produce a new mesh,
 as requested. It will then automatically update the view, and you will see the
 new result rendered.
 
@@ -505,7 +505,7 @@ the active source.
 .. \fixme{add an image showing the result}
 
 If you click  ``Apply`` :index:`\ <Apply>`\ , as was the case before, the shrink filter will be executed and the
-resulting dataset will be generated and shown in the 3D view. ``paraview``
+resulting dataset will be generated and shown in the 3D view. |paraview|
 will also automatically hide the result from the  ``Sphere1`` :index:`\ <Sphere1>`\  so that it is not shown
 in the view. Otherwise, the two datasets will overlap. This is reflected by
 the change of state for the *eyeball* icons in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ 
@@ -527,17 +527,17 @@ and 3D visualizations, as well as inspect your data and drill down into it.
   filters or after changing properties. This is one of the most common pitfalls for
   users new to the |ParaView| workflow.
 
-Getting started with ``pvpython``
+Getting started with |pvpython|
 =================================
 
-While this section refers to ``pvpython``, everything that we discuss
-here is applicable to ``pvbatch`` as well. Until we start looking into
+While this section refers to |pvpython|, everything that we discuss
+here is applicable to |pvbatch| as well. Until we start looking into
 parallel processing, the only difference between the two executables is that
-``pvpython`` provides an interactive shell wherein you can type your
-commands, while ``pvbatch`` expects the Python script to be specified
+|pvpython| provides an interactive shell wherein you can type your
+commands, while |pvbatch| expects the Python script to be specified
 on the command line argument.
 
-``pvpython`` scripting interface
+|pvpython| scripting interface
 --------------------------------
 
 |ParaView| provides a scripting interface to write scripts for performing the
@@ -548,11 +548,11 @@ working knowledge of Python will be useful for writing scripts with advanced
 capabilities, you should be able to follow most of the discussion in this book
 about |ParaView| scripting even without much Python exposure.
 
-|ParaView| provides a ``paraview`` package with several Python modules that expose
+|ParaView| provides a |paraview| package with several Python modules that expose
 various functionalities. The primary scripting interface is provided by the
 ``simple`` :index:`\ <simple>`\  module.
 
-When you start ``pvpython``, you should see a prompt in a terminal
+When you start |pvpython|, you should see a prompt in a terminal
 window as follows (with some platform specific differences).
 
 .. code-block:: python
@@ -564,7 +564,7 @@ window as follows (with some platform specific differences).
 
 You can now type commands at this prompt, and |ParaView| will execute them. To
 bring in the |ParaView| scripting API, you first need to import the  ``simple`` :index:`\ <simple>`\ 
-module from the ``paraview`` package as follows:
+module from the |paraview| package as follows:
 
 .. code-block:: python
 
@@ -576,7 +576,7 @@ module from the ``paraview`` package as follows:
   Remember to hit the ``Enter`` or ``Return`` key after every command to execute
   it. Any Python interpreter will not execute the command until ``Enter`` is hit.
 
-If the module is loaded correctly, ``pvpython`` will present a prompt for the next
+If the module is loaded correctly, |pvpython| will present a prompt for the next
 command.
 
 .. code-block:: python
@@ -584,7 +584,7 @@ command.
   >>> from paraview.simple import *
   >>>
 
-You can consider this as in the same state as when ``paraview`` was
+You can consider this as in the same state as when |paraview| was
 started (with some differences that we can ignore for now). The application is
 ready to ingest data and start processing.
 
@@ -597,7 +597,7 @@ in Section :ref:`sec:UnderstandingVisualizationGUI`.
 Creating a source
 -----------------
 
-In ``paraview``, we created the data source by using the :guilabel:`Sources`
+In |paraview|, we created the data source by using the :guilabel:`Sources`
 menu. In the scripting environment, this maps to simply typing the name of the
 source to create.
 
@@ -606,7 +606,7 @@ source to create.
   >>> Sphere()
 
 This will create the sphere source with a default set of properties. Just like
-with ``paraview``, as soon as a new pipeline module is created, it
+with |paraview|, as soon as a new pipeline module is created, it
 becomes the *active source*.
 
 Now, to show the active source in a view, try:
@@ -674,7 +674,7 @@ we have the  ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  and ``
   ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  functions are not enclosed in double-quotes, while
   those for the  ``GetProperty`` :index:`\ <GetProperty>`\  and  ``GetDisplayProperty`` :index:`\ <GetDisplayProperty>`\  methods are.
 
-In ``paraview``, every time you hit ``Apply`` or change a display
+In |paraview|, every time you hit ``Apply`` or change a display
 property, the UI automatically re-renders the view. In the scripting environment,
 you have to do this manually by calling the  ``Render`` :index:`\ <Render>`\  function every time you want
 to re-render and look at the updated result.
@@ -702,7 +702,7 @@ name.
 
 If you tried the above script, you'll notice the result isn't exactly what we
 expected. For some reason, the shrank cells are not visible. This is because we
-missed one stage: In ``paraview``, the UI was smart enough to
+missed one stage: In |paraview|, the UI was smart enough to
 automatically hide the input dataset for the newly created filter after we hit
 apply. In the scripting interface, such operations are the user's responsibility. We
 should have hidden the sphere source from the view. We can use the  ``Hide`` :index:`\ <Hide>`\ 
@@ -804,7 +804,7 @@ Updating the pipeline
 ---------------------
 
 When changing properties on the  ``Properties`` :index:`\ <Properties>`\  panel in
-``paraview``, we noticed that the algorithm doesn't re-execute until
+|paraview|, we noticed that the algorithm doesn't re-execute until
 you hit  ``Apply`` :index:`\ <Apply>`\ . In reality,  ``Apply`` :index:`\ <Apply>`\  isn't what's actually triggering
 the execution or the updating of the processing pipeline. What happens is that
 ``Apply`` :index:`\ <Apply>`\  updates the parameters on the pipeline module and causes the view to
@@ -818,8 +818,8 @@ on, you do make this module visible in the view, |ParaView| will automatically
 update and execute the pipeline. This is often referred to as
 *demand-driven pipeline execution* :index:`\ <Demand Driven Pipeline>`\ . It makes it possible to avoid unnecessary module executions.
 
-In ``paraview``, you can get by without ever noticing this since the
-application manages pipeline updates automatically. In ``pvpython``
+In |paraview|, you can get by without ever noticing this since the
+application manages pipeline updates automatically. In |pvpython|
 too, if your scripts are producing renderings in views, you'd never
 notice this as long as you remember to call  ``Render`` :index:`\ <Render>`\ . However, you may want
 to write scripts to produce transformed datasets or to determine data
@@ -888,17 +888,17 @@ time for which the pipeline must be updated.
   >>> UpdatePipeline(10.0, source)
   >>> UpdatePipeline(time=10.0, proxy=source)
 
-Scripting in ``paraview``
+Scripting in |paraview|
 =========================
 
 The ``Python Shell``
 --------------------
 
-The ``paraview`` application also provides access to an internal shell, in which
+The |paraview| application also provides access to an internal shell, in which
 you can enter Python commands and scripts exactly as with
-``pvpython``. To access the Python shell in the GUI, use the
+|pvpython|. To access the Python shell in the GUI, use the
 :guilabel:`View > Python Shell` menu option. A dialog will pop up with a
-prompt exactly like ``pvpython``. You can try inputting commands from
+prompt exactly like |pvpython|. You can try inputting commands from
 the earlier section into this shell. As you type each of the commands, you will
 see the user interface update after each command, e.g., when you create the
 sphere source instance, it will be shown in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ . If you
@@ -911,12 +911,12 @@ update to reflect the change. If you change any properties or display properties
     :width: 100%
     :align: center
     
-    ``Python Shell`` in ``paraview`` provides access to the scripting.
+    ``Python Shell`` in |paraview| provides access to the scripting.
 
 .. admonition:: **Did You Know?**
   :class: tip
 
-  The ``Python Shell`` in ``paraview`` supports auto-completion for functions
+  The ``Python Shell`` in |paraview| supports auto-completion for functions
   and instance methods. Try hitting the ``Tab`` key after partially typing any
   command (as shown in :numref:`fig-PythonShell`).
 
@@ -927,15 +927,15 @@ Tracing actions for scripting
 This guide provides a fair overview of |ParaView|'s Python API. However, there
 will be cases when you just want to know how to complete a particular action or
 sequence of actions that you can do with the GUI using a Python script instead. To
-accomplish this, ``paraview`` supports tracing your actions in
+accomplish this, |paraview| supports tracing your actions in
 the UI as a Python script. Simply start tracing by clicking on
-:guilabel:`Tools > Start Trace`. ``paraview`` now enters a mode where all
+:guilabel:`Tools > Start Trace`. |paraview| now enters a mode where all
 your actions (or at least those relevant for scripting) are monitored. Any time
 you create a source or filter, open data files,
 change properties and hit  ``Apply`` :index:`\ <Apply>`\ , interact with the 3D scene, or save
 screenshots, etc., your actions will be monitored. Once you are done with the series of
 actions that you want to script, click
-:guilabel:`Tools > Stop Trace`. ``paraview`` will then pop up an editor
+:guilabel:`Tools > Stop Trace`. |paraview| will then pop up an editor
 window with the generated trace. This will be the Python script equivalent for
 the actions you performed. You can now save this as a script to use for batch
 processing.
