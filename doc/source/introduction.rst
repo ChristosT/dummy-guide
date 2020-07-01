@@ -115,9 +115,9 @@ Basics of visualization in |ParaView|
 =====================================
 .. _sec:BasicsOfVisualization:
 
-.. _fig:VTKPipeline:
 
 .. figure:: images/VTKPipeline.png
+    :name: fig-VTKPipeline
     :width: 100%
     :align: center
 
@@ -266,16 +266,17 @@ for the better part of this guide.
 
 Let's start by looking at the various components of the UI. If you run
 ``paraview`` for the first time, you will see something similar to the
-Figure :ref:`fig:GUIOverview`. The UI is comprised of menus,
+:numref:`fig-GUIOverview`. The UI is comprised of menus,
 dockable panels, toolbars, and the viewport -- the central portion of the
 application window.
 
-.. _fig:GUIOverview:
 .. figure:: images/GUIOverview.png
-    :width: 100%
-    :align: center
+  :name: fig-GUIOverview
+  :width: 100%
+  :align: center
 
-    ``paraview`` application window.
+  ``paraview`` application window.
+
 
 Menus provide the standard set of options typical with a desktop application
 including options for opening/saving files (:guilabel:`File`
@@ -337,10 +338,10 @@ create a source, simply click on any item in the :guilabel:`Source` menu.
 
 If you click on :guilabel:`Sources > Sphere`, for example,
 you'll create a producer algorithm that generates a spherical surface, as shown in
-Figure :ref:`fig:CreateSphere1`.
+:numref:`fig-CreateSphere1`.
 
-.. _fig:CreateSphere1:
 .. figure:: images/GUIStep1.png
+    :name: fig-CreateSphere1
     :width: 100%
     :align: center
 
@@ -375,18 +376,23 @@ system yet, there's nothing to show. Therefore, the 3D view remains unaffected.
 Let's assume we are okay with the default values for all of the properties on the
 ``Sphere1``. Next, click on the ``Apply`` button.
 
-.. _fig:CreateSphere2:
 .. figure:: images/GUIStep2.png
+    :name: fig-CreateSphere2
     :width: 100%
     :align: center
 
     Visualization in ``paraview``: Step 2.
 
-The following will ensue (Figure :ref:`fig:CreateSphere2`):
+The following will ensue ( :numref:`fig-CreateSphere2` ):
+
 #. The ``Apply`` button goes back to its old disabled/un-highlighted state.
+
 #. A spherical surface is rendered in the 3D view.
+
 #. The ``Display`` section on the ``Properties`` panel now shows new parameters or properties.
+
 #. Certain toolbars update, and you can see that toolbars with text, such as ``Solid Color`` and ``Surface``, now become enabled. \fixme{Need to add labels to the image to show what's changed}
+
 
 By clicking ``Apply``, we told ``paraview`` to apply the properties
 shown on the ``Properties`` panel. When a new source (or filter) is
@@ -461,8 +467,8 @@ enabled filters to create a new instance of that filter type.
   Linux and Windows (not OS X, however), the status bar will provide a brief
   explanation of why that filter is not available.
 
-  .. _fig:CreateSphere2:
   .. figure:: images/StatusBarFilterInfo.png
+    :name: fig-StatusBar
     :width: 80%
     :align: center
 
@@ -595,11 +601,11 @@ Now, to show the active source in a view, try:
 
 The \py{Show} call will prepare the display, while the \py{Render} call will
 cause the rendering to occur. In addition, a new window will popup, showing the result
-(Figure :ref:`fig:PythonRendering`). This is similar to the state after hitting
+(:numref:`fig-PythonRendering`). This is similar to the state after hitting
 ``Apply`` in the UI.
 
-.. _fig:PythonRendering:
 .. figure:: images/PythonSphere.png
+    :name: fig-PythonRendering
     :width: 80%
     :align: center
     
@@ -732,10 +738,10 @@ Alternatively, you could also get/set the active source using the
   # Re-render the result
   >>> Render()
 
-The result is shown in Figure :ref:`fig:PythonRenderingShrink`.
+The result is shown in :numref:`fig-PythonRenderingShrink`.
 
-.. _fig:PythonRenderingShrink:
 .. figure:: images/PythonShrink.png
+    :name: fig-PythonRenderingShrink
     :width: 100%
     :align: center
     
@@ -881,8 +887,8 @@ change the active source, the ``Pipeline Browser`` and other UI components will
 update to reflect the change. If you change any properties or display properties, the
 ``Properties`` panel will update to reflect the change as well!
 
-.. _fig:PythonShell:
 .. figure:: images/PythonShell.png
+    :name: fig-PythonShell
     :width: 100%
     :align: center
     
@@ -893,7 +899,7 @@ update to reflect the change. If you change any properties or display properties
 
   The ``Python Shell`` in ``paraview`` supports auto-completion for functions
   and instance methods. Try hitting the ``Tab`` key after partially typing any
-  command (as shown in Figure :ref:`fig:PythonShell`).
+  command (as shown in :numref:`fig-PythonShell`).
 
 Tracing actions for scripting
 -----------------------------
