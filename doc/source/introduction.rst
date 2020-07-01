@@ -85,8 +85,8 @@ guides for getting started that are available on the Internet.
   **Common Errors** blocks are used to highlight some of the common problems or
   complications you may run into when dealing with the topic of discussion.
 
-This guide can be split into two volumes. Chapter :ref:`chapter:Introduction` to
-Chapter :ref:`chapter:SavingResults` can be considered the user's guide, where various
+This guide can be split into two volumes. :numref:`chapter:Introduction` to
+:numref:`chapter:SavingResults` can be considered the user's guide, where various
 aspects of data analysis and visualization with |ParaView| are covered.
 Chapter :ref:`chapter:PropertiesPanel` to Chapter :ref:`chapter:CustomizingParaView` are the
 user's manual sections, which provide details on various components in the UI and the

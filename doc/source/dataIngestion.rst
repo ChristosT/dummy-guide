@@ -57,8 +57,8 @@ each of the selected files separately.
 When a file is opened, |paraview| will create a reader instance of
 the type suitable for the selected file based on its extension. The reader will
 simply be another pipeline module, similar to the source we created in
-Chapter :ref:`chapter:Introduction`. From this point forward, the workflow will be
-the same as we discussed in Section :ref:`sec:UnderstandingVisualizationGUI` :
+:numref:`chapter:Introduction`. From this point forward, the workflow will be
+the same as we discussed in :numref:`sec:UnderstandingVisualizationGUI` :
 You adjust the reader properties, if needed, and hit  ``Apply`` :index:`\ <Apply>`\ .
 |paraview| will then read the data from the file and render it in the
 view.
@@ -109,7 +109,9 @@ opening the file again, this time choosing a different reader.
     :width: 100%
     :align: center
 
-    ``Open Data With...`` :index:`\ <Open Data With...>`\  dialog shown to manually choose the reader to use for a file with an unknown extension.} % FIXME: The filename in the dialog in the image is cut off
+    ``Open Data With...`` :index:`\ <Open Data With...>`\  dialog shown to manually choose the reader to use for a file with an unknown extension.} 
+    
+.. FIXME: The filename in the dialog in the image is cut off
 
 Error messages in |paraview| are shown in the  ``Output Messages`` :index:`\ <Output Messages>`\ 
 window (:numref:`fig:OutputMessagesWindow`).
@@ -164,7 +166,7 @@ animation for you so that you can play through each of the time steps in the
 dataset by using the |pqVcrPlay32| button
 on the  ``VCR Controls`` :index:`\ <VCR Controls>`\  toolbar (:numref:`fig:VCRControlsToolbar`).
 You can change or modify this animation and
-further customize it, as discussed in Chapter :ref:`chapter:Animation`.
+further customize it, as discussed in Chapter :numref:`chapter:Animation`.
 
 .. |pqVcrPlay32| image:: images/pqVcrPlay32.png
                   :width: 0.5cm
@@ -436,14 +438,14 @@ Selecting data arrays
 For those properties on readers that allow you to control what to read in from
 the file such as point data arrays, cell data arrays, or data blocks,
 |paraview| uses a selection widget, as seen in
-Section :ref:`sec:SelectingDataArrays`. Likewise, |pvpython| provides
+:numref:`sec:SelectingDataArrays`. Likewise, |pvpython| provides
 an API that allows you to determine the available options and then
 select/deselect them.
 
 The name of the property that allows you to make such selections depends on the
 reader itself. When in doubt, use the tracing capabilities in
-|paraview| (Section :ref:`sec:PythonTracing`) to figure it out. You can also use
-``help`` :index:`\ <help>`\  (Section :ref:`sec:OpeningDataFilesInPython`).
+|paraview| (:numref:`sec:PythonTracing`) to figure it out. You can also use
+``help`` :index:`\ <help>`\  (:numref:`sec:OpeningDataFilesInPython`).
 
 ``ExodusIIReader`` :index:`\ <ExodusIIReader>`\  has a  ``PointVariables`` :index:`\ <PointVariables>`\  property that can be used to
 select the point data arrays to load. Let's use this as an example.
@@ -516,8 +518,7 @@ does not re-execute until a re-execution is requested either by calling
   >>> print(reader.PointData[:])
   [Array: DISPL, Array: GlobalNodeId, Array: PedigreeNodeId]
 
-We will cover the  ``reader.PointData`` :index:`\ <reader.PointData>`\  API in more details in
-Section :ref:`sec:DataInformationInPython`.
+We will cover the  ``reader.PointData`` :index:`\ <reader.PointData>`\  API in more details in :numref:`sec:DataInformationInPython`.
 
 Reloading files
 ===============
