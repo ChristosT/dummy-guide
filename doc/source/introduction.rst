@@ -445,7 +445,9 @@ state.
   pipeline module properties. You can change this from the application settings dialog, which is
   accessible from the :guilabel:`Edit > Settings` menu. The setting is called ``Auto
   Apply``. You can also change the ``Auto Apply`` state using the
-  \icon{Images/AutoApplyIcon.png} button from the toolbar.
+  |AutoApplyIcon| button from the toolbar.
+
+.. |AutoApplyIcon| image:: images/AutoApplyIcon.png
 
 Applying filters
 ----------------
