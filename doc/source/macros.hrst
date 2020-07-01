@@ -5,3 +5,6 @@
 .. |pvserver| replace:: ``pvserver``
 .. |pvdataserver| replace:: ``pvdataserver``
 .. |pvrenderserver| replace:: ``pvrenderserver``
+
+.. |CMD| replace:: :kbd:`⌘`
+.. |CTRL| replace:: :kbd:`CTRL`

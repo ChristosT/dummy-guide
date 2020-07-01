@@ -26,7 +26,7 @@ Opening data files in |paraview|
 To open a data file in |paraview|, you use the  ``Open File`` :index:`\ <Open File>`\  dialog.
 This dialog can be accessed from the :guilabel:`File > Open` menu or by using the
 |OpenFileIcon| button in the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar. You can
-also use the keyboard shortcut :kbd:`\ctrl+O` (or :kbd:`\cmdmac+O`) to open this dialog.
+also use the keyboard shortcut |CTRL| + :kbd:`O` (or |CMD| + :kbd:`O`) to open this dialog.
 
 .. |OpenFileIcon| image:: images/OpenFileIcon.png
                   :width: 0.5cm
@@ -51,7 +51,7 @@ to note.
 
 You can browse to the directory containing your datasets and either select the
 file and hit  ``Ok`` :index:`\ <Ok>`\  or simply double click on the file to open it. You can also
-select multiple files using the :kbd:`\ctrl` (or :kbd:`\cmdmac`) key. This will open
+select multiple files using the |CTRL| (or |CMD|) key. This will open
 each of the selected files separately.
 
 When a file is opened, |paraview| will create a reader instance of
@@ -63,7 +63,7 @@ You adjust the reader properties, if needed, and hit  ``Apply`` :index:`\ <Apply
 |paraview| will then read the data from the file and render it in the
 view.
 
-If you selected multiple files using the :kbd:`\ctrl` (or :kbd:`\cmdmac`) key,
+If you selected multiple files using the |CTRL| (or |CMD|) key,
 |paraview| will create multiple reader modules. When you hit
 ``Apply`` :index:`\ <Apply>`\ , all of the readers will be executed, and their data will be shown in the view.
 
@@ -276,8 +276,8 @@ new data array.
 Sometimes the list of data arrays can get quite large, and it can
 become cumbersome to find the array for which you are looking. To help
 with such situations, |paraview| provides a mechanism to search lists. Click inside the
-widget to make it get the *focus*. Then type :kbd:`\ctrl+F` (or
-:kbd:`\cmdmac+F`) to get a search widget. Now you can type in the text to
+widget to make it get the *focus*. Then type |CTRL| + :kbd:`F` (or
+|CMD| + :kbd:`F`) to get a search widget. Now you can type in the text to
 search. Matching rows will be highlighted (:numref:`fig:SearchInLists`).
 
 .. figure:: images/SearchInLists.png
@@ -285,15 +285,15 @@ search. Matching rows will be highlighted (:numref:`fig:SearchInLists`).
     :width: 40%
     :align: center
 
-    To search through large lists in |paraview|, you can use ctrl+F.  %:kbd:`\ctrl+F`. 
-    FIXME: doesn't work in a caption
+    To search through large lists in |paraview|, you can use |CTRL| + :kbd:`F`.
 
-\begin{didyouknow}
-The ability to search for items in an array selection widget also applies to
-other list and tree widgets in the |paraview| UI. Whenever
-you see a widget with a large number of entries in a list, table, or tree fashion,
-try using :kbd:`\ctrl+F` (or :kbd:`\cmdmac+F`).
-\end{didyouknow}
+.. admonition:: **Did you know?**
+  :class: tip
+
+  The ability to search for items in an array selection widget also applies to
+  other list and tree widgets in the |paraview| UI. Whenever
+  you see a widget with a large number of entries in a list, table, or tree fashion,
+  try using |CTRL| + :kbd:`F` (or |CMD| + :kbd:`F`).
 
 .. % Maybe this is too advanced at this point in the guide? -- UDA
    %Selecting blocks
