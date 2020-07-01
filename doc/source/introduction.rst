@@ -52,6 +52,13 @@ that help make the tool and the documentation better are always welcome.
   user interface to be more user friendly and on developing a quantitative
   analysis framework. |ParaView| 3.0 was released in May 2007.
 
+..
+  \begin{didyouknow}
+  Catalyst is the name for \ParaView libraries that are designed to be embedded in
+  simulation codes for insitu analysis. \ParaView Catalyst User's Guide is available for
+  download at \url{http://catalyst.paraview.org}.
+  \end{didyouknow}
+
 In this guide
 -------------
 
@@ -143,7 +150,7 @@ filters, and sinks provide a flexible infrastructure wherein you can
 create complex processing pipelines by simply connecting algorithms to
 perform arbitrarily complex tasks.
 
-% Should we add an example or two showing a VTK pipeline? -Utkarsh
+.. % Should we add an example or two showing a VTK pipeline? -Utkarsh
 
 For more information on VTK's programming model, refer
 to :cite:`Schroeder:1996:DIO:244979.245018`.
@@ -237,6 +244,14 @@ client-server visualization in this guide is applicable to both
 
 Getting started with ``paraview``
 ==================================
+
+..
+  \begin{didyouknow}
+  \paraview also includes a Python shell that you can use to enter
+  Python code for programmatically setting up the visualization. You can use the
+  Python shell to interactively see the visualization pipeline and UI update as
+  you execute commands. The shell supports auto-completion to assist developers.
+  \end{didyouknow}
 
 ``paraview`` graphical user interface
 --------------------------------------
@@ -900,26 +915,27 @@ window with the generated trace. This will be the Python script equivalent for
 the actions you performed. You can now save this as a script to use for batch
 processing.
 
-\begin{TODO}
-\begin{itemize}
-
-\item put a ``did you know'' blurb about undo-redo, save-restore window layout.
-
-\item we could add information about state/saving restore in this chapter
-itself.
-
-\item we are missing a place to document arbitrary UI features like copy/paste
-in panels, search in tree widgets. Maybe we do that in didyouknow blurbs the
-first time we discuss the UI widget.
-
-\item After discussing the use-case, we may want to add a section about
-  terminology explaining what the terminology we use in this guide -- notions
-  like active, view, representation/display, property, maybe even proxy and
-  vtkobject. Add a note to the contributors section to read the terminology
-  section before adding new text.
-
-\item What about saving/loading state? Suppose we should cover that here too.
-\end{itemize}
-\end{TODO}
+..
+  \begin{TODO}
+  \begin{itemize}
+  
+  \item put a ``did you know'' blurb about undo-redo, save-restore window layout.
+  
+  \item we could add information about state/saving restore in this chapter
+  itself.
+  
+  \item we are missing a place to document arbitrary UI features like copy/paste
+  in panels, search in tree widgets. Maybe we do that in didyouknow blurbs the
+  first time we discuss the UI widget.
+  
+  \item After discussing the use-case, we may want to add a section about
+    terminology explaining what the terminology we use in this guide -- notions
+    like active, view, representation/display, property, maybe even proxy and
+    vtkobject. Add a note to the contributors section to read the terminology
+    section before adding new text.
+  
+  \item What about saving/loading state? Suppose we should cover that here too.
+  \end{itemize}
+  \end{TODO}
 
 .. bibliography:: References.bib
