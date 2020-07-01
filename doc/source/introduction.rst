@@ -357,15 +357,10 @@ you'll create a producer algorithm that generates a spherical surface, as shown 
 
 A few things to note:
 
-#. A pipeline module is added in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  panel with a name
-derived from the menu item, as is highlighted.
-#. The  ``Properties`` :index:`\ <Properties>`\  panel fills up with text to indicate that it's showing
-properties for the highlighted item (which, in this case, is  ``Sphere1`` :index:`\ <Sphere1>`\ ), as well as to display
-some widgets for parameters such as  ``Center`` :index:`\ <Center>`\ ,  ``Radius`` :index:`\ <Radius>`\ , etc.
-#. On the  ``Properties`` :index:`\ <Properties>`\  panel, the  ``Apply`` :index:`\ <Apply>`\  button becomes enabled and
-highlighted.
-#. The 3D view remains unaffected, as nothing new is shown or rendered in this
-view as of yet.
+#. A pipeline module is added in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  panel with a name derived from the menu item, as is highlighted.
+#. The  ``Properties`` :index:`\ <Properties>`\  panel fills up with text to indicate that it's showing properties for the highlighted item (which, in this case, is  ``Sphere1`` :index:`\ <Sphere1>`\ ), as well as to display some widgets for parameters such as  ``Center`` :index:`\ <Center>`\ ,  ``Radius`` :index:`\ <Radius>`\ , etc.
+#. On the  ``Properties`` :index:`\ <Properties>`\  panel, the  ``Apply`` :index:`\ <Apply>`\  button becomes enabled and highlighted.
+#. The 3D view remains unaffected, as nothing new is shown or rendered in this view as of yet.
 
 
 Let's take a closer look at what has happened. When we clicked on
