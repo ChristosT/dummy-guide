@@ -38,7 +38,7 @@ also use the keyboard shortcut :kbd:`\ctrl+O` (or :kbd:`\cmdmac+O`) to open this
 
     ``Open File`` :index:`\ <Open File>`\  dialog in |paraview| for opening data (and other) files.
 
-The  ``Open File`` :index:`\ <Open File>`\  dialog\index{keyword}{Open File}
+The  ``Open File`` :index:`\ <Open File>`\ dialog 
 allows you to browse the file system on the data
 processing nodes. This will become clear when we look at using |ParaView| for
 remote visualization. While several of the UI elements in this dialog are
@@ -46,12 +46,8 @@ obvious such as navigating up the current directory, creating a new
 directory, and navigating back and forth between directories, there are a few things
 to note.
 
-\begin{itemize}
-\item The  ``Favorites`` :index:`\ <Favorites>`\  pane shows some platform-specific common locations such
-as your home directory and desktop.
-\item The  ``Recent Directories`` :index:`\ <Recent Directories>`\  pane shows a few of the most recently used
-directories.
-\end{itemize}
+* The  ``Favorites`` :index:`\ <Favorites>`\  pane shows some platform-specific common locations such as your home directory and desktop.
+*  The  ``Recent Directories`` :index:`\ <Recent Directories>`\  pane shows a few of the most recently used directories.
 
 You can browse to the directory containing your datasets and either select the
 file and hit  ``Ok`` :index:`\ <Ok>`\  or simply double click on the file to open it. You can also
@@ -122,7 +118,7 @@ Whenever there's a new error message, |paraview| will
 automatically pop open this window and raise it to the top. This window can
 be attached, or docked, in the main window so that it is visible with the
 other user interface elements without covering them up.
-\index{keyword}{Error messages} :index:`\ <Output Messages>`\ 
+:index:`\ <Output Messages>`\  :index:`\ <Error Messages>`\ 
 
 .. figure:: images/OutputMessagesWindow.png
     :name: fig:OutputMessagesWindow
@@ -137,8 +133,7 @@ Handling temporal file series
 Most datasets produced by scientific simulation runs are temporal in nature.
 File formats differ in how this information is saved in the file.
 While several file formats support saving multiple timesteps in the same file,
-others save them out as a sequence of files, known as a file series.
-\index{keyword}{File series}
+others save them out as a sequence of files, known as a file series :index:`\ <File series>`\
 
 The  ``Open File`` :index:`\ <Open File>`\  dialog automatically detects file series and shows them as a
 grouped element, as shown in :numref:`fig:OpenFileSelectingMultipleFiles`. To load the file series,
@@ -166,10 +161,13 @@ Dealing with time
 When you open a dataset with time, either as a file series or in a file format
 that natively supports time, |paraview| will automatically setup an
 animation for you so that you can play through each of the time steps in the
-dataset by using the \icon{Images/pqVcrPlay32.png} button
+dataset by using the |pqVcrPlay32| button
 on the  ``VCR Controls`` :index:`\ <VCR Controls>`\  toolbar (:numref:`fig:VCRControlsToolbar`).
 You can change or modify this animation and
 further customize it, as discussed in Chapter :ref:`chapter:Animation`.
+
+.. |pqVcrPlay32| image:: images/pqVcrPlay32.png
+                  :width: 0.5cm
 
 .. figure:: images/VCRControlsToolbar.png
     :name: fig:VCRControlsToolbar
@@ -202,7 +200,7 @@ locate a reader for the file, create that reader, and wait for you to hit
 ``Apply`` :index:`\ <Apply>`\ .
 
 To open a file series, simply replace the numbers in the file name sequence by
-a `.` For example, to open a file series named  \directory{my0.vtk}, \directory{my1.vtk}\ldots\directory{myN.vtk}, use \directory{my..vtk}.
+a ``.`` For example, to open a file series named  ``my0.vtk``, ``my1.vtk`` ... ``myN.vtk``, use ``my..vtk``.
 
 .. code-block:: shell
 
@@ -244,9 +242,10 @@ the filters in the pipeline do not have to process them.
   selecting the  ``Load All Variables`` :index:`\ <Load All Variables>`\  checkbox under
   ``Settings/Properties Panel Options/Advanced`` :index:`\ <Settings/Properties Panel Options/Advanced>`\ .
 
-  \begin{center}
-  \includegraphics[width=0.4\linewidth]{Images/AdvancedSettings.png}
-  \end{center}
+  .. figure:: images/AdvancedSettings.png
+    :name: fig-AdvancedSettings
+    :width: 80%
+    :align: center
 
 The user interface for selecting the arrays to load is simply a list with the names of the
 arrays and a checkbox indicating whether that array is to be loaded or not
@@ -268,10 +267,11 @@ realize that you need that data array, you can always go back to the
 automatically re-execute any processing pipeline set up on the reader with this
 new data array.
 
-\begin{commonerrors}
-Remember to hit  ``Apply`` :index:`\ <Apply>`\  (or use  ``Auto Apply`` :index:`\ <Auto Apply>`\ ) after changing the array
-selection for the change to take effect.
-\end{commonerrors}
+.. admonition:: **Common Errors**
+  :class: error
+
+  Remember to hit  ``Apply`` :index:`\ <Apply>`\  (or use  ``Auto Apply`` :index:`\ <Auto Apply>`\ ) after changing the array
+  selection for the change to take effect.
 
 Sometimes the list of data arrays can get quite large, and it can
 become cumbersome to find the array for which you are looking. To help
