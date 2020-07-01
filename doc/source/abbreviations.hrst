@@ -11,7 +11,7 @@
 .. |AMR| replace:: :abbr:`AMR (Adaptive Mesh Refinement)`
 .. |CFD| replace:: :abbr:`CFD (Computational Fluid Dynamics)`
 .. |JSON| replace:: :abbr:`JSON (JavaScript Object Notation)`
-.. |PVEE| replace:: :abbr:`PVEE (**ParaView** Enterprise Edition)`
+.. |PVEE| replace:: :abbr:`PVEE (ParaView Enterprise Edition)`
 .. |ROI| replace:: :abbr:`ROI (Region of Interest)`
 .. |VE| replace:: :abbr:`VE (Virtual Environments)`
 .. |VRPN| replace:: :abbr:`VRPN (Virtual Reality Peripheral Network)`
