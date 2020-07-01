@@ -149,18 +149,11 @@ you want to open.
 |paraview| automatically detects several of the commonly-known file
 naming patterns used for indicating a file series. These include:
 
-\begin{multicols}{4}
-\begin{compactitem}
-\item \directory{fooN.vtk}
-\item \directory{foo\_N.vtk}
-\item \directory{foo\-N.vtk}
-\item \directory{foo.N.vtk}
-\item \directory{Nfoo.vtk}
-\item \directory{N.foo.vtk}
-\item \directory{foo.vtk.N}
-\item \directory{foo.vtk\-sN}
-\end{compactitem}
-\end{multicols}
++--------------+--------------+-------------+-------------+
+|``fooN.vtk``  |``fooN.vtk``  |``Nfoo.vtk`` |``foo.vtk.N``|
++--------------+--------------+-------------+-------------+
+|``foo_N.vtk`` |``foo.N.vtk`` |``N.foo.vtk``|``foo.vtksN``|
++--------------+--------------+-------------+-------------+
 
 where *foo* could be any filename, *N* is a numeral sequence (with
 any number of leading zeros), and *vtk* could be any extension.
