@@ -54,9 +54,9 @@ that help make the tool and the documentation better are always welcome.
 
 ..
   \begin{didyouknow}
-  Catalyst is the name for \ParaView libraries that are designed to be embedded in
-  simulation codes for insitu analysis. \ParaView Catalyst User's Guide is available for
-  download at \url{http://catalyst.paraview.org}.
+  Catalyst is the name for |ParaView| libraries that are designed to be embedded in
+  simulation codes for insitu analysis. |ParaView| Catalyst User's Guide is available for
+  download at http://catalyst.paraview.org.
   \end{didyouknow}
 
 In this guide
@@ -138,14 +138,14 @@ or generating contours from the data, or they could be computing derived
 quantities, etc. Algorithms have input ports through which they take in data and
 output ports through which they produce output. You need producers that ingest
 data into the system. These are simply algorithms that do not have an input port but have one or
-more output ports. They are called *sources*\keyword{Source}. Readers that read data
+more output ports. They are called *sources* :index:`\ <Source>`\ . Readers that read data
 from files are examples of such sources. Additionally, there are algorithms that
 transform the data into graphics primitives so that they can be rendered on a
 computer screen or saved to disk in another file. These algorithms, which have one
 or more input ports but do not have output ports, are called
-*sinks*\keyword{Sink}. Intermediate
+*sinks* :index:`\ <Sink>`\ . Intermediate
 algorithms with input ports and output ports are called
-*filters*\keyword{Filter}. Together, sources,
+*filters* :index:`\ <Filter>`\ . Together, sources,
 filters, and sinks provide a flexible infrastructure wherein you can
 create complex processing pipelines by simply connecting algorithms to
 perform arbitrarily complex tasks.
@@ -247,7 +247,7 @@ Getting started with ``paraview``
 
 ..
   \begin{didyouknow}
-  \paraview also includes a Python shell that you can use to enter
+  ``paraview`` also includes a Python shell that you can use to enter
   Python code for programmatically setting up the visualization. You can use the
   Python shell to interactively see the visualization pipeline and UI update as
   you execute commands. The shell supports auto-completion to assist developers.
@@ -287,16 +287,16 @@ filters for processing data (:guilabel:`Filters` menu). The :guilabel:`Tools` me
 provides access to some of the advanced features in ``paraview`` such as
 managing plugins and favorites.
 
-Panels provide you with the ability to peek into the application's state. For
-example, you can inspect the visualization pipeline that has been set up
-(``Pipeline Browser``), as well as the memory that is being used (``Memory
-Inspector``) and the parameters or properties for a processing module
-(``Properties`` panel). Several of the panels also allow you to change the
-values that are displayed, e.g., the ``Properties`` panel not only shows the
-processing module parameters, but it also allows you to change them.  Several
-of the panels are context sensitive. For example, the ``Properties`` panel
-changes to show the parameters from the selected module as you change the
-active module in the ``Pipeline Browser``.
+Panels provide you with the ability to peek into the application's state. For example, you can
+inspect the visualization pipeline that has been set up ( ``Pipeline
+Browser`` :index:`\ <Pipeline
+Browser>`\ ), as well as the memory that is being used ( ``Memory Inspector`` :index:`\ <Memory Inspector>`\ ) and the parameters or properties
+for a processing module ( ``Properties`` :index:`\ <Properties>`\  panel). Several of the panels also
+allow you to change the values that are displayed, e.g., the  ``Properties`` :index:`\ <Properties>`\  panel not only
+shows the processing module parameters, but it also allows you to change them.
+Several of the panels are context sensitive. For example, the  ``Properties`` :index:`\ <Properties>`\ 
+panel changes to show the parameters from the selected module as you change the
+active module in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ .
 
 Toolbars are designed to provide quick access to common functionality. Several
 of the actions in the toolbar are accessible from other locations,
@@ -350,28 +350,36 @@ you'll create a producer algorithm that generates a spherical surface, as shown 
 
 A few things to note:
 
-#. pipeline module is added in the ``Pipeline Browser`` panel with a name derived from the menu item, as is highlighted.
-#. The ``Properties`` panel fills up with text to indicate that it's showing properties for the highlighted item (which, in this case, is ``Sphere1``), as well as to display some widgets for parameters such as ``Center``, ``Radius``, etc.
-#. On the ``Properties`` panel, the ``Apply`` button becomes enabled and highlighted.
-#. The 3D view remains unaffected, as nothing new is shown or rendered in this view as of yet.
+#. A pipeline module is added in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  panel with a name
+derived from the menu item, as is highlighted.
+#. The  ``Properties`` :index:`\ <Properties>`\  panel fills up with text to indicate that it's showing
+properties for the highlighted item (which, in this case, is  ``Sphere1`` :index:`\ <Sphere1>`\ ), as well as to display
+some widgets for parameters such as  ``Center`` :index:`\ <Center>`\ ,  ``Radius`` :index:`\ <Radius>`\ , etc.
+#. On the  ``Properties`` :index:`\ <Properties>`\  panel, the  ``Apply`` :index:`\ <Apply>`\  button becomes enabled and
+highlighted.
+#. The 3D view remains unaffected, as nothing new is shown or rendered in this
+view as of yet.
 
 
 Let's take a closer look at what has happened. When we clicked on
 :guilabel:`Sources > Sphere`, referring to
-Section :ref:`sec-BasicsOfVisualization` , we created an instance of a source that
+Section :ref:`sec:BasicsOfVisualization`, we created an instance of a source that
 can produce a spherical surface mesh -- that's what is reflected in the
-``Pipeline Browser``.
-This instance receives a name, which is used by the ``Sphere1`` and the ``Pipeline Browser``, as well as other
+``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ .
+This instance receives a name, which is used by the  ``Sphere1`` :index:`\ <Sphere1>`\  and the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ , as well as other
 components of the UI, to refer to this instance of the source. Pipeline
 modules such as sources and filters have parameters on them that you can change
 that affect that module's behavior. We call them *properties*. The
-``Properties`` panel shows these properties and allows you to change them.
+``Properties`` :index:`\ <Properties>`\  panel shows these properties and allows you to change them.
 Since the ingestion of data into the system can be a time-consuming process,
 ``paraview`` allows you to change the properties before the module
 executes or performs the actual processing to ingest the data. Hence, the
-``Apply`` button is highlighted to indicate that you need to accept the
+``Apply`` :index:`\ <Apply>`\  button is highlighted to indicate that you need to accept the
 properties before the application will proceed. Since no data has entered the
 system yet, there's nothing to show. Therefore, the 3D view remains unaffected.
+
+Let's assume we are okay with the default values for all of the properties on the
+``Sphere1`` :index:`\ <Sphere1>`\ . Next, click on the  ``Apply`` :index:`\ <Apply>`\  button.
 
 Let's assume we are okay with the default values for all of the properties on the
 ``Sphere1``. Next, click on the ``Apply`` button.
@@ -385,25 +393,27 @@ Let's assume we are okay with the default values for all of the properties on th
 
 The following will ensue ( :numref:`fig-CreateSphere2` ):
 
-#. The ``Apply`` button goes back to its old disabled/un-highlighted state.
+#. The  ``Apply`` :index:`\ <Apply>`\  button goes back to its old disabled/un-highlighted state.
 
 #. A spherical surface is rendered in the 3D view.
 
-#. The ``Display`` section on the ``Properties`` panel now shows new parameters or properties.
+#. The  ``Display`` :index:`\ <Display>`\  section on the  ``Properties`` :index:`\ <Properties>`\  panel now shows new parameters or properties.
 
-#. Certain toolbars update, and you can see that toolbars with text, such as ``Solid Color`` and ``Surface``, now become enabled. \fixme{Need to add labels to the image to show what's changed}
+#. Certain toolbars update, and you can see that toolbars with text, such as  ``Solid Color`` :index:`\ <Solid Color>`\  and  ``Surface`` :index:`\ <Surface>`\ , now become enabled.
+    
+.. \fixme{Need to add labels to the image to show what's changed}
 
 
-By clicking ``Apply``, we told ``paraview`` to apply the properties
-shown on the ``Properties`` panel. When a new source (or filter) is
+By clicking  ``Apply`` :index:`\ <Apply>`\ , we told ``paraview`` to apply the properties
+shown on the  ``Properties`` :index:`\ <Properties>`\  panel. When a new source (or filter) is
 applied for the first time, ``paraview`` will automatically show
 the data that the pipeline module produces in the current view, if possible.
 In this case, the sphere source produces a surface mesh, which is then shown or
 displayed in the 3D view.
 
 The properties that allow you to control how
-the data is displayed in the view are now shown on the ``Properties`` panel in
-the ``Display`` section. Things such as the surface color, rendering type or
+the data is displayed in the view are now shown on the  ``Properties`` :index:`\ <Properties>`\  panel in
+the  ``Display`` :index:`\ <Display>`\  section. Things such as the surface color, rendering type or
 representation, shading parameters, etc., are shown under this newly updated
 section. We will look at display properties in more detail in
 Chapter :ref:`ch:DisplayingData`.
@@ -416,19 +426,21 @@ display properties.
 Changing properties
 -------------------
 
+.. \fixme{should we rename this section to Module or something like that?} 
+
 If you change any of the properties on the sphere source, such as the properties
-under the ``Properties``\fixme{should we rename this section to Module or
-something like that?} section on the ``Properties`` panel, including the ``Radius``
-for the spherical mesh or its ``Center``, the ``Apply`` button will be
+under the  ``Properties`` :index:`\ <Properties>`\ 
+section on the  ``Properties`` :index:`\ <Properties>`\  panel, including the  ``Radius`` :index:`\ <Radius>`\ 
+for the spherical mesh or its  ``Center`` :index:`\ <Center>`\ , the  ``Apply`` :index:`\ <Apply>`\  button will be
 highlighted again. Once you are finished with all of the property changes, you can
-hit ``Apply`` to apply the changes. Once the changes are applied,
+hit  ``Apply`` :index:`\ <Apply>`\  to apply the changes. Once the changes are applied,
 ``paraview`` will re-execute the sphere source to produce a new mesh,
 as requested. It will then automatically update the view, and you will see the
 new result rendered.
 
 If you change any of the display properties for the sphere source, such as the
-properties under the ``Display`` section of the ``Properties`` panel (including
-``Representation`` or ``Opacity``), the ``Apply`` button is not affected, the
+properties under the  ``Display`` :index:`\ <Display>`\  section of the  ``Properties`` :index:`\ <Properties>`\  panel (including
+``Representation`` :index:`\ <Representation>`\  or  ``Opacity`` :index:`\ <Opacity>`\ ), the  ``Apply`` :index:`\ <Apply>`\  button is not affected, the
 changes are immediately applied, and the view is updated.
 
 The rationale behind this is that, typically, the execution of the source (or
@@ -443,8 +455,9 @@ state.
   For some workflows with smaller data sizes, it may be more convenient
   if the ``Apply`` button was automatically applied even after changes are made to the
   pipeline module properties. You can change this from the application settings dialog, which is
-  accessible from the :guilabel:`Edit > Settings` menu. The setting is called ``Auto
-  Apply``. You can also change the ``Auto Apply`` state using the
+  accessible from the :guilabel:`Edit > Settings` menu. The setting is called  ``Auto
+  Apply`` :index:`\ <Auto
+  Apply>`\ . You can also change the  ``Auto Apply`` :index:`\ <Auto Apply>`\  state using the
   |AutoApplyIcon| button from the toolbar.
 
 .. |AutoApplyIcon| image:: images/AutoApplyIcon.png
@@ -477,23 +490,25 @@ enabled filters to create a new instance of that filter type.
 For example, if you click on :guilabel:`Filters > Shrink`, it will create a filter
 that shrinks each of the mesh cells by a fixed factor. Exactly as before, when we
 created the sphere source, we see that the newly-created filter is given a new
-name, ``Shrink1``, and is highlighted in the ``Pipeline Browser``. The
-``Properties`` panel is also updated to show the properties for this new
-filter, and the ``Apply`` button is highlighted to request that we accept the
+name,  ``Shrink1`` :index:`\ <Shrink1>`\ , and is highlighted in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ . The
+``Properties`` :index:`\ <Properties>`\  panel is also updated to show the properties for this new
+filter, and the  ``Apply`` :index:`\ <Apply>`\  button is highlighted to request that we accept the
 properties for the filter so that it can be executed and the result can be rendered. If you
-click back and forth between the ``Sphere1`` and ``Shrink1`` in the
-``Pipeline Browser``, you'll see the ``Properties`` panel and toolbars update,
+click back and forth between the  ``Sphere1`` :index:`\ <Sphere1>`\  and  ``Shrink1`` :index:`\ <Shrink1>`\  in the
+``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ , you'll see the  ``Properties`` :index:`\ <Properties>`\  panel and toolbars update,
 reflecting the state of the selected pipeline module. This is an important
 concept in |ParaView|. There's a notion of active pipeline module, called the
-*active source*\keyword{Active Source}.
+*active source* :index:`\ <Active Source>`\ .
 Several panels, toolbars, and menus will update based on
-the active source. \fixme{add an image showing the result}
+the active source. 
 
-If you click ``Apply``, as was the case before, the shrink filter will be executed and the
+.. \fixme{add an image showing the result}
+
+If you click  ``Apply`` :index:`\ <Apply>`\ , as was the case before, the shrink filter will be executed and the
 resulting dataset will be generated and shown in the 3D view. ``paraview``
-will also automatically hide the result from the ``Sphere1`` so that it is not shown
+will also automatically hide the result from the  ``Sphere1`` :index:`\ <Sphere1>`\  so that it is not shown
 in the view. Otherwise, the two datasets will overlap. This is reflected by
-the change of state for the *eyeball* icons in the ``Pipeline Browser``
+the change of state for the *eyeball* icons in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ 
 next to each of the pipeline modules. You can show or hide results from any
 pipeline module by clicking on the eyeballs.
 
@@ -535,7 +550,7 @@ about |ParaView| scripting even without much Python exposure.
 
 |ParaView| provides a ``paraview`` package with several Python modules that expose
 various functionalities. The primary scripting interface is provided by the
-\py{simple} module.
+``simple`` :index:`\ <simple>`\  module.
 
 When you start ``pvpython``, you should see a prompt in a terminal
 window as follows (with some platform specific differences).
@@ -548,7 +563,7 @@ window as follows (with some platform specific differences).
   >>>
 
 You can now type commands at this prompt, and |ParaView| will execute them. To
-bring in the |ParaView| scripting API, you first need to import the \py{simple}
+bring in the |ParaView| scripting API, you first need to import the  ``simple`` :index:`\ <simple>`\ 
 module from the ``paraview`` package as follows:
 
 .. code-block:: python
@@ -601,7 +616,7 @@ Now, to show the active source in a view, try:
   >>> Show()
   >>> Render()
 
-The \py{Show} call will prepare the display, while the \py{Render} call will
+The  ``Show`` :index:`\ <Show>`\  call will prepare the display, while the  ``Render`` :index:`\ <Render>`\  call will
 cause the rendering to occur. In addition, a new window will popup, showing the result
 (:numref:`fig-PythonRendering`). This is similar to the state after hitting
 ``Apply`` in the UI.
@@ -616,7 +631,7 @@ cause the rendering to occur. In addition, a new window will popup, showing the 
 Changing properties
 -------------------
 
-To change the properties on the sphere source, you can use the \py{SetProperties}
+To change the properties on the sphere source, you can use the  ``SetProperties`` :index:`\ <SetProperties>`\ 
 function.
 
 .. code-block:: python
@@ -627,9 +642,9 @@ function.
   # You can also set multiple properties.
   >>> SetProperties(Center=[1, 0, 0], StartTheta=100)
 
-Similar to the ``Properties`` panel, \py{SetProperties} affects the active
+Similar to the  ``Properties`` :index:`\ <Properties>`\  panel,  ``SetProperties`` :index:`\ <SetProperties>`\  affects the active
 source. To query the current value of any property on the active source, use
-\py{GetProperty}.
+``GetProperty`` :index:`\ <GetProperty>`\ .
 
 .. code-block:: python
 
@@ -640,12 +655,11 @@ source. To query the current value of any property on the active source, use
   >>> print(center)
   [1.0, 0.0, 0.0]
 
-\py{SetProperties} and \py{GetProperty} functions serve the same function as the
-``Properties`` section of the ``Properties`` panel -- they allow you to set
+``SetProperties`` :index:`\ <SetProperties>`\  and  ``GetProperty`` :index:`\ <GetProperty>`\  functions serve the same function as the
+``Properties`` :index:`\ <Properties>`\  section of the  ``Properties`` :index:`\ <Properties>`\  panel -- they allow you to set
 and introspect the pipeline module properties for the active source.
-Likewise, for the ``Display`` section of the panel, or the display properties,
-we have the \py{SetDisplayProperties} and
-\py{GetDisplayProperty} functions.
+Likewise, for the  ``Display`` :index:`\ <Display>`\  section of the panel, or the display properties,
+we have the  ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  and ``GetDisplayProperty`` :index:`\ <GetDisplayProperty>`\  functions.
 
 .. code-block:: python
 
@@ -656,13 +670,13 @@ we have the \py{SetDisplayProperties} and
 .. admonition:: **Common Errors** 
   :class: error
 
-  Note how the property names for the \py{SetProperties} and
-  \py{SetDisplayProperties} functions are not enclosed in double-quotes, while
-  those for the \py{GetProperty} and \py{GetDisplayProperty} methods are.
+  Note how the property names for the  ``SetProperties`` :index:`\ <SetProperties>`\  and
+  ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  functions are not enclosed in double-quotes, while
+  those for the  ``GetProperty`` :index:`\ <GetProperty>`\  and  ``GetDisplayProperty`` :index:`\ <GetDisplayProperty>`\  methods are.
 
 In ``paraview``, every time you hit ``Apply`` or change a display
 property, the UI automatically re-renders the view. In the scripting environment,
-you have to do this manually by calling the \py{Render} function every time you want
+you have to do this manually by calling the  ``Render`` :index:`\ <Render>`\  function every time you want
 to re-render and look at the updated result.
 
 \fixme{we're missing blurb about reset camera}.
@@ -691,8 +705,8 @@ expected. For some reason, the shrank cells are not visible. This is because we
 missed one stage: In ``paraview``, the UI was smart enough to
 automatically hide the input dataset for the newly created filter after we hit
 apply. In the scripting interface, such operations are the user's responsibility. We
-should have hidden the sphere source from the view. We can use the \py{Hide}
-method, the counter part of \py{Show}, to hide the active source. But, now we have
+should have hidden the sphere source from the view. We can use the  ``Hide`` :index:`\ <Hide>`\ 
+method, the counter part of  ``Show`` :index:`\ <Show>`\ , to hide the active source. But, now we have
 a problem -- when we created the shrink filter, we changed the active source to
 be the shrink instance. Luckily, all the functions we discussed so far can take
 an optional first argument, which is the source or filter instance on which to operate.
@@ -714,8 +728,7 @@ The solution is as follows:
   # Re-render the result.
   >>> Render()
 
-Alternatively, you could also get/set the active source using the
-\py{GetActiveSource} and \\* \py{SetActiveSource} functions.
+Alternatively, you could also get/set the active source using the ``GetActiveSource`` :index:`\ <GetActiveSource>`\  and  ``SetActiveSource`` :index:`\ <SetActiveSource>`\  functions.
 
 .. code-block:: python
 
@@ -741,17 +754,19 @@ Alternatively, you could also get/set the active source using the
   # Re-render the result
   >>> Render()
 
-The result is shown in :numref:`fig-PythonRenderingShrink`.
+
+The result is shown in :numref:`fig-PythonRenderingShrink` .
 
 .. figure:: images/PythonShrink.png
     :name: fig-PythonRenderingShrink
-    :width: 100%
+    :width: 80%
     :align: center
     
     Window showing result from the Python code after applying the shrink filter.
 
-\py{SetActiveSource} has same effect as changing the pipeline module, highlighted
-in the \py{Pipeline Browser}, by clicking on a different module.
+``SetActiveSource`` :index:`\ <SetActiveSource>`\  has same effect as changing
+the pipeline module, highlighted in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ ,
+by clicking on a different module.
 
 Alternative approach
 --------------------
@@ -788,11 +803,11 @@ It's totally okay to stick with the previous approach.
 Updating the pipeline
 ---------------------
 
-When changing properties on the ``Properties`` panel in
+When changing properties on the  ``Properties`` :index:`\ <Properties>`\  panel in
 ``paraview``, we noticed that the algorithm doesn't re-execute until
-you hit ``Apply``. In reality, ``Apply`` isn't what's actually triggering
+you hit  ``Apply`` :index:`\ <Apply>`\ . In reality,  ``Apply`` :index:`\ <Apply>`\  isn't what's actually triggering
 the execution or the updating of the processing pipeline. What happens is that
-``Apply`` updates the parameters on the pipeline module and causes the view to
+``Apply`` :index:`\ <Apply>`\  updates the parameters on the pipeline module and causes the view to
 render. If the output of the pipeline module is visible in the view, or if the output of
 any filter connected to it downstream is visible in the view, |ParaView| will
 determine that the data rendered is obsolete and request the pipeline to
@@ -801,20 +816,19 @@ downstream from it) is not visible in the view, |ParaView| will have no reason t
 re-execute the pipeline, and the pipeline module will not be be updated. If, later
 on, you do make this module visible in the view, |ParaView| will automatically
 update and execute the pipeline. This is often referred to as
-*demand-driven pipeline execution*\keyword{Demand Driven Pipeline}. It makes it possible to avoid
-unnecessary module executions.
+*demand-driven pipeline execution* :index:`\ <Demand Driven Pipeline>`\ . It makes it possible to avoid unnecessary module executions.
 
 In ``paraview``, you can get by without ever noticing this since the
 application manages pipeline updates automatically. In ``pvpython``
 too, if your scripts are producing renderings in views, you'd never
-notice this as long as you remember to call \py{Render}. However, you may want
+notice this as long as you remember to call  ``Render`` :index:`\ <Render>`\ . However, you may want
 to write scripts to produce transformed datasets or to determine data
 characteristics. In such cases, since you may never create a view, you'll never
 be seeing the pipeline update, no matter how many times you change the
 properties.
 
-Accordingly, you must use the \py{UpdatePipeline} function.
-\py{UpdatePipeline} updates the pipeline connected to the active source (or only
+Accordingly, you must use the  ``UpdatePipeline`` :index:`\ <UpdatePipeline>`\  function.
+``UpdatePipeline`` :index:`\ <UpdatePipeline>`\  updates the pipeline connected to the active source (or only
 until the active source, i.e., anything downstream from it, won't be updated).
 
 .. code-block:: python
@@ -856,10 +870,10 @@ until the active source, i.e., anything downstream from it, won't be updated).
   >>> sphere.GetDataInformation().GetBounds()
   (-9.749279022216797, 9.749279022216797, -9.749279022216797, 9.749279022216797, -10.0, 10.0)
 
-We will look at the \py{sphere.GetDataInformation} API in
+We will look at the  ``sphere.GetDataInformation`` :index:`\ <sphere.GetDataInformation>`\  API in
 Section :ref:`sec:DataInformationInPython` in more detail.
 
-For temporal datasets, \py{UpdatePipeline} takes in a time argument, which is the
+For temporal datasets,  ``UpdatePipeline`` :index:`\ <UpdatePipeline>`\  takes in a time argument, which is the
 time for which the pipeline must be updated.
 
 .. code-block:: python
@@ -887,10 +901,10 @@ you can enter Python commands and scripts exactly as with
 prompt exactly like ``pvpython``. You can try inputting commands from
 the earlier section into this shell. As you type each of the commands, you will
 see the user interface update after each command, e.g., when you create the
-sphere source instance, it will be shown in the ``Pipeline Browser``. If you
-change the active source, the ``Pipeline Browser`` and other UI components will
+sphere source instance, it will be shown in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ . If you
+change the active source, the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  and other UI components will
 update to reflect the change. If you change any properties or display properties, the
-``Properties`` panel will update to reflect the change as well!
+``Properties`` :index:`\ <Properties>`\  panel will update to reflect the change as well!
 
 .. figure:: images/PythonShell.png
     :name: fig-PythonShell
@@ -918,7 +932,7 @@ the UI as a Python script. Simply start tracing by clicking on
 :guilabel:`Tools > Start Trace`. ``paraview`` now enters a mode where all
 your actions (or at least those relevant for scripting) are monitored. Any time
 you create a source or filter, open data files,
-change properties and hit ``Apply``, interact with the 3D scene, or save
+change properties and hit  ``Apply`` :index:`\ <Apply>`\ , interact with the 3D scene, or save
 screenshots, etc., your actions will be monitored. Once you are done with the series of
 actions that you want to script, click
 :guilabel:`Tools > Stop Trace`. ``paraview`` will then pop up an editor
