@@ -2,7 +2,7 @@
 .. include:: abbreviations.hrst
 
 Introduction
-============
+############
 
 |ParaView| is an open-source, multi-platform scientific data analysis and
 visualization tool that enables analysis and visualization of extremely large
@@ -574,7 +574,7 @@ started (with some differences that we can ignore for now). The application is
 ready to ingest data and start processing.
 
 Understanding the visualization process
------
+---------------------------------------
 
 Let's try to understand the workflow by looking at the same use-case as we did
 in Section :ref:`sec:UnderstandingVisualizationGUI`.
@@ -655,6 +655,7 @@ we have the \py{SetDisplayProperties} and
 
 .. admonition:: **Common Errors** 
   :class: error
+
   Note how the property names for the \py{SetProperties} and
   \py{SetDisplayProperties} functions are not enclosed in double-quotes, while
   those for the \py{GetProperty} and \py{GetDisplayProperty} methods are.
@@ -817,6 +818,7 @@ Accordingly, you must use the \py{UpdatePipeline} function.
 until the active source, i.e., anything downstream from it, won't be updated).
 
 .. code-block:: python
+
   >>> from paraview.simple import *
   >>> sphere = Sphere()
   
@@ -861,6 +863,7 @@ For temporal datasets, \py{UpdatePipeline} takes in a time argument, which is th
 time for which the pipeline must be updated.
 
 .. code-block:: python
+
   # To update to time 10.0:
   >>> UpdatePipeline(10.0)
   

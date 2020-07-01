@@ -83,6 +83,8 @@ todo_include_todos = True
 # LaTeX builders. Default is False.
 numfig= True
 
+# supress ref errors for now since we haven't converted all chapters
+suppress_warnings=["ref.ref"]
 
 # -- Options for HTML output ----------------------------------------------
 
