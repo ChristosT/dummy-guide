@@ -5,7 +5,7 @@
 Getting data information in ``paraview``
 ========================================
 
-In the visualization pipeline (Section :numref:`sec:BasicsOfVisualization`),
+In the visualization pipeline (:numref:`sec:BasicsOfVisualization`),
 sources, readers, and filters are all producing data. In a VTK-based pipeline,
 this data is one of the types discussed. Thus, when you create a source or open
 a data file in |paraview| and hit  ``Apply`` :index:`\ <Apply>`\ , data is being produced.
@@ -72,10 +72,19 @@ estimate.
 The  ``Data Arrays`` :index:`\ <Data Arrays>`\  group lists all of the available point, cells, and field arrays,
 as well as their types and ranges for the current time step. The  ``Current data time`` :index:`\ <Current data time>`\ 
 field shows the time value for the current timestep as a reference. As with
-other places in |paraview|, the icons \icon{Images/pqCellData16.png},
-\icon{Images/pqNodalData16.png}, and \icon{Images/pqGlobalData16.png} are used
+other places in |paraview|, the icons |pqCellData16|, |pqNodalData16|, and |pqGlobalData16| are used
 to indicate cell, point, and field data arrays. Since data arrays can have multiple
 components, the range for each component of the data array is shown.
+
+.. |pqCellData16|  image:: images/pqCellData16.png
+                   :width: 0.5cm
+
+.. |pqNodalData16| image:: images/pqNodalData16.png
+                   :width: 0.5cm
+
+.. |pqGlobalData16| image:: images/pqGlobalData16.png
+                     :width: 0.5cm
+
 
 ``Bounds`` :index:`\ <Bounds>`\  shows the spatial bounds of the datasets in 3D Cartesian space. This
 will be unavailable for non-geometric datasets such as tables.
@@ -143,7 +152,7 @@ the hierarchy to view the summary limited to just that sub-tree.
   
   If you need an overview of how much physical memory is being used by |ParaView| in
   its current state, you can use the  ``Memory Inspector`` :index:`\ <Memory Inspector>`\ 
-  (Section :numref:`chapter:MemoryInspector`).
+  (:numref:`chapter:MemoryInspector`).
 
 
 The ``Statistics Inspector`` panel
@@ -320,7 +329,7 @@ magnitude ranges:
   The example scripts in this section all demonstrated how to obtain information about the data such
   as the number of points and cells, data bounds, and array ranges. However, what they
   do not show is how to access the raw data itself. To see how to obtain the full data,
-  please see Section :numref:`sec:Fetch`.
+  please see :numref:`sec:Fetch`.
 
 .. \begin{TODO}
   \begin{itemize}
