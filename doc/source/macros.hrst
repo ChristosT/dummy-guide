@@ -6,7 +6,10 @@
 .. |pvdataserver| replace:: ``pvdataserver``
 .. |pvrenderserver| replace:: ``pvrenderserver``
 
+.. |ALT| replace:: :kbd:`Alt`
 .. |CMD| replace:: :kbd:`⌘`
 .. |CTRL| replace:: :kbd:`CTRL`
 .. |SHIFT| replace:: :kbd:`⇧`
+.. |SPACE| replace:: :kbd:`Space`
+.. |ENTER| replace:: :kbd:`Enter`
 .. |ESC| replace:: :kbd:`Esc`
