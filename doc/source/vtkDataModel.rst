@@ -110,15 +110,11 @@ A uniform rectilinear grid, or image data, defines its topology and point
 coordinates implicitly (:numref:`fig:UniformRectilinearGrid`). To fully define
 the mesh for an image data, VTK uses the following:
 
-\begin{compactenum}
-\item *Extents* - These define the minimum and maximum indices in each
-direction. For example, an image data of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0, 29)`
-has 10 points in the x-direction, 20 points in the y-direction, and 30 points in the
-z-direction. The total number of points is :math:`10 \times 20 \times 30`.
-\item *Origin* - This is the position of a point defined with indices :math:`(0, 0, 0)`.
-\item *Spacing* - This is the distance between each point. Spacing for each
-direction can defined independently.
-\end{compactenum}
+*  *Extents* - These define the minimum and maximum indices in each direction. For example, an image data of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0, 29)` has 10 points in the x-direction, 20 points in the y-direction, and 30 points in the z-direction. The total number of points is :math:`10 \times 20 \times 30`.
+
+* *Origin* - This is the position of a point defined with indices :math:`(0, 0, 0)`.
+
+* *Spacing* - This is the distance between each point. Spacing for each direction can defined independently.
 
 The coordinate of each point is defined as follows: :math:`coordinate = origin +
 index \times spacing` where :math:`coordinate`, :math:`origin`, :math:`index`, and :math:`spacing` are vectors of
@@ -150,16 +146,8 @@ A rectilinear grid, such as :numref:`fig:ExampleMesh`, defines its topology
 implicitly and point coordinates semi-implicitly. To fully define the mesh for a
 rectilinear grid, VTK uses the following:
 
-\begin{compactenum}
-\item *Extents* - These define the minimum and maximum indices in each
-direction. For example, a rectilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0,
-29)` has 10 points in the x-direction, 20 points in the y-direction, and 30
-points in the z-direction. The total number of points is :math:`10 \times 20 \times 30`.
-\item *Three arrays defining coordinates in the x-, y- and z-directions* -
-These arrays are of length :math:`npts_x`, :math:`npts_y`, and :math:`npts_z`. This is a significant
-savings in memory, as the total memory used by these arrays is
-:math:`npts_x+npts_y+npts_z` rather than :math:`npts_x \times npts_y \times npts_z`.
-\end{compactenum}
+* *Extents* - These define the minimum and maximum indices in each direction. For example, a rectilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0, 29)` has 10 points in the x-direction, 20 points in the y-direction, and 30 points in the z-direction. The total number of points is :math:`10 \times 20 \times 30`.
+*  *Three arrays defining coordinates in the x-, y- and z-directions* - These arrays are of length :math:`npts_x`, :math:`npts_y`, and :math:`npts_z`. This is a significant savings in memory, as the total memory used by these arrays is :math:`npts_x+npts_y+npts_z` rather than :math:`npts_x \times npts_y \times npts_z`.
 
 The coordinate of each point is defined as follows:
 
@@ -189,13 +177,8 @@ A curvilinear grid, such as  :numref:`fig:CurvilinearGrid`, defines its
 topology implicitly and point coordinates explicitly. To fully define the mesh
 for a curvilinear grid, VTK uses the following:
 
-\begin{compactenum}
-\item \emph {Extents} - These define the minimum and maximum indices in each
-direction. For example, a curvilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0,
-29)` has :math:`10 \times 20 \times 30` points regularly defined over a curvilinear mesh.
-\item \emph {An array of point coordinates} - This array stores the position of
-each vertex explicitly.
-\end{compactenum}
+* *Extents* - These define the minimum and maximum indices in each direction. For example, a curvilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0, 29)` has :math:`10 \times 20 \times 30` points regularly defined over a curvilinear mesh.
+* *An array of point coordinates* - This array stores the position of each vertex explicitly.
 
 The coordinate of each point is defined as follows:
 :math:`coordinate = coordinate\_array(idx\_flat)`.
@@ -249,66 +232,64 @@ all of which can exist (heterogeneously) within one unstructured grid. The full
 list of all cell types supported by VTK can be found in the file  ``vtkCellType.h`` :index:`\ <vtkCellType.h>`\ 
 in the VTK source code. Here is the list of cell types as of when this document was written:
 
-\begin{multicols}{2}
-\begin{compactitem}
-\item VTK\_EMPTY\_CELL
-\item VTK\_VERTEX
-\item VTK\_POLY\_VERTEX
-\item VTK\_LINE
-\item VTK\_POLY\_LINE
-\item VTK\_TRIANGLE
-\item VTK\_TRIANGLE\_STRIP
-\item VTK\_POLYGON
-\item VTK\_PIXEL
-\item VTK\_QUAD
-\item VTK\_TETRA
-\item VTK\_VOXEL
-\item VTK\_HEXAHEDRON
-\item VTK\_WEDGE
-\item VTK\_PYRAMID
-\item VTK\_PENTAGONAL\_PRISM
-\item VTK\_HEXAGONAL\_PRISM
-\item VTK\_QUADRATIC\_EDGE
-\item VTK\_QUADRATIC\_TRIANGLE
-\item VTK\_QUADRATIC\_QUAD
-\item VTK\_QUADRATIC\_POLYGON
-\item VTK\_QUADRATIC\_TETRA
-\item VTK\_QUADRATIC\_HEXAHEDRON
-\item VTK\_QUADRATIC\_WEDGE
-\item VTK\_QUADRATIC\_PYRAMID
-\item VTK\_BIQUADRATIC\_QUAD
-\item VTK\_TRIQUADRATIC\_HEXAHEDRON
-\item VTK\_QUADRATIC\_LINEAR\_QUAD
-\item VTK\_QUADRATIC\_LINEAR\_WEDGE
-\item VTK\_BIQUADRATIC\_QUADRATIC\_WEDGE
-\item VTK\_BIQUADRATIC\_QUADRATIC\_HEXAHEDRON
-\item VTK\_BIQUADRATIC\_TRIANGLE
-\item VTK\_CUBIC\_LINE
-\item VTK\_CONVEX\_POINT\_SET
-\item VTK\_POLYHEDRON
-\item VTK\_PARAMETRIC\_CURVE
-\item VTK\_PARAMETRIC\_SURFACE
-\item VTK\_PARAMETRIC\_TRI\_SURFACE
-\item VTK\_PARAMETRIC\_QUAD\_SURFACE
-\item VTK\_PARAMETRIC\_TETRA\_REGION
-\item VTK\_PARAMETRIC\_HEX\_REGION
-\item VTK\_HIGHER\_ORDER\_EDGE
-\item VTK\_HIGHER\_ORDER\_TRIANGLE
-\item VTK\_HIGHER\_ORDER\_QUAD
-\item VTK\_HIGHER\_ORDER\_POLYGON
-\item VTK\_HIGHER\_ORDER\_TETRAHEDRON
-\item VTK\_HIGHER\_ORDER\_WEDGE
-\item VTK\_HIGHER\_ORDER\_PYRAMID
-\item VTK\_HIGHER\_ORDER\_HEXAHEDRON
-\item VTK\_LAGRANGE\_CURVE
-\item VTK\_LAGRANGE\_TRIANGLE
-\item VTK\_LAGRANGE\_QUADRILATERAL
-\item VTK\_LAGRANGE\_TETRAHEDRON
-\item VTK\_LAGRANGE\_HEXAHEDRON
-\item VTK\_LAGRANGE\_WEDGE
-\item VTK\_LAGRANGE\_PYRAMID
-\end{compactitem}
-\end{multicols}
++--------------------------------------+--------------------------------------+
+|VTK\_EMPTY\_CELL                      |VTK\_POLYGON                          |
++--------------------------------------+--------------------------------------+
+|VTK\_VERTEX                           |VTK\_PIXEL                            |
++--------------------------------------+--------------------------------------+
+|VTK\_POLY\_VERTEX                     |VTK\_QUAD                             |
++--------------------------------------+--------------------------------------+
+|VTK\_LINE                             |VTK\_TETRA                            |
++--------------------------------------+--------------------------------------+
+|VTK\_POLY\_LINE                       |VTK\_VOXEL                            |
++--------------------------------------+--------------------------------------+
+|VTK\_TRIANGLE                         |VTK\_HEXAHEDRON                       |
++--------------------------------------+--------------------------------------+
+|VTK\_TRIANGLE\_STRIP                  |VTK\_WEDGE                            |
++--------------------------------------+--------------------------------------+
+|VTK\_PYRAMID                          |VTK\_PARAMETRIC\_CURVE                |
++--------------------------------------+--------------------------------------+
+|VTK\_PENTAGONAL\_PRISM                |VTK\_PARAMETRIC\_SURFACE              |
++--------------------------------------+--------------------------------------+
+|VTK\_HEXAGONAL\_PRISM                 |VTK\_PARAMETRIC\_TRI\_SURFACE         |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_EDGE                  |VTK\_PARAMETRIC\_QUAD\_SURFACE        |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_TRIANGLE              |VTK\_PARAMETRIC\_TETRA\_REGION        |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_QUAD                  |VTK\_PARAMETRIC\_HEX\_REGION          |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_POLYGON               |VTK\_HIGHER\_ORDER\_EDGE              |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_TETRA                 |VTK\_HIGHER\_ORDER\_TRIANGLE          |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_HEXAHEDRON            |VTK\_HIGHER\_ORDER\_QUAD              |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_WEDGE                 |VTK\_HIGHER\_ORDER\_POLYGON           |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_PYRAMID               |VTK\_HIGHER\_ORDER\_TETRAHEDRON       |
++--------------------------------------+--------------------------------------+
+|VTK\_BIQUADRATIC\_QUAD                |VTK\_HIGHER\_ORDER\_WEDGE             |
++--------------------------------------+--------------------------------------+
+|VTK\_TRIQUADRATIC\_HEXAHEDRON         |VTK\_HIGHER\_ORDER\_PYRAMID           |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_LINEAR\_QUAD          |VTK\_HIGHER\_ORDER\_HEXAHEDRON        |
++--------------------------------------+--------------------------------------+
+|VTK\_QUADRATIC\_LINEAR\_WEDGE         |VTK\_LAGRANGE\_CURVE                  |
++--------------------------------------+--------------------------------------+
+|VTK\_BIQUADRATIC\_QUADRATIC\_WEDGE    |VTK\_LAGRANGE\_TRIANGLE               |
++--------------------------------------+--------------------------------------+
+|VTK\_BIQUADRATIC\_QUADRATIC_HEXAHEDRON|VTK\_LAGRANGE\_QUADRILATERAL          |
++--------------------------------------+--------------------------------------+
+|VTK\_BIQUADRATIC\_TRIANGLE            |VTK\_LAGRANGE\_TETRAHEDRON            |
++--------------------------------------+--------------------------------------+
+|VTK\_CUBIC\_LINE                      |VTK\_LAGRANGE\_HEXAHEDRON             |
++--------------------------------------+--------------------------------------+
+|VTK\_CONVEX\_POINT\_SET               |VTK\_LAGRANGE\_WEDGE                  |
++--------------------------------------+--------------------------------------+
+|VTK\_POLYHEDRON                       |VTK\_LAGRANGE\_PYRAMID                |
++--------------------------------------+--------------------------------------+
+
 
 Many of these cell types are straightforward. For details, see the VTK
 documentation.
