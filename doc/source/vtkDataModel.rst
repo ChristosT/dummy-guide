@@ -3,6 +3,7 @@
 
 
 .. _sec:VTKDataModel:
+
 VTK data model
 ==============
 
@@ -18,6 +19,7 @@ datasets are formed from smaller building blocks: mesh (topology and geometry) a
 attributes.
 
 .. _sec:VTKDataModel:Mesh:
+
 Mesh
 ^^^^
 
@@ -49,6 +51,7 @@ vertices. In VTK, the point coordinates may be implicit, or they may be explicit
 a data array of dimensions :math:`(number\_of\_points \times 3)`.
 
 .. _sec:VTKDataModel:Attributes:
+
 Attributes (fields, arrays)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -91,9 +94,10 @@ necessary.
 
     Cell-centered attribute.
 
-Uniform rectilinear grid (image data)
-^^^^^
 .. _sec:VTKDataModel:UniformRectilinearGrid:
+
+Uniform rectilinear grid (image data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_Image.png
     :name: fig:UniformRectilinearGrid
@@ -131,8 +135,9 @@ Furthermore, many algorithms in VTK have been optimized to take advantage of
 this property and are more efficient for image data.
 
 .. _sec:VTKDataModel:RectilinearGrid:
+
 Rectilinear grid
-^^^^^
+^^^^^^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_Rectilinear.png
     :name: fig:ExampleMesh
@@ -141,7 +146,7 @@ Rectilinear grid
 
     Rectilinear grid.
 
-A rectilinear grid, such as :nuref:`fig:ExampleMesh`, defines its topology
+A rectilinear grid, such as :numref:`fig:ExampleMesh`, defines its topology
 implicitly and point coordinates semi-implicitly. To fully define the mesh for a
 rectilinear grid, VTK uses the following:
 
@@ -168,9 +173,10 @@ A rectilinear grid consists of cells of the same type. This type is determined
 by the dimensionality of the dataset (based on the extents) and can either be
 vertex (0D), line (1D), pixel (2D), or voxel (3D).
 
-Curvilinear grid (structured grid)
-^^^^^
 .. _sec:VTKDataModel:CurvilinearGrid:
+
+Curvilinear grid (structured grid)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_Curvilinear.png
     :name: fig:CurvilinearGrid
@@ -201,8 +207,9 @@ by the dimensionality of the dataset (based on the extents) and can either be
 vertex (0D), line (1D), quad (2D), or hexahedron (3D).
 
 .. _sec:VTKDataModel:AMRDataset:
+
 AMR dataset
-^^^^^
+^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_AMR.png
     :name: fig:AMRDataset
@@ -220,12 +227,13 @@ masking (blanking) sub-regions of the rectilinear grids using an array of bytes.
 This allows VTK to process overlapping grids with minimal artifacts. VTK can
 automatically generate the masking arrays for Berger-Oliger compliant meshes.
 
-Unstructured grid
-^^^^^
 .. _sec:VTKDataModel:UnstructuredGrid:
 
+Unstructured grid
+^^^^^^^^^^^^^^^^^
+
 .. figure:: images/ParaView_UG_Unstructured.png
-    :name: fig:Unstructured
+    :name: fig:UnstructuredGrid
     :width: 40%
     :align: center
 
@@ -308,10 +316,10 @@ documentation.
 .. _sec:VTKDataModel:PolyData:
 
 Polygonal grid (polydata)
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_Polydata.png
-    :name: fig-PolyData
+    :name: fig:PolyData
     :width: 40%
     :align: center
 
@@ -327,6 +335,7 @@ be converted to a polydata using the  ``Extract Surface Filter`` :index:`\ <Extr
 converted to an unstructured grid using  ``Clean to Grid`` :index:`\ <Clean to Grid>`\ .
 
 .. _sec:VTKDataModel:Table:
+
 Table
 ^^^^^
 
@@ -346,9 +355,10 @@ they are of the right format. Filters that convert tables include  ``Table to
 Points`` :index:`\ <Table to
 Points>`\  and  ``Table to Structured Grid`` :index:`\ <Table to Structured Grid>`\ .
 
-Multiblock dataset
-^^^^^
 .. _sec:MultiblockDataset:
+
+Multiblock dataset
+^^^^^^^^^^^^^^^^^^
 
 .. figure:: images/ParaView_UG_Multiblock.png
     :name: fig:MultiblockDataset
@@ -370,6 +380,7 @@ filter that requires an attribute, it will be applied only to blocks that have
 that attribute.
 
 .. _sec:MultipieceDataset:
+
 Multipiece dataset
 ^^^^^^^^^^^^^^^^^^
 
