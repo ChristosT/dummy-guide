@@ -14,7 +14,7 @@ Welcome to ParaView Users Guide!
 
    introduction
    dataIngestion
-   vtkDataModel
+   understandingData
 
 
 
