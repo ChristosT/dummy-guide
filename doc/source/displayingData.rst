@@ -86,13 +86,22 @@ in the application.
 
 Besides being able to create multiple views and laying them out in a pane,
 |paraview| also supports placing views in multiple layouts under
-separate tabs. To create new tabs, use the \icon{Images/TabWidgetPlus.png}
+separate tabs. To create new tabs, use the |TabWidgetPlus|
 button in the tab bar. You can close a tab, which will destroy all views laid out
 in that tab,
-by clicking on the \icon{Images/SP_TitleBarCloseButton.png} button.
+by clicking on the |SP_TitleBarCloseButton| button.
 To pop out an entire tab as a
-separate window, use the \icon{Images/SP_TitleBarMaxButton.png} button on the
+separate window, use the |SP_TitleBarMaxButton| button on the
 tab bar.
+
+.. |TabWidgetPlus| image:: images/TabWidgetPlus.png
+                   :width: 0.5cm 
+
+.. |SP_TitleBarCloseButton| image:: images/SP_TitleBarCloseButton.png
+                            :width: 0.5cm 
+
+.. |SP_TitleBarMaxButton| image:: images/SP_TitleBarMaxButton.png
+                          :width: 0.5cm 
 
 The active view is always present in the active tab. Thus, if you change the
 active tab, the active view will also be changed to be a view in the active tab
@@ -647,12 +656,15 @@ can be defined with custom GLSL shader code.
 Next, we will cover each of the property groups available under  ``Display`` :index:`\ <Display>`\ 
 properties. Several of these are marked as advanced. Accordingly, you may need to
 either toggle the panel to show advanced properties using the
-\icon{Images/pqAdvanced26.png} button or search for it by name using the search
+|pqAdvanced26| button or search for it by name using the search
 box.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/RenderViewDisplayPropertiesColoringGroup.png}
-\end{center}
+.. |pqAdvanced26| image:: images/pqAdvanced26.png
+                  :width: 0.5cm
+
+.. figure:: images/RenderViewDisplayPropertiesColoringGroup.png
+    :width: 50%
+    :align: center
 
 Display properties under  ``Coloring`` :index:`\ <Coloring>`\  :index:`\ <Coloring>`\  allow you to set
 how the dataset is
@@ -1402,18 +1414,27 @@ dataset being shown. The  ``Attribute`` :index:`\ <Attribute>`\  field allows yo
 elements to show, e.g.,  ``Cell Data`` :index:`\ <Cell Data>`\ ,  ``Point Data`` :index:`\ <Point Data>`\ ,  ``Field Data`` :index:`\ <Field Data>`\ , etc.
  ``Precision`` :index:`\ <Precision>`\  can be utilized to change the precision used when displaying floating
 point numbers.
-The \icon{Images/pqRectilinearGrid16.png} button enables you to select columns to
+The |pqRectilinearGrid16| button enables you to select columns to
 show. Click on the button to get a popup menu in which you check/uncheck the
 columns to show/hide.
-If showing  ``Cell Data`` :index:`\ <Cell Data>`\ , the \icon{Images/pqProgrammableFilter24.png} button, when
+If showing  ``Cell Data`` :index:`\ <Cell Data>`\ , the |pqProgrammableFilter24| button, when
 checked, enables you to see the point ids that form each of the cells.
 
+.. |pqRectilinearGrid16| image:: images/pqRectilinearGrid16.png
+                         :width: 0.5cm
+
+.. |pqProgrammableFilter24| image:: images/pqProgrammableFilter24.png
+                            :width: 0.5cm
+
 Section :ref:`sec:UnderstandingSelection` discusses how selections can be made in
-views to select elements of interest. Use the \icon{Images/pqSelectChart16.png}
+views to select elements of interest. Use the |pqSelectChart16|
 button to make the view show only selected elements. Now, as you make selections
 in other views, this  ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  will update to only show the values
 of the selected elements (as long as the dataset selected in are indeed being shown
 in the view).
+
+.. |pqSelectChart16| image:: images/pqSelectChart16.png
+                     :width: 0.5cm
 
 .. admonition:: **Did you know?**
   :class: tip
