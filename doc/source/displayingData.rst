@@ -77,7 +77,7 @@ view frame). This will swap the positions of the two views.
 Similar to the notion of active source, there is a notion of *active
 view* :index:`\ <Active View>`\ .
 Several panels, toolbars, and menus will update based on the active view. The
- ``Display`` :index:`\ <Display>`\  properties section on the  ``Properties`` :index:`\ <Properties>`\  panel, for example,
+``Display`` :index:`\ <Display>`\  properties section on the  ``Properties`` :index:`\ <Properties>`\  panel, for example,
 reflects the display properties of the active source in the active view.
 Similarly, the eyeball icons in the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  show the visibility
 status of the pipeline module in the active view. Active view is marked in the
@@ -114,7 +114,7 @@ that contains the active view.
   :class: tip
   
   You can make the views fullscreen by using :guilabel:`View > Fullscreen`. To return
-  back to the normal mode, use the :kbd:`\esc` key.
+  back to the normal mode, use the |ESC| key.
 
 Multiple views in ``pvpython``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -204,7 +204,7 @@ View properties in ``paraview``
 Similar to properties on pipeline modules like sources and readers, view
 properties are accessible from the  ``Properties`` :index:`\ <Properties>`\  panel. These
 are grouped under the  ``View`` :index:`\ <View>`\  section. When the active view is changed, the
- ``Properties`` :index:`\ <Properties>`\  panel updates to show the view properties for the active view.
+``Properties`` :index:`\ <Properties>`\  panel updates to show the view properties for the active view.
 Unlike pipeline modules, however, when you change the view properties, they
 affect the visualization immediately, without use of the  ``Apply`` :index:`\ <Apply>`\ 
 button.
@@ -213,12 +213,12 @@ button.
   :class: tip
 
   It may seem odd that  ``View`` :index:`\ <View>`\  and  ``Display`` :index:`\ <Display>`\  properties on the
-   ``Properties`` :index:`\ <Properties>`\  panel don't need to be  ``Apply`` :index:`\ <Apply>`\ -ed to take effect, while
+  ``Properties`` :index:`\ <Properties>`\  panel don't need to be  ``Apply`` :index:`\ <Apply>`\ -ed to take effect, while
   properties on pipeline modules like sources, readers and filter require you to
   hit the  ``Apply`` :index:`\ <Apply>`\  button.
   
   To understand the reasoning behind that, we need to understand why the
-   ``Apply`` :index:`\ <Apply>`\  action is needed in the first place. Generally, executing a data
+  ``Apply`` :index:`\ <Apply>`\  action is needed in the first place. Generally, executing a data
   processing filter or reader is time consuming on large datasets. If the pipeline
   module keeps on executing as you are changing the parameter, the user experience
   will quickly deteriorate, since the pipeline will keep on executing with
@@ -307,7 +307,7 @@ Display properties in ``paraview``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Display properties are accessible from the  ``Display`` :index:`\ <Display>`\  section on the
- ``Properties`` :index:`\ <Properties>`\  panel. When the active source or active view changes, this
+``Properties`` :index:`\ <Properties>`\  panel. When the active source or active view changes, this
 section updates to show the display properties for the active source in the
 active view, if available. If the active source produces data that cannot be
 shown (or has never been shown) in the view, then the  ``Display`` :index:`\ <Display>`\  properties
@@ -401,7 +401,7 @@ several of the established visualization techniques. (E.g., you can compute the
 outer surface of these meshes and then render that surface as filled polygons, you can
 just render the edges, or you can render the data as a nebulous blob to get a better
 understanding of the internal structure in the dataset.) Plugins, like
- ``Surface LIC`` :index:`\ <Surface LIC>`\ , can provide additional ways of rendering data using advanced
+``Surface LIC`` :index:`\ <Surface LIC>`\ , can provide additional ways of rendering data using advanced
 techniques that provide more insight into the data.
 
 If the dataset doesn't represent a mesh, e.g., a table
@@ -422,7 +422,7 @@ example.
 Understanding the rendering process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- ``Render View`` :index:`\ <Render View>`\  uses data processing techniques to map raw data to graphics
+``Render View`` :index:`\ <Render View>`\  uses data processing techniques to map raw data to graphics
 primitives, which can then be rendered in a 3D scene. These mapping techniques
 can be classified as follows:
 
@@ -435,7 +435,7 @@ can be classified as follows:
 Each of these techniques are referred to as
 *representations*. When
 available, you can change the representation type from the display properties on the
- ``Properties`` :index:`\ <Properties>`\  panel or using the  ``Representation Toolbar`` :index:`\ <Representation Toolbar>`\ .
+``Properties`` :index:`\ <Properties>`\  panel or using the  ``Representation Toolbar`` :index:`\ <Representation Toolbar>`\ .
 
 Render View in ``paraview``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -445,10 +445,9 @@ Creating a Render View
 
 Unless you changed the default setting, a new  ``Render View`` :index:`\ <Render View>`\  will be created
 when |paraview| starts up or connects to a new server. To create a
- ``Render View`` :index:`\ <Render View>`\  in |paraview|, split or close a view, and select the
- ``Render View`` :index:`\ <Render View>`\  button. You can also convert a view to a Render View (or any other
-type) by right-clicking on the view's title bar and picking from the  ``Convert
-To`` :index:`\ <Convert
+``Render View`` :index:`\ <Render View>`\  in |paraview|, split or close a view, and select the
+``Render View`` :index:`\ <Render View>`\  button. You can also convert a view to a Render View (or any other
+type) by right-clicking on the view's title bar and picking from the  ``Convert To`` :index:`\ <Convert
 To>`\  sub-menu. It simply closes the chosen view and creates a selected view type
 in its place.
 
@@ -468,35 +467,30 @@ Interactions
 You can interact with the Render View to move the camera in the scene for
 exploring the visualization and setting up optimal viewing angles.
 Each of the three mouse buttons, combined with keyboard modifier keys
-(:kbd:`\ctrl` or :kbd:`\cmdmac`, and :kbd:`\shift`), move the camera differently.
+(|CTRL| or |CMD| , and |SHIFT| ), move the camera differently.
 The interaction mode can be changed from the  ``Camera`` :index:`\ <Camera>`\  tab in the  ``Settings`` :index:`\ <Settings>`\ 
 dialog, which is accessible from :guilabel:`Tools > Settings` (or :guilabel:`ParaView > Preferences`
 on macOS).
 There are six interaction modes available in ParaView:
-\begin{description}
-  \item[Pan] for translating the camera in the view plane.
-  \item[Zoom] for zooming in or out of the center of the view.
-  \item[Roll] for rolling the camera.
-  \item[Rotate] for rotating the camera around the center of rotation.
-  \item[Zoom To Mouse] for zooming in or out of the projected point under the mouse position.
-  \item[Multi Rotate] for allowing azimuth and elevation rotations by dragging from the middle of the view and rolls by dragging from the edges.
-\end{description}
+
+* *Pan* for translating the camera in the view plane.
+* *Zoom* for zooming in or out of the center of the view.
+* *Roll* for rolling the camera.
+* *Rotate* for rotating the camera around the center of rotation.
+* *Zoom To Mouse* for zooming in or out of the projected point under the mouse position.
+* *Multi Rotate* for allowing azimuth and elevation rotations by dragging from the middle of the view and rolls by dragging from the edges.
 
 The default interactions options are as follows:
-\begin{center}
-  \begin{tabular}{|l|l|l|l|}
-    \hline
-    Modifier & Left Button & Middle Button & Right Button \\
-    \hline
-    \hline
-             & Rotate & Pan & Zoom \\
-    \hline
-    :kbd:`\shift` & Roll & Rotate & Pan \\
-    \hline
-    :kbd:`\ctrl` or :kbd:`\cmdmac` & Zoom & Rotate & Zoom To Mouse \\
-    \hline
-  \end{tabular}
-\end{center}
+
++-----------------+--------------+----------------+---------------+
+| Modifier        | Left Button  | Middle Button  |  Right Button |
++=================+==============+================+===============+
+|                 |   Rotate     |    Pan         |    Zoom       |
++-----------------+--------------+----------------+---------------+
+| |SHIFT|         |   Roll       |    Rotate      |     Pan       |
++-----------------+--------------+----------------+---------------+
+| |CTRL| or |CMD| |   Zoom       |    Rotate      | Zoom To Mouse |
++-----------------+--------------+----------------+---------------+
 
 Usually in ParaView, you are interacting with a 3D scene. However, there are cases when
 you are working with a 2D dataset such as a slice plane or a 2D image. In such
@@ -506,25 +500,21 @@ options and 2D interaction options by clicking the  ``2D`` :index:`\ <2D>`\  or 
 the view toolbar. The default interaction options for 2D interactions are as
 follows:
 
-\begin{center}
-  \begin{tabular}{|l|l|l|l|}
-    \hline
-    Modifier & Left Button & Middle Button & Right Button \\
-    \hline
-    \hline
-    & Pan & Roll & Zoom \\
-    \hline
-    :kbd:`\shift` & Zoom & Zoom & Zoom To Mouse \\
-    \hline
-    :kbd:`\ctrl` or :kbd:`\cmdmac` & Roll & Pan & Rotate \\
-    \hline
-  \end{tabular}
-\end{center}
+
++-----------------+--------------+----------------+---------------+
+| Modifier        | Left Button  | Middle Button  |  Right Button |
++=================+==============+================+===============+
+|                 |   Pan        |      Roll      |    Zoom       |
++-----------------+--------------+----------------+---------------+
+| |SHIFT|         |    Zoom      |    Zoom        | Zoom To Mouse |
++-----------------+--------------+----------------+---------------+
+| |CTRL| or |CMD| |   Roll       |    Pan         |  Rotate       |
++-----------------+--------------+----------------+---------------+
 
 By default, ParaView will determine whether your data is 2D or 3D when
 loading the data and will set the interaction mode accordingly. This
 behavior can be changed in the  ``Settings`` :index:`\ <Settings>`\  dialog by changing the
- ``Default Interaction Mode`` :index:`\ <Default Interaction Mode>`\  setting under the  ``Render View`` :index:`\ <Render View>`\  tab.
+``Default Interaction Mode`` :index:`\ <Default Interaction Mode>`\  setting under the  ``Render View`` :index:`\ <Render View>`\  tab.
 The default setting is "Automatic, based on the first time step", but
 the setting can be changed to "Always 2D" or "Always 3D" in case you
 wish to force the interaction mode.
@@ -560,7 +550,7 @@ described in Chapter :ref:`chapter:AxesGrid`.
 The *Center axes* refers to axes rendered in the scene positioned as the
 center of rotation, i.e., the location is space around which the camera revolves
 during  ``Rotate`` :index:`\ <Rotate>`\  camera interaction.
- ``Center Axes Visibility`` :index:`\ <Center Axes Visibility>`\  controls the visibility of the center axes.
+``Center Axes Visibility`` :index:`\ <Center Axes Visibility>`\  controls the visibility of the center axes.
 
 The *Orientation axes* is the widget shown at the lower-left corner by
 default, which is used to get a sense for the orientation of the scene. The properties
@@ -569,8 +559,8 @@ the interactivity of this widget. When interactivity is enabled, you can click a
 drag this widget to the location of your choosing in the scene.
 
 You can also change the  ``Background`` :index:`\ <Background>`\  used for this view. You can either set it as a
- ``Single`` :index:`\ <Single>`\  color or as a  ``Gradient`` :index:`\ <Gradient>`\  comprised of two colors, or you can select an
- ``Image`` :index:`\ <Image>`\  (or texture) to use as the background.
+``Single`` :index:`\ <Single>`\  color or as a  ``Gradient`` :index:`\ <Gradient>`\  comprised of two colors, or you can select an
+``Image`` :index:`\ <Image>`\  (or texture) to use as the background.
 
 There are two advanced properties you may wish to set: hidden line removal
 and camera parallel projection. The  ``Hidden Line Removal`` :index:`\ <Hidden Line Removal>`\  option
@@ -578,18 +568,19 @@ can be enabled to hide lines that would be occluded by a solid object
 when drawing objects in a  ``Wireframe`` :index:`\ <Wireframe>`\  representation.
 If you want to render your data using parallel projection instead of
 the default perspective projection you can check the
- ``Camera Parallel Projection`` :index:`\ <Camera Parallel Projection>`\  checkbox.
+``Camera Parallel Projection`` :index:`\ <Camera Parallel Projection>`\  checkbox.
 
 Display properties
 ------------------
 
 .. _sec:RenderView:DisplayProperties:
-\begin{center}
-\includegraphics[width=0.4\linewidth]{Images/RenderViewDisplayPropertiesRepresentation.png}
-\end{center}
+
+.. figure:: images/RenderViewDisplayPropertiesRepresentation.png
+    :width: 40%
+    :align: center
 
 One of the first (and probably the most often used) display properties is
- ``Representation`` :index:`\ <Representation>`\ .  ``Representation`` :index:`\ <Representation>`\  allows you to pick one of the
+``Representation`` :index:`\ <Representation>`\ .  ``Representation`` :index:`\ <Representation>`\  allows you to pick one of the
 *mapping* modes. The options available depend on the data type, as well as
 the plugins loaded. While all display properties are accessible from the
 advanced view for the  ``Properties`` :index:`\ <Properties>`\  panel, certain properties may be
@@ -639,7 +630,7 @@ pseudocolored by a data array. The  ``Point Gaussian`` :index:`\ <Point Gaussian
 but instead of drawing 3D geometry at every point, it draws a 2D image sprite
 that may have transparency. The image drawn can be one of several predefined
 image sprites such as  ``Gaussian Blur`` :index:`\ <Gaussian Blur>`\ ,  ``Sphere`` :index:`\ <Sphere>`\ ,  ``Black-edged circle`` :index:`\ <Black-edged circle>`\ ,
- ``Plain cirlce`` :index:`\ <Plain cirlce>`\ ,  ``Triangle`` :index:`\ <Triangle>`\ , or  ``Square outline`` :index:`\ <Square outline>`\ , or a custom sprite
+``Plain cirlce`` :index:`\ <Plain cirlce>`\ ,  ``Triangle`` :index:`\ <Triangle>`\ , or  ``Square outline`` :index:`\ <Square outline>`\ , or a custom sprite
 can be defined with custom GLSL shader code.
 
 .. admonition:: **Did you know?**
@@ -688,7 +679,7 @@ button. Remember that, despite the fact that you can set the scalar array with
 which to color when rendering as  ``Outline`` :index:`\ <Outline>`\ , the outline itself continues to use
 the specified solid color.
 
- ``Scalar Coloring`` :index:`\ <Scalar Coloring>`\  properties are only relevant when you have selected a data
+``Scalar Coloring`` :index:`\ <Scalar Coloring>`\  properties are only relevant when you have selected a data
 array with which to pseudocolor. The  ``Map Scalars`` :index:`\ <Map Scalars>`\  checkbox affects whether a color
 transfer function should be used (Figure :ref:`fig:UnderstandingMapScalars`).
 If unchecked, and the data array can directly
@@ -789,18 +780,18 @@ camera, while a back face is the one facing away from the camera. By choosing to
 ``Cull Frontface`` :index:`\ <Cull Frontface>`\  or  ``Cull Backface`` :index:`\ <Cull Backface>`\ , or by selecting a specific representation
 type to use for the backface, you can customize your visualizations.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/RenderViewDisplayPropertiesTransformingGroup.png}
-\end{center}
+.. figure:: images/RenderViewDisplayPropertiesTransformingGroup.png
+    :width: 80%
+    :align: center
 
- ``Transforming`` :index:`\ <Transforming>`\  properties can be used to transform the rendered data in the
+``Transforming`` :index:`\ <Transforming>`\  properties can be used to transform the rendered data in the
 scene without affecting the raw data itself. Thus, if you apply filters on the
 data source, it will indeed be working with the untransformed data. To transform
 the data itself, you should use the  ``Transform`` :index:`\ <Transform>`\  filter.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/RenderViewDisplayPropertiesMiscellaneousGroup.png}
-\end{center}
+.. figure:: images/RenderViewDisplayPropertiesMiscellaneousGroup.png
+    :width: 50%
+    :align: center
 
 Several properties are available under the  ``Miscellaneous`` :index:`\ <Miscellaneous>`\  group. Uncheck the  ``Pickable`` :index:`\ <Pickable>`\ 
 option if you want the dataset to be ignored when making selections. If the
@@ -808,7 +799,7 @@ dataset has a texture coordinates array, you can apply a texture to the dataset
 surface using the  ``Texture`` :index:`\ <Texture>`\  combo-box. Choose  ``Load`` :index:`\ <Load>`\  to load a texture or
 apply a previously loaded texture listed in the combo-box. If your dataset
 doesn't have texture coordinates, you can create them by applying one of
- ``Texture Map to Cylinder`` :index:`\ <Texture Map to Cylinder>`\ ,  ``Texture Map to Sphere`` :index:`\ <Texture Map to Sphere>`\ , or  ``Texture Map To
+``Texture Map to Cylinder`` :index:`\ <Texture Map to Cylinder>`\ ,  ``Texture Map to Sphere`` :index:`\ <Texture Map to Sphere>`\ , or  ``Texture Map To
 Plane`` :index:`\ <Texture Map To
 Plane>`\  filters, or using the filters  ``Calculator`` :index:`\ <Calculator>`\  or  ``Programmable Filter`` :index:`\ <Programmable Filter>`\ .
 \fixme{Add section on Use Shader Replacements property}
@@ -831,7 +822,7 @@ cost of more triangles and, hence, potentially, increased rendering time.
 
 The  ``Block Colors Distinct Values`` :index:`\ <Block Colors Distinct Values>`\  sets the number
 of unique colors to use when coloring multi-block datasets by block ID. Finally,
- ``Use Data Partitions`` :index:`\ <Use Data Partitions>`\  controls whether data is redistributed when it is
+``Use Data Partitions`` :index:`\ <Use Data Partitions>`\  controls whether data is redistributed when it is
 rendered translucently. When off (default value), data is repartitioned by the
 compositing algorithm prior to rendering. This is typically an expensive
 operation that slows down rendering. When this option is off, the existing data
@@ -839,21 +830,21 @@ partitions are used, and the cost of data restribution is avoided. However, if
 the partitions are not sortable in back-to-front order, rendering artifacts may
 occur.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/RenderViewDisplayPropertiesVolumeRenderingGroup.png}
-\end{center}
+.. figure:: images/RenderViewDisplayPropertiesVolumeRenderingGroup.png
+    :width: 50%
+    :align: center
 
- ``Volume Rendering`` :index:`\ <Volume Rendering>`\  options are available if the data can be volume rendered.
+``Volume Rendering`` :index:`\ <Volume Rendering>`\  options are available if the data can be volume rendered.
 You can pick a specific type of  ``Volume Rendering Mode`` :index:`\ <Volume Rendering Mode>`\ , although the
 default ( ``Smart`` :index:`\ <Smart>`\ ) should work in most cases, since it attempts to pick a
 volume rendering mode suitable for your data and graphics setup. To enable
 gradient-based shading, check  ``Shade`` :index:`\ <Shade>`\ , if available.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/RenderViewDisplayPropertiesSlicingGroup.png}
-\end{center}
+.. figure:: images/RenderViewDisplayPropertiesSlicingGroup.png
+    :width: 50%
+    :align: center
 
- ``Slicing`` :index:`\ <Slicing>`\  properties are available when the  ``Slice`` :index:`\ <Slice>`\  representation type is
+``Slicing`` :index:`\ <Slicing>`\  properties are available when the  ``Slice`` :index:`\ <Slice>`\  representation type is
 present. These allow you to pick the orthogonal slice plane orientation and
 slice offset using  ``Slice Direction`` :index:`\ <Slice Direction>`\  and the  ``Slice`` :index:`\ <Slice>`\  slider.
 
@@ -1023,7 +1014,7 @@ Line Chart View
 
     |paraview| using  ``Line Chart View`` :index:`\ <Line Chart View>`\  to plot data values probed along a line through the dataset using  ``Plot Over Line`` :index:`\ <Plot Over Line>`\  filter.
 
- ``Line Chart View`` :index:`\ <Line Chart View>`\  can be used to plot data as a line plot representing
+``Line Chart View`` :index:`\ <Line Chart View>`\  can be used to plot data as a line plot representing
 changes in dependent variables against an independent variable. Using display
 properties, you can also show scatter plots in this view. This view and other
 charting views in |ParaView| follow a similar design, where you pick attribute
@@ -1051,7 +1042,7 @@ directly show the data in this view.
 Understanding plotting
 ^^^^^^^^^^^^^^^^^^^^^^
 
- ``Line Chart View`` :index:`\ <Line Chart View>`\  plots data arrays. For any dataset being shown in the view,
+``Line Chart View`` :index:`\ <Line Chart View>`\  plots data arrays. For any dataset being shown in the view,
 you first select which data array is to be treated as the independent variable
 and plotted along the x-axis. Then, you select which arrays to plot along the
 Y-axis. You can select multiple of these and setup properties for each of the
@@ -1069,7 +1060,7 @@ Creating a Line Chart View
 Similar to creating  ``Render View`` :index:`\ <Render View>`\ , you can split the viewport or convert
 an existing view to  ``Line Chart View`` :index:`\ <Line Chart View>`\ .  ``Line Chart View`` :index:`\ <Line Chart View>`\  will also be
 automatically created if you apply a filter that needs this view, e.g., the
- ``Plot Over Line`` :index:`\ <Plot Over Line>`\  filter.
+``Plot Over Line`` :index:`\ <Plot Over Line>`\  filter.
 
 .. admonition:: **Did you know?**
   :class: tip
@@ -1077,8 +1068,8 @@ automatically created if you apply a filter that needs this view, e.g., the
   If you generate lengthy data for the  ``Line Chart View`` :index:`\ <Line Chart View>`\ , the default variables
   that are selected may be slow to adjust. You can change |paraview|'s default
   behavior to initially load no variables at all by selecting the
-   ``Load No Chart Variables`` :index:`\ <Load No Chart Variables>`\  checkbox under
-   ``Settings/General/Properties Panel Options`` :index:`\ <Settings/General/Properties Panel Options>`\ .
+  ``Load No Chart Variables`` :index:`\ <Load No Chart Variables>`\  checkbox under
+  ``Settings/General/Properties Panel Options`` :index:`\ <Settings/General/Properties Panel Options>`\ .
 
   \begin{center}
   \includegraphics[width=0.4\linewidth]{Images/ChartNoVarSetting.png}
@@ -1125,7 +1116,7 @@ color by checking the  ``Show Left Axis Grid`` :index:`\ <Show Left Axis Grid>`\
 
 Next, you can customize the axes ranges. You can always simply interact with the
 mouse to set the axes ranges. To precisely set the range, check the
- ``Axis Use Custom Range`` :index:`\ <Axis Use Custom Range>`\  for the appropriate axis, e.g.,  ``Bottom Axis Use
+``Axis Use Custom Range`` :index:`\ <Axis Use Custom Range>`\  for the appropriate axis, e.g.,  ``Bottom Axis Use
 Custom Range`` :index:`\ <Bottom Axis Use
 Custom Range>`\  for fixing the bottom axis range, and then specify the data values to
 use for the min and the max.
@@ -1136,7 +1127,7 @@ enabling the  ``Axis Log Scale`` :index:`\ <Axis Log Scale>`\  option you can us
 addition, you can override the default labelling strategy for any of the axes
 separately and, instead, specify the locations to label explicitly. This can be
 done by checking  ``Axis Use Custom Labels`` :index:`\ <Axis Use Custom Labels>`\  for a particular axis, e.g.,
- ``Bottom Axis Use Custom Labels`` :index:`\ <Bottom Axis Use Custom Labels>`\ . When checked, a list widget will be shown
+``Bottom Axis Use Custom Labels`` :index:`\ <Bottom Axis Use Custom Labels>`\ . When checked, a list widget will be shown
 where you can manually add values at which labels will be placed.
 
 For generating log plots, simply check the corresponding  ``Axis Use Log Scale`` :index:`\ <Axis Use Log Scale>`\ ,
@@ -1194,11 +1185,11 @@ Style`` :index:`\ <Marker
 Style>`\ . To change any of these, highlight a row in the  ``Series Parameters`` :index:`\ <Series Parameters>`\ 
 widget, and then change the associated parameter to affect the highlighted
 series. You can change properties for multiple series and can select multiple of
-them by using the :kbd:`\ctrl` (or :kbd:`\cmdmac`) and :kbd:`\shift` keys.
+them by using the |CTRL| (or |CMD|) and |SHIFT| keys.
 
 Using  ``Chart Axes`` :index:`\ <Chart Axes>`\ , you can change which axes on which a series is shown. The
 default is  ``Bottom-Left`` :index:`\ <Bottom-Left>`\ , but you can change it to be  ``Bottom-Right`` :index:`\ <Bottom-Right>`\ ,
- ``Top-Left`` :index:`\ <Top-Left>`\ , or  ``Top-Right`` :index:`\ <Top-Right>`\  to accommodate series with widely different
+``Top-Left`` :index:`\ <Top-Left>`\ , or  ``Top-Right`` :index:`\ <Top-Right>`\  to accommodate series with widely different
 ranges in the same plot.
 
 Line Chart View in ``pvpython``
@@ -1291,7 +1282,7 @@ Bar Chart View
 creating the view, view properties, and display properties. One difference is
 that, instead of rendering lines for each series, this view renders bars. In addition,
 under the display properties, the  ``Series Parameters`` :index:`\ <Series Parameters>`\  like  ``Line Style`` :index:`\ <Line Style>`\  and
- ``Line Thickness`` :index:`\ <Line Thickness>`\  are not available, since they are not applicable to bars.
+``Line Thickness`` :index:`\ <Line Thickness>`\  are not available, since they are not applicable to bars.
 
 Box Chart View
 ==============
@@ -1412,7 +1403,7 @@ The view's toolbar provides quick access to several of this view's capabilities.
 Use the  ``Showing`` :index:`\ <Showing>`\  widget on the view toolbar to view as well as to change the
 dataset being shown. The  ``Attribute`` :index:`\ <Attribute>`\  field allows you to pick which types of
 elements to show, e.g.,  ``Cell Data`` :index:`\ <Cell Data>`\ ,  ``Point Data`` :index:`\ <Point Data>`\ ,  ``Field Data`` :index:`\ <Field Data>`\ , etc.
- ``Precision`` :index:`\ <Precision>`\  can be utilized to change the precision used when displaying floating
+``Precision`` :index:`\ <Precision>`\  can be utilized to change the precision used when displaying floating
 point numbers.
 The |pqRectilinearGrid16| button enables you to select columns to
 show. Click on the button to get a popup menu in which you check/uncheck the
@@ -1545,7 +1536,7 @@ and hierarchical block structure) is always transferred to the client.
 By default, no data arrays are selected for transfer from the server.
 
 The Python script for the view must define a function called
- ``setup\_data(view)`` :index:`\ <setup\_data(view)>`\ . The  ``view`` :index:`\ <view>`\  argument is the VTK object for the  ``Python
+``setup\_data(view)`` :index:`\ <setup\_data(view)>`\ . The  ``view`` :index:`\ <view>`\  argument is the VTK object for the  ``Python
 View`` :index:`\ <Python
 View>`\ . The current datasets loaded into |ParaView| may be accessed
 through the view object.
@@ -1589,7 +1580,7 @@ in Figure :ref:`fig:PythonViewInParaView`:
       view.SetAttributeArrayStatus(i, vtkDataObject.FIELD, "fieldData", 1)
 
 The  ``vtkPythonView`` :index:`\ <vtkPythonView>`\  class passed in as the  ``view`` :index:`\ <view>`\  argument to
- ``setup\_data(view)`` :index:`\ <setup\_data(view)>`\  defines several methods useful for specifying which
+``setup\_data(view)`` :index:`\ <setup\_data(view)>`\  defines several methods useful for specifying which
 data arrays to copy:
 
 \begin{itemize}
@@ -1643,7 +1634,7 @@ data arrays to copy:
 \setlength{\saveparindent}{\parindent}
 \raggedright{
 The methods  ``GetNumberOfVisibleDataObjects()`` :index:`\ <GetNumberOfVisibleDataObjects()>`\ ,
- ``GetVisibleDataObjectForSetup(...)`` :index:`\ <GetVisibleDataObjectForSetup(...)>`\ ,  ``GetNumberOfAttributeArrays(...)`` :index:`\ <GetNumberOfAttributeArrays(...)>`\ ,
+``GetVisibleDataObjectForSetup(...)`` :index:`\ <GetVisibleDataObjectForSetup(...)>`\ ,  ``GetNumberOfAttributeArrays(...)`` :index:`\ <GetNumberOfAttributeArrays(...)>`\ ,
 and  ``GetAttributeArrayName(...)`` :index:`\ <GetAttributeArrayName(...)>`\  are all convenient methods for
 obtaining information about visible data objects in the view that
 could otherwise be accessed with existing view and representation
@@ -1669,7 +1660,7 @@ height)>`\  function uses the data available through the view, along with
 the width and height, to generate a  ``vtkImageData`` :index:`\ <vtkImageData>`\  object that will
 be displayed in the viewport. This  ``vtkImageData`` :index:`\ <vtkImageData>`\  object must be
 returned from the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\  function. If no
- ``vtkImageData`` :index:`\ <vtkImageData>`\  is returned, the viewport will be black. If the size of the
+``vtkImageData`` :index:`\ <vtkImageData>`\  is returned, the viewport will be black. If the size of the
 image does not match the size of the viewport, the image will be
 stretched to fit the viewport.
 
@@ -1749,12 +1740,12 @@ visible object in the pipeline browser. Note the conversion
 function,  ``python\_view.figure\_to\_image(figure)`` :index:`\ <python\_view.figure\_to\_image(figure)>`\ , in the last line.
 This converts the matplotlib  ``Figure`` :index:`\ <Figure>`\  object created
 with  ``python\_view.matplotlib\_figure(width, height)`` :index:`\ <python\_view.matplotlib\_figure(width, height)>`\  into a
- ``vtkImageData`` :index:`\ <vtkImageData>`\  object suitable for display in the viewport.
+``vtkImageData`` :index:`\ <vtkImageData>`\  object suitable for display in the viewport.
 
 Comparative Views
 =================
 
- ``Comparative Views`` :index:`\ <Comparative Views>`\ , including  ``Render View (Comparative)`` :index:`\ <Render View (Comparative)>`\ ,  ``Line Chart
+``Comparative Views`` :index:`\ <Comparative Views>`\ , including  ``Render View (Comparative)`` :index:`\ <Render View (Comparative)>`\ ,  ``Line Chart
 View (Comparative)`` :index:`\ <Line Chart View (Comparative)>`\ , and  ``Bar Chart View (Comparative)`` :index:`\ <Bar Chart View (Comparative)>`\ , are used
 for generating comparative visualization from parameter studies. We
 will cover these views in Chapter :ref:`chapter:ComparativeVisualization`.

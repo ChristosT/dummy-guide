@@ -8,3 +8,5 @@
 
 .. |CMD| replace:: :kbd:`⌘`
 .. |CTRL| replace:: :kbd:`CTRL`
+.. |SHIFT| replace:: :kbd:`⇧`
+.. |ESC| replace:: :kbd:`Esc`
