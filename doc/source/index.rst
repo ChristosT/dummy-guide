@@ -15,6 +15,7 @@ Welcome to ParaView Users Guide!
    introduction
    dataIngestion
    understandingData
+   displayingData
 
 
 
