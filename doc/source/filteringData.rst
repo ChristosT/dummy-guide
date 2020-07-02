@@ -10,13 +10,13 @@ Filtering Data
 Visualization can be characterized as a process of transforming raw data
 produced from experiments or simulations until it takes a form in which it can be
 interpreted and analysed. The visualization pipeline introduced in
-Section :numref:`sec:BasicsOfVisualization` formalizes this concept as a data flow
+:numref:`sec:BasicsOfVisualization` formalizes this concept as a data flow
 paradigm where a pipeline is set up of sources, filters, and sinks
 (collectively called pipeline modules or algorithms). Data *flows*
 through this pipeline, being transformed at each node until it is in a form where
 it can be consumed by the sinks. In previous chapters, we saw how to ingest data
-into |ParaView| (Chapter :numref:`chapter:LoadingData`) and how to display it in
-views (Chapter :numref:`chapter:DisplayingData`). If the data ingested into |ParaView|
+into |ParaView| (:numref:`chapter:LoadingData`) and how to display it in
+views (:numref:`chapter:DisplayingData`). If the data ingested into |ParaView|
 already has all the relevant attribute data, and it is in the form that can be directly
 represented in one the existing views, then that is all you would need.
 The true power of the visualization process, however, comes from leveraging the
@@ -270,7 +270,7 @@ algorithm employed by the filter. Changing and viewing properties on filters is
 the same as with any other pipeline module, including readers and sources.
 You can view and change these properties, when available, using the
 ``Properties`` :index:`\ <Properties>`\  panel.
-Chapter :numref:`chapter:PropertiesPanel` covers how to effectively use the
+:numref:`chapter:PropertiesPanel` covers how to effectively use the
 ``Properties`` :index:`\ <Properties>`\  panel. Since this panel only shows the properties present on the
 *active source* :index:`\ <Active Source>`\ , you must ensure that the filter
 you are interested in is active. To make the filter active, use the  ``Pipeline
@@ -283,7 +283,7 @@ Changing filter properties in ``pvpython``
 With |pvpython|, the available properties are accessible as properties
 on the filter object, and you can get or set their values by name (similar to
 changing the input connections
-(Section :numref:`subsection:ChangingInputConnectionsPython`)).
+(:numref:`subsection:ChangingInputConnectionsPython`)).
 
 .. code-block:: python
 
@@ -353,8 +353,8 @@ through the part of the cell that is truly inside the specified implicit
 function (or greater than the scalar value).
 
 This filter converts any dataset into an unstructured grid
-(Section :numref:`sec:VTKDataModel:UnstructuredGrid`) or a multi-block of
-unstructured grids (Section :numref:`sec:MultiblockDataset`) in the case of composite
+(:numref:`sec:VTKDataModel:UnstructuredGrid`) or a multi-block of
+unstructured grids (:numref:`sec:MultiblockDataset`) in the case of composite
 datasets.
 
 Clip in ``paraview``
@@ -373,8 +373,11 @@ Clip in ``paraview``
 
 To create the  ``Clip`` :index:`\ <Clip>`\  filter, you can use the :guilabel:`Filters > Common` or
 the :guilabel:`Filters > Alphabetical` menu. This filter is also accessible from the
-``Common`` :index:`\ <Common>`\  filters toolbar. You can click the \icon{Images/pqClip24.png} button to create
+``Common`` :index:`\ <Common>`\  filters toolbar. You can click the |pqClip24| button to create
 this filter.
+
+.. |pqClip24| image:: images/pqClip24.png
+              :width: 0.5cm
 
 .. figure:: images/CommonFiltersToolbar.png
     :name: fig:CommonFiltersToolbar
@@ -566,8 +569,11 @@ slices because it does not need to compute the intersection of a plane with cell
 in the dataset.
 
 In |paraview|, this filter can be created using the
-\icon{Images/pqSlice24.png} button on the  ``Common`` :index:`\ <Common>`\  filters toolbar, besides the
+|pqSlice24| button on the  ``Common`` :index:`\ <Common>`\  filters toolbar, besides the
 :guilabel:`Filters` menu.
+
+.. |pqSlice24| image:: images/pqSlice24.png
+               :width: 0.5cm
 
 Extract Subset
 ^^^^^^^^^^^^^^
@@ -581,13 +587,13 @@ Extract Subset
     available properties (including the advanced properties).
 
 For structured datasets such as
-image datasets (Section :numref:`sec:VTKDataModel:UniformRectilinearGrid`), rectilinear grids
-(Section :numref:`sec:VTKDataModel:RectilinearGrid`), and
-curvilinear grids (Section :numref:`sec:VTKDataModel:CurvilinearGrid`),  ``Extract
+image datasets (:numref:`sec:VTKDataModel:UniformRectilinearGrid`), rectilinear grids
+(:numref:`sec:VTKDataModel:RectilinearGrid`), and
+curvilinear grids (:numref:`sec:VTKDataModel:CurvilinearGrid`),  ``Extract
 Subset`` :index:`\ <Extract
 Subset>`\  filter can be used to extract a region of interest or a subgrid. The
 region to extract is specified using structured coordinates, i.e., the
-$i$, $j$, $k$ values. Whenever possible, this filter should be preferred over
+:math:`i`, :math:`j`, :math:`k` values. Whenever possible, this filter should be preferred over
 ``Clip`` :index:`\ <Clip>`\  or  ``Slice`` :index:`\ <Slice>`\  for structured datasets, since it preserves the input
 data type. Besides extracting a subset, this filter can also be used to resample
 the dataset to a coarser resolution by specifying the sample rate along each of
@@ -596,16 +602,17 @@ the structured dimensions.
 Extract Subset in ``paraview``
 ------------------------------
 
-This is one of the filters available on the  ``Common`` :index:`\ <Common>`\  filters toolbar
-\icon{Images/pqExtractGrid24.png}.
+This is one of the filters available on the  ``Common`` :index:`\ <Common>`\  filters toolbar |pqExtractGrid24|
 To specify the region of interest, use the  ``VOI`` :index:`\ <VOI>`\  property. The values are
-specified as min and max values for each of the structured dimensions ($i$, $j$,
-$k$,) in each row.  ``Sample Rate I`` :index:`\ <Sample Rate I>`\ ,  ``Sample Rate J`` :index:`\ <Sample Rate J>`\ , and  ``Sample Rate
-K`` :index:`\ <Sample Rate
-K>`\  specify the sub-sampling rate. Set it to a value greater than one to sub-sample.
+specified as min and max values for each of the structured dimensions (:math:`i`, :math:`j`,
+:math:`k`,) in each row.  ``Sample Rate I`` :index:`\ <Sample Rate I>`\ ,  ``Sample Rate J`` :index:`\ <Sample Rate J>`\ , 
+and  ``Sample Rate K`` :index:`\ <Sample Rate K>`\  specify the sub-sampling rate. Set it to a value greater than one to sub-sample.
 ``Include Boundary`` :index:`\ <Include Boundary>`\  is used to determine if the boundary slab should be
 included in the extracted result, if the sub-sampling rate along that dimension
 is greater than 1, and the boundary slab would otherwise have been skipped.
+
+.. |pqExtractGrid24| image:: images/pqExtractGrid24.png
+                     :width: 0.5cm
 
 Threshold
 ^^^^^^^^^
@@ -640,14 +647,22 @@ Threshold in ``paraview``
 
     The  ``Properties`` :index:`\ <Properties>`\  panel for the  ``Threshold`` :index:`\ <Threshold>`\  filter.
 
-This filter is represented as \icon{Images/pqThreshold24.png} on the  ``Common`` :index:`\ <Common>`\  filters
+This filter is represented as |pqThreshold24| on the  ``Common`` :index:`\ <Common>`\  filters
 toolbar. After selecting the  ``Scalars`` :index:`\ <Scalars>`\  with which to threshold from the combo-box, you
 select the  ``Minimum`` :index:`\ <Minimum>`\  and  ``Maximum`` :index:`\ <Maximum>`\  values to specify the range. If the
 range shown by the sliders is not sufficient, you can manually type the values
 in the input boxes. The values are deliberately not clamped to the current data
 range. The  ``Scalars`` :index:`\ <Scalars>`\  combo-box uses icons to help you differentiate between
-point data arrays \icon{Images/pqNodalData16.png} and cell data arrays
-\icon{Images/pqCellData16.png}.
+point data arrays |pqNodalData16| and cell data arrays |pqCellData16|
+
+.. |pqThreshold24| image:: images/pqThreshold24.png
+                   :width: 0.5cm
+
+.. |pqNodalData16| image:: images/pqNodalData16.png
+                   :width: 0.5cm
+
+.. |pqCellData16| image:: images/pqCellData16.png
+                  :width: 0.5cm
 
 Threshold in ``pvpython``
 -------------------------
@@ -679,7 +694,7 @@ Threshold in ``pvpython``
 
 To determine the types of arrays available in the input dataset, and their
 ranges, refer to the discussion on data information in
-Section :numref:`sec:DataInformationInPython`.
+:numref:`sec:DataInformationInPython`.
 
 Iso Volume
 ^^^^^^^^^^
@@ -701,7 +716,7 @@ from a dataset. There are several ways of making selections in |ParaView|. Once
 you have made the selection, this filter allows you to extract the selected
 elements as a new dataset for further processing. We will cover this filter in
 more detail when looking at selections in |ParaView| in
-Section :numref:`sec:ExtractingSelections`.
+:numref:`sec:ExtractingSelections`.
 
 Filters for geometric manipulation
 ==================================
@@ -720,12 +735,12 @@ As this is a geometric manipulation filter, this filter does not affect
 connectivity in the input dataset. While it tries to preserve the input dataset
 type, whenever possible, there are cases when the transformed dataset can no
 longer be represented in the same data type as the input. For example, with
-image data (Section :numref:`sec:VTKDataModel:UniformRectilinearGrid`) and
-rectilinear grids (Section :numref:`sec:VTKDataModel:RectilinearGrid`) that are
+image data (:numref:`sec:VTKDataModel:UniformRectilinearGrid`) and
+rectilinear grids (:numref:`sec:VTKDataModel:RectilinearGrid`) that are
 transformed by rotation, the output dataset can be non-axis aligned and, hence,
 cannot be represented as either data types. In such cases, the dataset is
 converted to a structured, or curvilinear, grid
-(Section :numref:`sec:VTKDataModel:CurvilinearGrid`). Since curvilinear grids are
+(:numref:`sec:VTKDataModel:CurvilinearGrid`). Since curvilinear grids are
 not as compact as the other two, the need to store the results in a more general
 data type implies a considerable increase in the memory footprint.
 
@@ -776,7 +791,7 @@ select  ``X`` :index:`\ <X>`\ ,  ``Y`` :index:`\ <Y>`\ , or  ``Z`` :index:`\ <Z>
 ``Center`` :index:`\ <Center>`\  to the plane offset from the origin.
 
 This filter reflects the input dataset and produces an unstructured grid
-(Section :numref:`sec:VTKDataModel:UnstructuredGrid`). Thus, the same caveats for
+(:numref:`sec:VTKDataModel:UnstructuredGrid`). Thus, the same caveats for
 ``Clip`` :index:`\ <Clip>`\  and  ``Threshold`` :index:`\ <Threshold>`\  filter apply here when dealing with structured
 datasets.
 
@@ -822,7 +837,7 @@ dataset. The glyphs can be oriented or scaled based on vector and
 scalar attributes on those points.
 
 To create this filter in |paraview|, you can use the :guilabel:`Filters` menu,
-as well as the \icon{Images/pqGlyph24.png}
+as well as the |pqGlyph24|
 button on the  ``Common`` :index:`\ <Common>`\  filters toolbar. You first select
 the type of glyph using one of the options in  ``Glyph Type`` :index:`\ <Glyph Type>`\ . The choices
 include  ``Arrow`` :index:`\ <Arrow>`\ ,  ``Sphere`` :index:`\ <Sphere>`\ ,  ``Cylinder`` :index:`\ <Cylinder>`\ , etc. Next, you select the point
@@ -830,6 +845,8 @@ arrays to use as the  ``Orientation Array`` :index:`\ <Orientation Array>`\  (se
 will result in the glyphs not being oriented). Similarly, you select a point array
 to serve as the glyph  ``Scale Array`` :index:`\ <Scale Array>`\  (no scaling is performed if  ``No scale array`` :index:`\ <No scale array>`\ 
 is chosen).
+
+.. |pqGlyph24| image:: images/pqGlyph24.png
 
 If the  ``Scale Array`` :index:`\ <Scale Array>`\  is set to a vector array, the  ``Vector Scale Mode`` :index:`\ <Vector Scale Mode>`\ 
 property is available to select which properties of the vector should be used
@@ -850,10 +867,13 @@ independent of the  ``Scale Array`` :index:`\ <Scale Array>`\  and  ``Vector Sca
 Choosing a good scale factor depends on
 several things including the bounds on the input dataset, the  ``Scale Array`` :index:`\ <Scale Array>`\ 
 and  ``Vector Scale Mode`` :index:`\ <Vector Scale Mode>`\  selected, and the range for the array selected as the
-``Scale Array`` :index:`\ <Scale Array>`\ . You can use the \icon{Images/ReloadButton.png}
+``Scale Array`` :index:`\ <Scale Array>`\ . You can use the |ReloadButton|
 button next to the  ``Scale Factor`` :index:`\ <Scale Factor>`\  widget to have |paraview|
 pick a usually reasonable scale factor value based on the current dataset and
 scaling properties.
+
+.. |ReloadButton| image:: images/ReloadButton.png
+                  :width: 0.5cm
 
 The  ``Masking`` :index:`\ <Masking>`\  properties control which points from the input
 dataset get glyphed. The  ``Glyph Mode`` :index:`\ <Glyph Mode>`\  controls how points are selected to be
@@ -866,7 +886,7 @@ glyphs (Figure :numref:`fig:GlyphModesComparison`). The available options are as
   generate and render the glyphs.
 
 * ``Every Nth Points`` :index:`\ <Every Nth Points>`\ : This elects every :math:`n^{th}` point in the input dataset
-  for glyphing, where $n$ can be specified using  ``Stride`` :index:`\ <Stride>`\ . Setting
+  for glyphing, where :math:`n` can be specified using  ``Stride`` :index:`\ <Stride>`\ . Setting
   ``Stride`` :index:`\ <Stride>`\  to 1 will have the same effect as  ``All Points`` :index:`\ <All Points>`\ .
 
 * ``Uniform Spatial Distribution`` :index:`\ <Uniform Spatial Distribution>`\ : This selects a random set of points. The
@@ -900,7 +920,7 @@ Glyph With Custom Source
 
 ``Glyph With Custom Source`` :index:`\ <Glyph With Custom Source>`\  is the same as  ``Glyph`` :index:`\ <Glyph>`\ , except that instead of a limited
 set of  ``Glyph Type`` :index:`\ <Glyph Type>`\ , you can select any data source producing a polygonal
-dataset (Section :numref:`sec:VTKDataModel:PolyData`) available in the  ``Pipeline
+dataset (:numref:`sec:VTKDataModel:PolyData`) available in the  ``Pipeline
 Browser`` :index:`\ <Pipeline
 Browser>`\ . To use this filter, select the data source you wish to glyph in the
 ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\  and attach this filter to it. You will be presented a dialog
@@ -936,7 +956,7 @@ points, in the dataset and then integrating the streamlines starting at these se
 points.
 
 In |paraview|, you can create this filter using the :guilabel:`Filters`
-menu, as well as the \icon{Images/pqStreamTracer24.png} button on the  ``Common`` :index:`\ <Common>`\ 
+menu, as well as the |pqStreamTracer24| button on the  ``Common`` :index:`\ <Common>`\ 
 filters toolbar. To use
 this filter, you first select the attribute array to use as the  ``Vectors`` :index:`\ <Vectors>`\  for
 generating the streamline.  ``Integration Parameters`` :index:`\ <Integration Parameters>`\  let you fine tune the
@@ -947,6 +967,9 @@ advanced view of the  ``Properties`` :index:`\ <Properties>`\  panel that let yo
 integration, including specifying the step size and others. You use the
 ``Maximum Streamline Length`` :index:`\ <Maximum Streamline Length>`\  to limit the maximum length for the streamline --
 the longer the length, the longer the generated streamlines.
+
+.. |pqStreamTracer24| image:: images/pqStreamTracer24.png
+                      :width: 0.5cm
 
 .. figure:: images/StreamlinesPropertiesPanel.png
     :width: 80%
@@ -1167,7 +1190,7 @@ the input.
 
 A common use-case is to convert three input scalars into a vector array. For that,
 the  ``Function`` :index:`\ <Function>`\  would look something like:
-$scalar_x * iHat + scalar_y * jHat +  scalar_z * kHat$.
+:math:`scalar_x * iHat + scalar_y * jHat +  scalar_z * kHat`.
 
 .. figure:: images/CalculatorInParaView.png
     :name: fig:CalculatorInParaView
@@ -1316,16 +1339,21 @@ the following example.
 
 * Go to the Menu Bar, and select :guilabel:`File > Disconnect` to
   clear the Pipeline. 
+  
 * Select :guilabel:`Source > Mandelbrot`, and then click
   Apply, which will set up a default version of the Mandelbrot Set. The data for
-  this set are stored in a $251 \times 251$ scalar array. * Select
-  :guilabel:`Source > Mandelbrot` again, and then go to the  ``Properties`` :index:`\ <Properties>`\  panel and
+  this set are stored in a :math:`251 \times 251` scalar array. 
+
+* Select :guilabel:`Source > Mandelbrot` again, and then go to the  ``Properties`` :index:`\ <Properties>`\  panel and
   set the Maximum Number of Iterations to 50. Click  ``Apply`` :index:`\ <Apply>`\ , which will set up
   a different version of the Mandelbrot Set, represented by the same size array.
+
 * Hold the Shift key down and select both of the Mandelbrot entries in the
   Pipeline Inspector, and then go to the Menu Bar, and select :guilabel:`Filter >
   Python Calculator`. The two Mandelbrot entries will now be shown as linked, as
-  inputs, to the  ``Python Calculator`` :index:`\ <Python Calculator>`\ . * In the Properties panel for the Python
+  inputs, to the  ``Python Calculator`` :index:`\ <Python Calculator>`\ . 
+  
+* In the Properties panel for the Python
   Calculator filter, enter the following into the Expression box:
 
   .. code-block:: python
@@ -1361,7 +1389,7 @@ Basic Operations
 ----------------
 
 The  ``Python Calculator`` :index:`\ <Python Calculator>`\  supports all of the basic arithmetic operations using the
-$+$, $-$, $*$ and $/$ operators. These are always applied element-by-element to
+:math:`+`, :math:`-`, :math:`*` and :math:`/` operators. These are always applied element-by-element to
 point and cell data including scalars, vectors, and tensors. These operations
 also work with single values. For example, the following adds 5 to all
 components of all Normals.
@@ -1442,9 +1470,9 @@ can be used in the  ``Python Calculator`` :index:`\ <Python Calculator>`\ . Many
 single values or arrays as argument.
 
 
-* ``abs(x)`` :index:`\ <abs(x)>`\ : Returns the absolute value(s) of $x$.
+* ``abs(x)`` :index:`\ <abs(x)>`\ : Returns the absolute value(s) of :math:`x`.
 
-* ``add(x, y)`` :index:`\ <add(x, y)>`\ : Returns the sum of two values. $x$ and $y$ can be single values or arrays. This is the same as $x+y$.
+* ``add(x, y)`` :index:`\ <add(x, y)>`\ : Returns the sum of two values. :math:`x` and :math:`y` can be single values or arrays. This is the same as :math:`x+y`.
 
 * ``area(dataset)`` :index:`\ <area(dataset)>`\ : Returns the surface area of each cell in a mesh.
 
@@ -1460,7 +1488,7 @@ single values or arrays as argument.
 
 * ``divergence(array)`` :index:`\ <divergence(array)>`\ : Returns the divergence of an array of 3D vectors.
 
-* ``divide(x, y)`` :index:`\ <divide(x, y)>`\ : Element-by-element division. $x$ and $y$ can be single
+* ``divide(x, y)`` :index:`\ <divide(x, y)>`\ : Element-by-element division. :math:`x` and :math:`y` can be single
   values or arrays. This is the same as math:`\frac{x}{y}`.
 
 * ``det(array)`` :index:`\ <det(array)>`\ : Returns the determinant of an array of 2D square matrices.
@@ -1475,7 +1503,7 @@ single values or arrays as argument.
 
 * ``eigenvector(array)`` :index:`\ <eigenvector(array)>`\ : Returns the eigenvector of an array of 2D square matrices.
 
-* ``exp(x)`` :index:`\ <exp(x)>`\ : Returns $e^x$.
+* ``exp(x)`` :index:`\ <exp(x)>`\ : Returns :math:`e^x`.
 
 * ``global_max(array)`` :index:`\ <global_max(array)>`\ : Returns the maximum value of an array of
   scalars, vectors, or tensors among all process. This is not yet supported for multi-block and
@@ -1522,38 +1550,38 @@ single values or arrays as argument.
 
 * ``min_angle(dataset)`` :index:`\ <min_angle(dataset)>`\ : Returns the minimum angle of each cell in a dataset.
 
-* ``mod(x, y)`` :index:`\ <mod(x, y)>`\ : Same as remainder $(x, y)$.
+* ``mod(x, y)`` :index:`\ <mod(x, y)>`\ : Same as remainder :math:`(x, y)`.
 
-* ``multiply(x, y)`` :index:`\ <multiply(x, y)>`\ : Returns the product of $x$ and $y$. $x$ and $y$ can be
+* ``multiply(x, y)`` :index:`\ <multiply(x, y)>`\ : Returns the product of :math:`x` and :math:`y`. :math:`x` and :math:`y` can be
   single values or arrays. Note that this is an element-by-element operation when
-  $x$ and $y$ are both arrays. This is the same as $x \times y$.
+  :math:`x` and :math:`y` are both arrays. This is the same as :math:`x \times y`.
 
-* ``negative(x)`` :index:`\ <negative(x)>`\ : Same as $-x$.
+* ``negative(x)`` :index:`\ <negative(x)>`\ : Same as :math:`-x`.
 
 * ``norm(a)`` :index:`\ <norm(a)>`\ : Returns the normalized values of an array of scalars/vectors.
 
-* ``power(x, a)`` :index:`\ <power(x, a)>`\ : Exponentiation of $x$ with $a$. Here, both $x$ and $a$ can
-  either be a single value or an array. If $x$ and $y$ are both arrays, a one-by-one
+* ``power(x, a)`` :index:`\ <power(x, a)>`\ : Exponentiation of :math:`x` with :math:`a`. Here, both :math:`x` and :math:`a` can
+  either be a single value or an array. If :math:`x` and :math:`y` are both arrays, a one-by-one
   mapping is used between two arrays.
 
-* ``reciprocal(x)`` :index:`\ <reciprocal(x)>`\ : Returns $\frac{1}{x}$.
+* ``reciprocal(x)`` :index:`\ <reciprocal(x)>`\ : Returns :math:`\frac{1}{x}`.
 
-* ``remainder(x, y)`` :index:`\ <remainder(x, y)>`\ : Returns $x - y \times floor(\frac{x}{y})$. $x$ and $y$ can be single values or arrays.
+* ``remainder(x, y)`` :index:`\ <remainder(x, y)>`\ : Returns :math:`x - y \times floor(\frac{x}{y})`. :math:`x` and :math:`y` can be single values or arrays.
 
-* ``rint(x)`` :index:`\ <rint(x)>`\ : Rounds $x$ to the nearest integer(s).
+* ``rint(x)`` :index:`\ <rint(x)>`\ : Rounds :math:`x` to the nearest integer(s).
 
 * ``shear(dataset)`` :index:`\ <shear(dataset)>`\ : Returns the shear of each cell in a dataset.
 
 * ``skew(dataset)`` :index:`\ <skew(dataset)>`\ : Returns the skew of each cell in a dataset.
 
-* ``square(x)`` :index:`\ <square(x)>`\ : Returns $x*x$.
+* ``square(x)`` :index:`\ <square(x)>`\ : Returns :math:`x*x`.
 
-* ``sqrt(x)`` :index:`\ <sqrt(x)>`\ : Returns $\sqrt[2]{x}$.
+* ``sqrt(x)`` :index:`\ <sqrt(x)>`\ : Returns :math:`\sqrt[2]{x}`.
 
 * ``strain(array)`` :index:`\ <strain(array)>`\ : Returns the strain of an array of 3D vectors.
 
-* ``subtract(x, y)`` :index:`\ <subtract(x, y)>`\ : Returns the difference between two values. $x$ and
-  $y$ can be single values or arrays. This is the same as $x - y$.
+* ``subtract(x, y)`` :index:`\ <subtract(x, y)>`\ : Returns the difference between two values. :math:`x` and
+  `y` can be single values or arrays. This is the same as :math:`x - y`.
 
 * ``surface_normal(dataset)`` :index:`\ <surface_normal(dataset)>`\ : Returns the surface normal of each cell in a dataset.
 
@@ -1586,7 +1614,7 @@ Gradient
 There are two filters that can compute gradients:
 
 * ``Gradient`` :index:`\ <Gradient>`\ : This is designed for efficiently computing gradients of point data arrays
-  on a uniform rectilinear grid (Section :numref:`sec:VTKDataModel:UniformRectilinearGrid`).
+  on a uniform rectilinear grid (:numref:`sec:VTKDataModel:UniformRectilinearGrid`).
 
 * ``Gradient of Unstructured DataSet`` :index:`\ <Gradient of Unstructured DataSet>`\ : This computes gradient quantities
   for a cell or point data array for
@@ -1627,7 +1655,7 @@ White-box filters
 This includes the  ``Programmable Filter`` :index:`\ <Programmable Filter>`\  and  ``Programmable Source`` :index:`\ <Programmable Source>`\ . For
 these filters/sources, you can add Python code to do the data generation or
 processing. We'll cover writing Python code for these in
-Chapter :numref:`chapter:PythonProgrammableFilter`.
+:numref:`chapter:PythonProgrammableFilter`.
 
 Favorite filters
 ================
