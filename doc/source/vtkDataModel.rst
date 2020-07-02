@@ -108,21 +108,21 @@ the mesh for an image data, VTK uses the following:
 
 \begin{compactenum}
 \item *Extents* - These define the minimum and maximum indices in each
-direction. For example, an image data of extents $(0, 9)$, $(0, 19)$, $(0, 29)$
+direction. For example, an image data of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0, 29)`
 has 10 points in the x-direction, 20 points in the y-direction, and 30 points in the
-z-direction. The total number of points is $10 \times 20 \times 30$.
-\item *Origin* - This is the position of a point defined with indices $(0, 0, 0)$.
+z-direction. The total number of points is :math:`10 \times 20 \times 30`.
+\item *Origin* - This is the position of a point defined with indices :math:`(0, 0, 0)`.
 \item *Spacing* - This is the distance between each point. Spacing for each
 direction can defined independently.
 \end{compactenum}
 
-The coordinate of each point is defined as follows: $coordinate = origin +
-index \times spacing$ where $coordinate$, $origin$, $index$, and $spacing$ are vectors of
+The coordinate of each point is defined as follows: :math:`coordinate = origin +
+index \times spacing` where :math:`coordinate`, :math:`origin`, :math:`index`, and :math:`spacing` are vectors of
 length 3.
 
 Note that the generic VTK interface for all datasets uses a flat index. The
-$(i,j,k)$ index can be converted to this flat index as follows:
-$idx\_flat = k \times (npts_x \times npts_y) + j \times nptr_x + i$.
+:math:`(i,j,k)` index can be converted to this flat index as follows:
+:math:`idx\_flat = k \times (npts_x \times npts_y) + j \times nptr_x + i`.
 
 A uniform rectilinear grid consists of cells of the same type. This type is determined by the dimensionality of the dataset (based on the extents) and can either be vertex (0D), line (1D), pixel (2D), or voxel (3D).
 
@@ -147,22 +147,22 @@ rectilinear grid, VTK uses the following:
 
 \begin{compactenum}
 \item *Extents* - These define the minimum and maximum indices in each
-direction. For example, a rectilinear grid of extents $(0, 9)$, $(0, 19)$, $(0,
-29)$ has 10 points in the x-direction, 20 points in the y-direction, and 30
-points in the z-direction. The total number of points is $10 \times 20 \times 30$.
+direction. For example, a rectilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0,
+29)` has 10 points in the x-direction, 20 points in the y-direction, and 30
+points in the z-direction. The total number of points is :math:`10 \times 20 \times 30`.
 \item *Three arrays defining coordinates in the x-, y- and z-directions* -
-These arrays are of length $npts_x$, $npts_y$, and $npts_z$. This is a significant
+These arrays are of length :math:`npts_x`, :math:`npts_y`, and :math:`npts_z`. This is a significant
 savings in memory, as the total memory used by these arrays is
-$npts_x+npts_y+npts_z$ rather than $npts_x \times npts_y \times npts_z$.
+:math:`npts_x+npts_y+npts_z` rather than :math:`npts_x \times npts_y \times npts_z`.
 \end{compactenum}
 
 The coordinate of each point is defined as follows:
 
-$coordinate = (coordinate\_array_x(i), coordinate\_array_y(j), coordinate\_array_z(k))$.
+:math:`coordinate = (coordinate\_array_x(i), coordinate\_array_y(j), coordinate\_array_z(k))`.
 
 Note that the generic VTK interface for all datasets uses a flat index. The
-$(i,j,k)$ index can be converted to this flat index as follows:
-$idx\_flat = k \times (npts_x \times npts_y) + j \times nptr_x + i$.
+:math:`(i,j,k)` index can be converted to this flat index as follows:
+:math:`idx\_flat = k \times (npts_x \times npts_y) + j \times nptr_x + i`.
 
 A rectilinear grid consists of cells of the same type. This type is determined
 by the dimensionality of the dataset (based on the extents) and can either be
@@ -185,16 +185,16 @@ for a curvilinear grid, VTK uses the following:
 
 \begin{compactenum}
 \item \emph {Extents} - These define the minimum and maximum indices in each
-direction. For example, a curvilinear grid of extents $(0, 9)$, $(0, 19)$, $(0,
-29)$ has $10 \times 20 \times 30$ points regularly defined over a curvilinear mesh.
+direction. For example, a curvilinear grid of extents :math:`(0, 9)`, :math:`(0, 19)`, :math:`(0,
+29)` has :math:`10 \times 20 \times 30` points regularly defined over a curvilinear mesh.
 \item \emph {An array of point coordinates} - This array stores the position of
 each vertex explicitly.
 \end{compactenum}
 
 The coordinate of each point is defined as follows:
-$coordinate = coordinate\_array(idx\_flat)$.
-The $(i,j,k)$ index can be converted to this flat index as follows:
-$idx\_flat = k \times (npts_x \times npts_y) + j \times npts_x + i$.
+:math:`coordinate = coordinate\_array(idx\_flat)`.
+The :math:`(i,j,k)` index can be converted to this flat index as follows:
+:math:`idx\_flat = k \times (npts_x \times npts_y) + j \times npts_x + i`.
 
 A curvilinear grid consists of cells of the same type. This type is determined
 by the dimensionality of the dataset (based on the extents) and can either be

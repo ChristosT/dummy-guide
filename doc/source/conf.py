@@ -32,7 +32,12 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.todo',
-    'sphinx.ext.githubpages','sphinxcontrib.bibtex']
+    'sphinx.ext.githubpages',
+    'sphinxcontrib.bibtex',
+    # if switching from mathjax to static pngs you need latex installed to build the document
+    'sphinx.ext.mathjax',
+    #'sphinx.ext.mathpng',
+    ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
