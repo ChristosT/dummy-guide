@@ -115,33 +115,33 @@ Multiple views in ``pvpython``
 In |pvpython|, one can create new views using the  ``CreateView`` :index:`\ <CreateView>`\ 
 function or its variants, e.g., \\*  ``CreateRenderView`` :index:`\ <CreateRenderView>`\ .
 
-\begin{python}
->>> from paraview.simple import *
->>> view = CreateRenderView()
-# Alternatively, use CreateView.
->>> view = CreateView("RenderView")
-\end{python}
+.. code-block:: python
+
+  >>> from paraview.simple import *
+  >>> view = CreateRenderView()
+  # Alternatively, use CreateView.
+  >>> view = CreateView("RenderView")
 
 When a new view is created, it is automatically made active. You can manually
 make a view active by using the  ``SetActiveView`` :index:`\ <SetActiveView>`\  function. Several of the
 functions available in |pvpython| will use the active view when no
 view is passed as an argument to the function.
 
-\begin{python}
-# Create a view
->>> view1 = CreateRenderView()
-# Create a second view
->>> view2 = CreateRenderView()
+.. code-block:: python
 
-# Check if view2 is the active view
->>> view2 == GetActiveView()
-True
-
-# Make view1 active
->>> SetActiveView(view1)
->>> view1 == GetActiveView()
-True
-\end{python}
+  # Create a view
+  >>> view1 = CreateRenderView()
+  # Create a second view
+  >>> view2 = CreateRenderView()
+  
+  # Check if view2 is the active view
+  >>> view2 == GetActiveView()
+  True
+  
+  # Make view1 active
+  >>> SetActiveView(view1)
+  >>> view1 == GetActiveView()
+  True
 
 When using  ``Python Shell`` :index:`\ <Python Shell>`\  in |paraview|, if you create a new view,
 it will automatically be placed in the active tab by splitting the active view.
@@ -149,36 +149,37 @@ You can manually control the layout and placement of views from Python too, usin
 the layout API.
 
 In Python, each tab corresponds to a layout.
-\fixme{this can be expanded to cover more details about view layouting.}
 
-\begin{python}
-# To get exisiting tabs/layouts
->>> layouts = GetLayouts()
->>> print(layouts)
-{('ViewLayout1', '264'): <paraview.servermanager.ViewLayout object at 0x2e5b7d0>}
+.. \fixme{this can be expanded to cover more details about view layouting.}
 
-# To get layout corresponding to a particular view
->>> print(GetLayout(view))
-<paraview.servermanager.ViewLayout object at 0x2e5b7d0>
+.. code-block:: python
 
-# If view is not specified, active view is used
->>> print(GetLayout())
-<paraview.servermanager.ViewLayout object at 0x2e5b7d0>
-
-# To create a new tab
->>> new_layout = servermanager.misc.ViewLayout(registrationGroup="layouts")
-
-# To split the cell containing the view, either horizontally or vertically
->>> view = GetActiveView()
->>> layout = GetLayout(view)
->>> locationId = layout.SplitViewVertical(view=view,
-                                          fraction=0.5)
-# fraction is optional, if not specified the frame is split evenly.
-
-# To assign a view to a particular cell.
->>> view2 = CreateRenderView()
->>> layout.AssignView(locationId, view2)
-\end{python}
+  # To get exisiting tabs/layouts
+  >>> layouts = GetLayouts()
+  >>> print(layouts)
+  {('ViewLayout1', '264'): <paraview.servermanager.ViewLayout object at 0x2e5b7d0>}
+  
+  # To get layout corresponding to a particular view
+  >>> print(GetLayout(view))
+  <paraview.servermanager.ViewLayout object at 0x2e5b7d0>
+  
+  # If view is not specified, active view is used
+  >>> print(GetLayout())
+  <paraview.servermanager.ViewLayout object at 0x2e5b7d0>
+  
+  # To create a new tab
+  >>> new_layout = servermanager.misc.ViewLayout(registrationGroup="layouts")
+  
+  # To split the cell containing the view, either horizontally or vertically
+  >>> view = GetActiveView()
+  >>> layout = GetLayout(view)
+  >>> locationId = layout.SplitViewVertical(view=view,
+                                            fraction=0.5)
+  # fraction is optional, if not specified the frame is split evenly.
+  
+  # To assign a view to a particular cell.
+  >>> view2 = CreateRenderView()
+  >>> layout.AssignView(locationId, view2)
 
 View properties
 ===============
@@ -238,52 +239,49 @@ In |pvpython|, once you have access to the view, you can directly change view
 properties on the view object. There are several ways to get access to the view
 object.
 
-\begin{python}
-# 1. Save reference when a view is created
->>> view = CreateView("RenderView")
+.. code-block:: python
 
-# 2. Get reference to the active view.
->>> view = GetActiveView()
-\end{python}
-
-\noindent
+  # 1. Save reference when a view is created
+  >>> view = CreateView("RenderView")
+  
+  # 2. Get reference to the active view.
+  >>> view = GetActiveView()
+  
 The properties available on the view will change based on the type of the view.
 You can use the  ``help`` :index:`\ <help>`\  function to discover available properties.
 
-\begin{python-no-highlighting}
->>> view = CreateRenderView()
->>> help(view)
+.. code-block:: python
+  
+  >>> view = CreateRenderView()
+  >>> help(view)
+  
+    Help on RenderView in module paraview.servermanager object:
+  
+  class RenderView(Proxy)
+   |  View proxy for a 3D interactive render
+   |  view.
+   |
+   |  ----------------------------------------------------------------------
+   |  Data descriptors defined here:
+   |
+   |  CenterAxesVisibility
+   |      Toggle the visibility of the axes showing the center of
+   |      rotation in the scene.
+   |
+   |  CenterOfRotation
+   |      Center of rotation for the interactor.
+   |
+   ...
+  
+  # Once you have a reference to the view, you can then get/set the properties.
+  
+  # Get the current value
+  >>> print(view.CenterAxesVisibility)
+  1
+  
+  # Change the value
+  >>> view.CenterAxesVisibility = 0
 
-  Help on RenderView in module paraview.servermanager object:
-
-class RenderView(Proxy)
- |  View proxy for a 3D interactive render
- |  view.
- |
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |
- |  CenterAxesVisibility
- |      Toggle the visibility of the axes showing the center of
- |      rotation in the scene.
- |
- |  CenterOfRotation
- |      Center of rotation for the interactor.
- |
- ...
-\end{python-no-highlighting}
-
-\noindent
-Once you have a reference to the view, you can then get/set the properties.
-
-\begin{python}
-# Get the current value
->>> print(view.CenterAxesVisibility)
-1
-
-# Change the value
->>> view.CenterAxesVisibility = 0
-\end{python}
 
 .. _sec:DisplayingData:DisplayProperties:
 
@@ -317,75 +315,74 @@ Display properties in ``pvpython``
 To access display properties in |pvpython|, you can use
  ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  and \\*  ``GetDisplayProperty`` :index:`\ <GetDisplayProperty>`\  methods.
 
-\begin{python}
-# Using SetDisplayProperties/GetDisplayProperties to access the display
-# properties for the active source in the active view.
+.. code-block:: python
 
->>> print(GetDisplayProperties("Opacity"))
-1.0
+  # Using SetDisplayProperties/GetDisplayProperties to access the display
+  # properties for the active source in the active view.
+  
+  >>> print(GetDisplayProperties("Opacity"))
+  1.0
+  
+  >>> SetDisplayProperties(Opacity=0.5)
 
->>> SetDisplayProperties(Opacity=0.5)
-
-\end{python}
-
-\noindent Alternatively, you
+Alternatively, you
 can get access to the display properties object using  ``GetDisplayProperties`` :index:`\ <GetDisplayProperties>`\ 
 and then changing properties directly on the object.
 
-\begin{python}
-# Get display properties object for the active source in the active view.
->>> disp = GetDisplayProperties()
+.. code-block:: python
 
-# You can also save the object returned by Show.
->>> disp = Show()
+  # Get display properties object for the active source in the active view.
+  >>> disp = GetDisplayProperties()
+  
+  # You can also save the object returned by Show.
+  >>> disp = Show()
+  
+  # Now, you can directly access the properties.
+  >>> print(disp.Opacity)
+  0.5
+  
+  >>> disp.Opacity = 0.75
 
-# Now, you can directly access the properties.
->>> print(disp.Opacity)
-0.5
-
->>> disp.Opacity = 0.75
-\end{python}
-
-\noindent As always, you can use the  ``help`` :index:`\ <help>`\  method to discover available properties on a
+As always, you can use the  ``help`` :index:`\ <help>`\  method to discover available properties on a
 display object.
 
-\begin{python-no-highlighting}
->>> disp = Show()
+.. code-block:: python
 
->>> help(disp)
->>> help(a)
-Help on GeometryRepresentation in module paraview.servermanager object:
-
-class GeometryRepresentation(SourceProxy)
- |  ParaView`s default representation for showing any type of
- |  dataset in the render view.
- |
- |  Method resolution order:
- |      GeometryRepresentation
- |      SourceProxy
- |      Proxy
- |      __builtin__.object
- |
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |
- |  ...
- |
- |  CenterStickyAxes
- |      Keep the sticky axes centered in the view window.
- |
- |  ColorArrayName
- |      Set the array name to color by. Set it to empty string
- |      to use solid color.
- |
- |  ColorAttributeType
- |  ...
-\end{python-no-highlighting}
+  >>> disp = Show()
+  
+  >>> help(disp)
+  >>> help(a)
+  Help on GeometryRepresentation in module paraview.servermanager object:
+  
+  class GeometryRepresentation(SourceProxy)
+   |  ParaView`s default representation for showing any type of
+   |  dataset in the render view.
+   |
+   |  Method resolution order:
+   |      GeometryRepresentation
+   |      SourceProxy
+   |      Proxy
+   |      __builtin__.object
+   |
+   |  ----------------------------------------------------------------------
+   |  Data descriptors defined here:
+   |
+   |  ...
+   |
+   |  CenterStickyAxes
+   |      Keep the sticky axes centered in the view window.
+   |
+   |  ColorArrayName
+   |      Set the array name to color by. Set it to empty string
+   |      to use solid color.
+   |
+   |  ColorAttributeType
+   |  ...
 
 Render View
 ===========
 
- ``Render View`` :index:`\ <Render View>`\  is the most commonly used view in |ParaView|. It is used to render
+``Render View`` :index:`\ <Render View>`\  is the most commonly used view in |ParaView|. It is used to render
 geometries and volumes in a 3D scene. This is the view that you typically think
 of when referring to 3D visualization. The view relies on techniques to map data
 to graphics primitives such as triangles, polygons, and voxels, and it renders
@@ -625,7 +622,7 @@ implies totally opacity.
   during exploration, but use them for generating images or screenshots for
   presentations and publications.
 
- ``Points`` :index:`\ <Points>`\ ,  ``Surface`` :index:`\ <Surface>`\ ,  ``Surface With Edges`` :index:`\ <Surface With Edges>`\ , and  ``Wireframe`` :index:`\ <Wireframe>`\  rely on
+``Points`` :index:`\ <Points>`\ ,  ``Surface`` :index:`\ <Surface>`\ ,  ``Surface With Edges`` :index:`\ <Surface With Edges>`\ , and  ``Wireframe`` :index:`\ <Wireframe>`\  rely on
 extracting the surface mesh from the dataset and then rendering that either as a
 collection of points, as solid surface, as solid surface with cell boundaries
 highlighted, or as a wireframe of cell boundaries only.  ``Feature Edges`` :index:`\ <Feature Edges>`\ 
@@ -864,30 +861,30 @@ Creating a Render View
 You use  ``CreateRenderView`` :index:`\ <CreateRenderView>`\  or  ``CreateView`` :index:`\ <CreateView>`\  functions to create a new
 instance of a render view.
 
-\begin{python}
->>> from paraview.simple import *
->>> view = CreateRenderView()
-# Alternatively, use CreateView.
->>> view = CreateView("RenderView")
-\end{python}
+.. code-block:: python
+
+  >>> from paraview.simple import *
+  >>> view = CreateRenderView()
+  # Alternatively, use CreateView.
+  >>> view = CreateView("RenderView")
 
 \noindent
 You use  ``Show`` :index:`\ <Show>`\  and  ``Hide`` :index:`\ <Hide>`\  to show or hide data produced by a pipeline
 module in the view.
 
-\begin{python}
->>> source = Sphere()
->>> view = CreateRenderView()
+.. code-block:: python
 
-# Show active source in active view.
->>> Show()
-
-# Or specify source and view explicitly.
->>> Show(source, view)
-
-# Hide source in active view.
->>> Hide(source)
-\end{python}
+  >>> source = Sphere()
+  >>> view = CreateRenderView()
+  
+  # Show active source in active view.
+  >>> Show()
+  
+  # Or specify source and view explicitly.
+  >>> Show(source, view)
+  
+  # Hide source in active view.
+  >>> Hide(source)
 
 Interactions
 ------------
@@ -896,70 +893,69 @@ Since |pvpython| is designed for scripting and batch processing,
 it has limited support for direct interaction with the view.
 To interact with a scene, invoke the  ``Interact`` :index:`\ <Interact>`\  function in Python.
 
-\begin{python}
-Interact()
-\end{python}
+.. code-block:: python
+
+  Interact()
 
 More often, you will programmatically change the camera as follows:
 
-\begin{python}
-# Get camera from the active view, if possible.
->>> camera = GetActiveCamera()
+.. code-block:: python
 
-# or, get the camera from a specific render view.
->>> camera = view.GetActiveCamera()
-
-# Now, you can use methods on camera to move it around the scene.
-
-# Divide the camera's distance from the focal point by the given dolly value.
-# Use a value greater than one to dolly-in toward the focal point, and use a
-# value less than one to dolly-out away from the focal point.
->>> camera.Dolly(10)
-
-# Set the roll angle of the camera about the direction of projection.
->>> camera.Roll(30)
-
-# Rotate the camera about the view up vector centered at the focal point. Note
-# that the view up vector is whatever was set via SetViewUp, and is not
-# necessarily perpendicular to the direction of projection. The result is a
-# horizontal rotation of the camera.
->>> camera.Azimuth(30)
-
-# Rotate the focal point about the view up vector, using the camera's position
-# as the center of rotation. Note that the view up vector is whatever was set
-# via SetViewUp, and is not necessarily perpendicular to the direction of
-# projection. The result is a horizontal rotation of the scene.
->>> camera.Yaw(10)
-
-# Rotate the camera about the cross product of the negative of the direction
-# of projection and the view up vector, using the focal point as the center
-# of rotation. The result is a vertical rotation of the scene.
->>> camera.Elevation(10)
-
-# Rotate the focal point about the cross product of the view up vector and the
-# direction of projection, using the camera's position as the center of
-# rotation. The result is a vertical rotation of the camera.
->>> camera.Pitch(10)
-\end{python}
-
-\noindent
+  # Get camera from the active view, if possible.
+  >>> camera = GetActiveCamera()
+  
+  # or, get the camera from a specific render view.
+  >>> camera = view.GetActiveCamera()
+  
+  # Now, you can use methods on camera to move it around the scene.
+  
+  # Divide the camera's distance from the focal point by the given dolly value.
+  # Use a value greater than one to dolly-in toward the focal point, and use a
+  # value less than one to dolly-out away from the focal point.
+  >>> camera.Dolly(10)
+  
+  # Set the roll angle of the camera about the direction of projection.
+  >>> camera.Roll(30)
+  
+  # Rotate the camera about the view up vector centered at the focal point. Note
+  # that the view up vector is whatever was set via SetViewUp, and is not
+  # necessarily perpendicular to the direction of projection. The result is a
+  # horizontal rotation of the camera.
+  >>> camera.Azimuth(30)
+  
+  # Rotate the focal point about the view up vector, using the camera's position
+  # as the center of rotation. Note that the view up vector is whatever was set
+  # via SetViewUp, and is not necessarily perpendicular to the direction of
+  # projection. The result is a horizontal rotation of the scene.
+  >>> camera.Yaw(10)
+  
+  # Rotate the camera about the cross product of the negative of the direction
+  # of projection and the view up vector, using the focal point as the center
+  # of rotation. The result is a vertical rotation of the scene.
+  >>> camera.Elevation(10)
+  
+  # Rotate the focal point about the cross product of the view up vector and the
+  # direction of projection, using the camera's position as the center of
+  # rotation. The result is a vertical rotation of the camera.
+  >>> camera.Pitch(10)
+  
 Alternatively, you can explicitly set the camera position, focal point, view up,
 etc,. to explicitly place the camera in the scene.
+  
+.. code-block:: python
 
-\begin{python}
->>> camera.SetFocalPoint(0, 0, 0)
->>> camera.SetPosition(0, 0, -10)
->>> camera.SetViewUp(0, 1, 0)
->>> camera.SetViewAngle(30)
->>> camera.SetParallelProjection(False)
-
-# If ParallelProjection is set to True, then you'll need
-# to specify parallel scalar as well i.e. the height of the viewport in
-# world-coordinate distances. The default is 1. Note that the `scale'
-# parameter works as an `inverse scale' where larger numbers produce smaller
-# images. This method has no effect in perspective projection mode.
->>> camera.SetParallelScale(1)
-\end{python}
+  >>> camera.SetFocalPoint(0, 0, 0)
+  >>> camera.SetPosition(0, 0, -10)
+  >>> camera.SetViewUp(0, 1, 0)
+  >>> camera.SetViewAngle(30)
+  >>> camera.SetParallelProjection(False)
+  
+  # If ParallelProjection is set to True, then you'll need
+  # to specify parallel scalar as well i.e. the height of the viewport in
+  # world-coordinate distances. The default is 1. Note that the `scale'
+  # parameter works as an `inverse scale' where larger numbers produce smaller
+  # images. This method has no effect in perspective projection mode.
+  >>> camera.SetParallelScale(1)
 
 View properties
 ---------------
@@ -971,22 +967,22 @@ Once you get access to the view properties objects, you can then set properties
 on it similar to properties on pipeline modules such as sources, filters, and
 readers.
 
-\begin{python}
->>> view = GetActiveView()
+.. code-block:: python
 
-# Set center axis visibility
->>> view.CenterAxesVisibility = 0
-
-# Or you can use this variant to set the property on the active view.
->>> SetViewProperties(CenterAxesVisibility=0)
-
-# Another way of doing the same
->>> SetViewProperties(view, CenterAxesVisibility=0)
-
-# Similarly, you can change orientation axes related properties
->>> view.OrientationAxesVisibility = 0
->>> view.OrientationAxesLabelColor = (1, 1, 1)
-\end{python}
+  >>> view = GetActiveView()
+  
+  # Set center axis visibility
+  >>> view.CenterAxesVisibility = 0
+  
+  # Or you can use this variant to set the property on the active view.
+  >>> SetViewProperties(CenterAxesVisibility=0)
+  
+  # Another way of doing the same
+  >>> SetViewProperties(view, CenterAxesVisibility=0)
+  
+  # Similarly, you can change orientation axes related properties
+  >>> view.OrientationAxesVisibility = 0
+  >>> view.OrientationAxesLabelColor = (1, 1, 1)
 
 Display properties
 ------------------
@@ -994,20 +990,20 @@ Display properties
 Similar to view properties, display properties are accessible from the display
 properties object or using the  ``SetDisplayProperties`` :index:`\ <SetDisplayProperties>`\  function.
 
-\begin{python}
->>> displayProperties = GetDisplayProperties(source, view)
-# Both source and view are optional. If not specified, the active source
-# and active view will be used.
+.. code-block:: python
 
-# Now one can change properties on this object
->>> displayProperties.Representation = "Outline"
-
-# Or use the SetDisplayProperties API.
->>> SetDisplayProperties(source, view, Representation=Outline)
-
-# Here too, source and view are optional and when not specified,
-# active source and active view will be used.
-\end{python}
+  >>> displayProperties = GetDisplayProperties(source, view)
+  # Both source and view are optional. If not specified, the active source
+  # and active view will be used.
+  
+  # Now one can change properties on this object
+  >>> displayProperties.Representation = "Outline"
+  
+  # Or use the SetDisplayProperties API.
+  >>> SetDisplayProperties(source, view, Representation=Outline)
+  
+  # Here too, source and view are optional and when not specified,
+  # active source and active view will be used.
 
 You can always use the  ``help`` :index:`\ <help>`\  function to get information about available
 properties on a display properties object.
@@ -1214,70 +1210,70 @@ properties.
 
 The following script demonstrates the typical usage:
 
-\begin{python}
->>> from paraview.simple import *
+.. code-block:: python
 
-# Create a data source to probe into.
->>> Wavelet()
-<paraview.servermanager.Wavelet object at 0x1156fd810>
-
-# We update the source so that when we create PlotOverLine filter
-# it has input data available to determine good defaults. Otherwise,
-# we will have to manually set up the defaults.
->>> UpdatePipeline()
-
-# Now, create the PlotOverLine filter. It will be initialized using
-# defaults based on the input data.
->>> PlotOverLine()
-<paraview.servermanager.PlotOverLine object at 0x1156fd490>
-
-# Show the result.
->>> Show()
-<paraview.servermanager.XYChartRepresentation object at 0x1160a6a10>
-
-# This will automatically create a new Line Chart View if the
-# the active view is no a Line Chart View since PlotOverLine
-# filter indicates it as the preferred view. You can also explicitly
-# create it by using CreateView() function.
-
-# Display the result.
->>> Render()
-
-# Access display properties object.
->>> dp = GetDisplayProperties()
->>> print(dp.SeriesVisibility)
-['arc_length', '0', 'RTData', '1']
-
-# This is  list with key-value pairs where the first item is the name
-# of the series, then its visibility and so on.
-# To toggle visibility, change this list e.g.
->>> dp.SeriesVisibility = ['arc_length', '1', 'RTData', '1']
-
-# Same is true for other series parameters including series color,
-# line thickness etc.
-
-# For series color, the value consists of 3 values: red, green, and blue
-# color components.
->>> print(dp.SeriesColor)
-['arc_length', '0', '0', '0', 'RTData', '0.89', '0.1', '0.11']
-
-# For series labels, value is the label to use.
->>> print(dp.SeriesLabel)
-['arc_length', 'arc_length', 'RTData', 'RTData']
-
-# e.g. to change RTData's legend label, we can do something as follows:
->>> dp.SeriesLabel[3] = 'RTData -- new label'
-
-# Access view properties object.
->>> view = GetActiveView()
-# or
->>> view = GetViewProperties()
-
-# To change titles
->>> view.ChartTitle = "My Title"
->>> view.BottomAxisTitle = "X Axis"
->>> view.LeftAxisTitle = "Y Axis"
-\end{python}
+  >>> from paraview.simple import *
+  
+  # Create a data source to probe into.
+  >>> Wavelet()
+  <paraview.servermanager.Wavelet object at 0x1156fd810>
+  
+  # We update the source so that when we create PlotOverLine filter
+  # it has input data available to determine good defaults. Otherwise,
+  # we will have to manually set up the defaults.
+  >>> UpdatePipeline()
+  
+  # Now, create the PlotOverLine filter. It will be initialized using
+  # defaults based on the input data.
+  >>> PlotOverLine()
+  <paraview.servermanager.PlotOverLine object at 0x1156fd490>
+  
+  # Show the result.
+  >>> Show()
+  <paraview.servermanager.XYChartRepresentation object at 0x1160a6a10>
+  
+  # This will automatically create a new Line Chart View if the
+  # the active view is no a Line Chart View since PlotOverLine
+  # filter indicates it as the preferred view. You can also explicitly
+  # create it by using CreateView() function.
+  
+  # Display the result.
+  >>> Render()
+  
+  # Access display properties object.
+  >>> dp = GetDisplayProperties()
+  >>> print(dp.SeriesVisibility)
+  ['arc_length', '0', 'RTData', '1']
+  
+  # This is  list with key-value pairs where the first item is the name
+  # of the series, then its visibility and so on.
+  # To toggle visibility, change this list e.g.
+  >>> dp.SeriesVisibility = ['arc_length', '1', 'RTData', '1']
+  
+  # Same is true for other series parameters including series color,
+  # line thickness etc.
+  
+  # For series color, the value consists of 3 values: red, green, and blue
+  # color components.
+  >>> print(dp.SeriesColor)
+  ['arc_length', '0', '0', '0', 'RTData', '0.89', '0.1', '0.11']
+  
+  # For series labels, value is the label to use.
+  >>> print(dp.SeriesLabel)
+  ['arc_length', 'arc_length', 'RTData', 'RTData']
+  
+  # e.g. to change RTData's legend label, we can do something as follows:
+  >>> dp.SeriesLabel[3] = 'RTData -- new label'
+  
+  # Access view properties object.
+  >>> view = GetActiveView()
+  # or
+  >>> view = GetViewProperties()
+  
+  # To change titles
+  >>> view.ChartTitle = "My Title"
+  >>> view.BottomAxisTitle = "X Axis"
+  >>> view.LeftAxisTitle = "Y Axis"
 
 Bar Chart View
 ==============
@@ -1483,19 +1479,19 @@ decoration to manipulate slice locations along the three axis planes.
 Slice View in ``pvpython``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-\begin{python}
-# To create a slice view in use:
->>> view = CreateView("MultiSlice")
+.. code-block:: python
 
-# Use properties on view to set/get the slice offsets.
->>> view.XSliceValues = [-10, 0, 10]
->>> print(view.XSliceValues)
-[-10, 0, 10]
-
-# Similar to XSliceValues, you have YSliceValues and ZSliceValues.
->>> view.YSliceValues = [0]
->>> view.ZSliceValues = []
-\end{python}
+  # To create a slice view in use:
+  >>> view = CreateView("MultiSlice")
+  
+  # Use properties on view to set/get the slice offsets.
+  >>> view.XSliceValues = [-10, 0, 10]
+  >>> print(view.XSliceValues)
+  [-10, 0, 10]
+  
+  # Similar to XSliceValues, you have YSliceValues and ZSliceValues.
+  >>> view.YSliceValues = [0]
+  >>> view.ZSliceValues = []
 
 Python View
 ===========
@@ -1569,33 +1565,33 @@ bluntfin.vts dataset.}
 Here's an example of this function that was used to generate the image
 in Figure :ref:`fig:PythonViewInParaView`:
 
-\begin{python}
-def setup_data(view):
-  # Iterate over visible data objects
-  for i in xrange(view.GetNumberOfVisibleDataObjects()):
-    # You need to use GetVisibleDataObjectForSetup(i)
-    # in setup_data to access the data object.
-    dataObject = view.GetVisibleDataObjectForSetup(i)
+.. code-block:: python
 
-    # The data object has the same data type and structure
-    # as the data object that sits on the server. You can
-    # query the size of the data, for instance, or do anything
-    # else you can do through the Python wrapping.
-    print('Memory size: {0} kilobytes'.format(dataObject.GetActualMemorySize()))
-
-    # Clean up from previous calls here. We want to unset
-    # any of the arrays requested in previous calls to this function.
-    view.DisableAllAttributeArrays()
-
-    # By default, no arrays will be passed to the client.
-    # You need to explicitly request the arrays you want.
-    # Here, we'll request the Density point data array
-    view.SetAttributeArrayStatus(i, vtkDataObject.POINT, "Density", 1)
-    view.SetAttributeArrayStatus(i, vtkDataObject.POINT, "Momentum", 1)
-
-    # Other attribute arrays can be set similarly
-    view.SetAttributeArrayStatus(i, vtkDataObject.FIELD, "fieldData", 1)
-\end{python}
+  def setup_data(view):
+    # Iterate over visible data objects
+    for i in xrange(view.GetNumberOfVisibleDataObjects()):
+      # You need to use GetVisibleDataObjectForSetup(i)
+      # in setup_data to access the data object.
+      dataObject = view.GetVisibleDataObjectForSetup(i)
+  
+      # The data object has the same data type and structure
+      # as the data object that sits on the server. You can
+      # query the size of the data, for instance, or do anything
+      # else you can do through the Python wrapping.
+      print('Memory size: {0} kilobytes'.format(dataObject.GetActualMemorySize()))
+  
+      # Clean up from previous calls here. We want to unset
+      # any of the arrays requested in previous calls to this function.
+      view.DisableAllAttributeArrays()
+  
+      # By default, no arrays will be passed to the client.
+      # You need to explicitly request the arrays you want.
+      # Here, we'll request the Density point data array
+      view.SetAttributeArrayStatus(i, vtkDataObject.POINT, "Density", 1)
+      view.SetAttributeArrayStatus(i, vtkDataObject.POINT, "Momentum", 1)
+  
+      # Other attribute arrays can be set similarly
+      view.SetAttributeArrayStatus(i, vtkDataObject.FIELD, "fieldData", 1)
 
 The  ``vtkPythonView`` :index:`\ <vtkPythonView>`\  class passed in as the  ``view`` :index:`\ <view>`\  argument to
  ``setup\_data(view)`` :index:`\ <setup\_data(view)>`\  defines several methods useful for specifying which
@@ -1685,21 +1681,21 @@ stretched to fit the viewport.
 Putting it all together, here is a simple example that generates a
 solid red image to display in the viewport.
 
-\begin{python}
-def render(view, width, height):
-  from paraview.vtk import vtkImageData
-  image = vtkImageData()
-  image.SetDimensions(width, height, 1)
-  from paraview.numeric import VTK_UNSIGNED_CHAR
-  image.AllocateScalars(VTK_UNSIGNED_CHAR, 4)
-  pixel_array = image.GetPointData().GetArray(0)
-  pixel_array.FillComponent(0, 255.0)
-  pixel_array.FillComponent(1, 0.0)
-  pixel_array.FillComponent(2, 0.0)
-  pixel_array.FillComponent(3, 0.0)
+.. code-block:: python
 
-  return image
-\end{python}
+  def render(view, width, height):
+    from paraview.vtk import vtkImageData
+    image = vtkImageData()
+    image.SetDimensions(width, height, 1)
+    from paraview.numeric import VTK_UNSIGNED_CHAR
+    image.AllocateScalars(VTK_UNSIGNED_CHAR, 4)
+    pixel_array = image.GetPointData().GetArray(0)
+    pixel_array.FillComponent(0, 255.0)
+    pixel_array.FillComponent(1, 0.0)
+    pixel_array.FillComponent(2, 0.0)
+    pixel_array.FillComponent(3, 0.0)
+  
+    return image
 
 This example does not produce an interesting visualization, but serves
 as a minimal example of how the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\ 
@@ -1718,9 +1714,9 @@ The  ``Python View`` :index:`\ <Python View>`\  comes with a Python module,
 called  ``python\_view`` :index:`\ <python\_view>`\ , that has some utility functions you can
 use. To import it, use:
 
-\begin{python}
-from paraview import python_view
-\end{python}
+.. code-block:: python
+
+  from paraview import python_view
 
 This module has a function, called  ``matplotlib\_figure(view, width,
 height)`` :index:`\ <matplotlib\_figure(view, width,
@@ -1728,29 +1724,29 @@ height)>`\ , that returns a  ``matplotlib.figure.Figure`` :index:`\ <matplotlib.
 and  ``height`` :index:`\ <height>`\  arguments. This figure can be used with matplotlib
 plotting commands to plot data as in the following:
 
-\begin{python}
-def render(view, width, height):
-  figure = python_view.matplotlib_figure(width, height)
+.. code-block:: python
 
-  ax = figure.add_subplot(1,1,1)
-  ax.minorticks_on()
-  ax.set_title('Plot title')
-  ax.set_xlabel('X label')
-  ax.set_ylabel('Y label')
-
-  # Process only the first visible object in the pipeline browser
-  dataObject = view.GetVisibleDataObjectForRendering(0)
-
-  x = dataObject.GetPointData().GetArray('X')
-
-  # Convert VTK data array to numpy array for plotting
-  from paraview.numpy_support import vtk_to_numpy
-  np_x = vtk_to_numpy(x)
-
-  ax.hist(np_x, bins=10)
-
-  return python_view.figure_to_image(figure)
-\end{python}
+  def render(view, width, height):
+    figure = python_view.matplotlib_figure(width, height)
+  
+    ax = figure.add_subplot(1,1,1)
+    ax.minorticks_on()
+    ax.set_title('Plot title')
+    ax.set_xlabel('X label')
+    ax.set_ylabel('Y label')
+  
+    # Process only the first visible object in the pipeline browser
+    dataObject = view.GetVisibleDataObjectForRendering(0)
+  
+    x = dataObject.GetPointData().GetArray('X')
+  
+    # Convert VTK data array to numpy array for plotting
+    from paraview.numpy_support import vtk_to_numpy
+    np_x = vtk_to_numpy(x)
+  
+    ax.hist(np_x, bins=10)
+  
+    return python_view.figure_to_image(figure)
 
 This definition of the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\  function
 creates a histogram of a point data array named  ``X`` :index:`\ <X>`\  from the first
@@ -1764,13 +1760,12 @@ Comparative Views
 =================
 
  ``Comparative Views`` :index:`\ <Comparative Views>`\ , including  ``Render View (Comparative)`` :index:`\ <Render View (Comparative)>`\ ,  ``Line Chart
-View (Comparative)`` :index:`\ <Line Chart
-View (Comparative)>`\ , and  ``Bar Chart View (Comparative)`` :index:`\ <Bar Chart View (Comparative)>`\ , are used
+View (Comparative)`` :index:`\ <Line Chart View (Comparative)>`\ , and  ``Bar Chart View (Comparative)`` :index:`\ <Bar Chart View (Comparative)>`\ , are used
 for generating comparative visualization from parameter studies. We
 will cover these views in Chapter :ref:`chapter:ComparativeVisualization`.
 
-\begin{TODO}
-\begin{itemize}
-  \item Several advanced views remain including Histogram View, Bag Chart, etc.
-\end{itemize}
-\end{TODO}
+.. \begin{TODO}
+  \begin{itemize}
+    \item Several advanced views remain including Histogram View, Bag Chart, etc.
+  \end{itemize}
+  \end{TODO}
