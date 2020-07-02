@@ -322,7 +322,7 @@ Table
 
 .. figure:: images/ParaView_UG_Table.png
     :name: fig:Table
-    :width: 70%
+    :width: 80%
     :align: center
 
     Table
