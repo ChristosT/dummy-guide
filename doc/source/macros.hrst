@@ -1,1 +1,10 @@
 .. |ParaView| replace:: **ParaView**
+.. |paraview| replace:: ``paraview``
+.. |pvpython| replace:: ``pvpython``
+.. |pvbatch| replace:: ``pvbatch``
+.. |pvserver| replace:: ``pvserver``
+.. |pvdataserver| replace:: ``pvdataserver``
+.. |pvrenderserver| replace:: ``pvrenderserver``
+
+.. |CMD| replace:: :kbd:`⌘`
+.. |CTRL| replace:: :kbd:`CTRL`

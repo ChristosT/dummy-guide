@@ -32,7 +32,12 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.todo',
-    'sphinx.ext.githubpages']
+    'sphinx.ext.githubpages',
+    'sphinxcontrib.bibtex',
+    # if switching from mathjax to static pngs you need latex installed to build the document
+    'sphinx.ext.mathjax',
+    #'sphinx.ext.mathpng',
+    ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -78,6 +83,13 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+# If true, figures, tables and code-blocks are automatically numbered if they
+# have a caption. The numref role is enabled. Obeyed so far only by HTML and
+# LaTeX builders. Default is False.
+numfig= True
+
+# supress ref errors for now since we haven't converted all chapters
+suppress_warnings=["ref.ref"]
 
 # -- Options for HTML output ----------------------------------------------
 

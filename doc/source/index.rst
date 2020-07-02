@@ -8,10 +8,13 @@ Welcome to ParaView Users Guide!
 .. include:: macros.hrst
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
    :caption: Contents:
 
    introduction
+   dataIngestion
+   vtkDataModel
 
 
 
