@@ -17,7 +17,7 @@ Welcome to ParaView Users Guide!
    understandingData
    displayingData
 
-
+   references
 
 Indices and tables
 ==================

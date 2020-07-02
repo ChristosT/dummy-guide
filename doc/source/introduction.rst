@@ -966,4 +966,3 @@ processing.
   \end{itemize}
   \end{TODO}
 
-.. bibliography:: References.bib
