@@ -124,7 +124,7 @@ With Dataset`` :index:`\ <Resample
 With Dataset>`\ , have multiple inputs that must be set up before the filter can be
 created. In such a case, when you click on the filter name, the  ``Change Input
 Dialog`` :index:`\ <Change Input
-Dialog>`\  will pop up, as seen in Figure :numref:`fig:ChangeInputDialog`.
+Dialog>`\  will pop up, as seen in :numref:`fig:ChangeInputDialog`.
 This dialog allows you to select the pipeline modules to be
 connected to each of the input ports. The active source(s) is connected by
 default to the first input port. You are free to change those as well.
@@ -416,7 +416,7 @@ clipping space.
 
 Check  ``Crinkle Clip`` :index:`\ <Crinkle Clip>`\  if you don't want this filter to truly clip cells on the
 boundary, but want to preserve the input cell structure and to pass the entire cell on through the
-boundary (Figure :numref:`fig:CrinkleClipComparison`).
+boundary (:numref:`fig:CrinkleClipComparison`).
 This option is not available when clipping by  ``Scalar`` :index:`\ <Scalar>`\ .
 
 Clip in ``pvpython``
@@ -551,7 +551,7 @@ pass complete cells from the input dataset that intersects the implicit function
 
 What is different includes the lack of slicing by  ``Scalar`` :index:`\ <Scalar>`\  (for that, you
 can use the  ``Contour`` :index:`\ <Contour>`\  filter) and a new option,  ``Triangulate the slice`` :index:`\ <Triangulate the slice>`\ .
-Figure :numref:`fig:SliceComparisons`
+:numref:`fig:SliceComparisons`
 shows the difference in the generated meshes when various slice properties are
 changed.
 
@@ -847,6 +847,7 @@ to serve as the glyph  ``Scale Array`` :index:`\ <Scale Array>`\  (no scaling is
 is chosen).
 
 .. |pqGlyph24| image:: images/pqGlyph24.png
+               :width: 0.5cm
 
 If the  ``Scale Array`` :index:`\ <Scale Array>`\  is set to a vector array, the  ``Vector Scale Mode`` :index:`\ <Vector Scale Mode>`\ 
 property is available to select which properties of the vector should be used
@@ -877,7 +878,7 @@ scaling properties.
 
 The  ``Masking`` :index:`\ <Masking>`\  properties control which points from the input
 dataset get glyphed. The  ``Glyph Mode`` :index:`\ <Glyph Mode>`\  controls how points are selected to be
-glyphs (Figure :numref:`fig:GlyphModesComparison`). The available options are as follows:
+glyphs (:numref:`fig:GlyphModesComparison`). The available options are as follows:
 
 * ``All Points`` :index:`\ <All Points>`\ : This selects all points in the input dataset for glyphing.
   Use this mode with caution and only when the input dataset has relatively few
@@ -1237,11 +1238,11 @@ that controls whether the input arrays are copied to the output ( ``Copy
 Array`` :index:`\ <Copy
 Array>`\ ).
 
-%Note that the  ``Python Calculator`` :index:`\ <Python Calculator>`\  depends on Python and NumPy. All |ParaView|
-%binaries distributed by Kitware are built with these to enable the calculator.
-%If you have built |ParaView| yourself, you have to make sure that NumPy is
-%installed and that ``PARAVIEW_ENABLE_PYTHON`` is turned on when
-%configuring the |ParaView| build.
+.. Note that the  ``Python Calculator`` :index:`\ <Python Calculator>`\  depends on Python and NumPy. All |ParaView|
+  binaries distributed by Kitware are built with these to enable the calculator.
+  If you have built |ParaView| yourself, you have to make sure that NumPy is
+  installed and that ``PARAVIEW_ENABLE_PYTHON`` is turned on when
+  configuring the |ParaView| build.
 
 Basic tutorial
 --------------
