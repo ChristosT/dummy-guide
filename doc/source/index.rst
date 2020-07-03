@@ -17,6 +17,7 @@ Welcome to ParaView Users Guide!
    understandingData
    displayingData
    filteringData
+   selectingData
 
    references
 
