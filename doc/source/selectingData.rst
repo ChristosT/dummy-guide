@@ -133,13 +133,14 @@ points or blocks in |ParaView|: interactive and non-interactive.
 
 |ParaView| enters a *non-interactive selection mode* when the user
 clicks one of the non-interactive selection buttons:
-\icon{Images/pqSurfaceSelectionCell24.png}
-\icon{Images/pqSurfaceSelectionPoint24.png}
-\icon{Images/pqFrustumSelectionCell24.png}
-\icon{Images/pqFrustumSelectionPoint24.png}
-\icon{Images/pqPolygonSelectSurfaceCell24.png}
-\icon{Images/pqPolygonSelectSurfacePoint24.png}
-\icon{Images/pqSelectBlock24.png}. The type of selection you are
+|pqSurfaceSelectionCell24|
+|pqSurfaceSelectionPoint24|
+|pqFrustumSelectionCell24|
+|pqFrustumSelectionPoint24|
+|pqPolygonSelectSurfaceCell24|
+|pqPolygonSelectSurfacePoint24|
+|pqSelectBlock24|
+The type of selection you are
 creating will depend on the button you clicked. Once in
 non-interactive selection mode, the cursor will switch to cross-hair
 and you can click and drag to create a selection region. Once you
@@ -147,33 +148,54 @@ release the mouse,
 |ParaView| will attempt to create a selection for any elements in the selection
 region and will go back to default interaction mode.
 
+.. |pqSurfaceSelectionCell24| image:: images/pqSurfaceSelectionCell24.png
+                              :width: 0.5cm
+
+.. |pqSurfaceSelectionPoint24| image:: images/pqSurfaceSelectionPoint24.png
+                               :width: 0.5cm
+
+.. |pqSelectBlock24| image:: images/pqSelectBlock24.png
+                     :width: 0.5cm
+
+.. |pqFrustumSelectionCell24| image:: images/pqFrustumSelectionCell24.png
+                              :width: 0.5cm
+
+.. |pqFrustumSelectionPoint24| image:: images/pqFrustumSelectionPoint24.png
+                               :width: 0.5cm
+
+.. |pqPolygonSelectSurfaceCell24| image:: images/pqPolygonSelectSurfaceCell24.png
+                                  :width: 0.5cm
+
+.. |pqPolygonSelectSurfacePoint24| image:: images/pqPolygonSelectSurfacePoint24.png
+                                   :width: 0.5cm
+
+
 To create a selection for cells visible in the view, use the
-\icon{Images/pqSurfaceSelectionCell24.png} button. For selecting
-visible points, use the \icon{Images/pqSurfaceSelectionPoint24.png}
+|pqSurfaceSelectionCell24| button. For selecting
+visible points, use the |pqSurfaceSelectionPoint24|
 button instead. Visible cells (and points) are only those cells (or
 points) that are currently rendered on the screen. Thus, elements that
 are occluded or are too small to be rendered on the screen will not be
 selected. If you want to select all data elements that intersect the
 view frustum formed by the selection rectangle you drew on the screen,
-use the \icon{Images/pqFrustumSelectionCell24.png} button (or
-\icon{Images/pqFrustumSelectionPoint24.png} for points).  In this
+use the |pqFrustumSelectionCell24| button (or
+|pqFrustumSelectionPoint24| for points).  In this
 case, all elements, visible or otherwise, that are within the 3D space
 defined by the selection frustum are selected.
 
 To create a selection for blocks visible in the view use the
-\icon{Images/pqSelectBlock24.png} button. Note that there is no frustum
+|pqSelectBlock24| button. Note that there is no frustum
 selection for blocks.
 
 While most selection modes allow you to define the selection region as a rectangle,
-\icon{Images/pqPolygonSelectSurfaceCell24.png}
-(and \icon{Images/pqPolygonSelectSurfacePoint24.png} for points) enables you to
+|pqPolygonSelectSurfaceCell24| (and |pqPolygonSelectSurfacePoint24| for points) enables you to
 define the selection region as a closed polygon. However, this is limited to
 surface elements (i.e., no frustum-based selection).
 
 |ParaView| enters an *interactive selection mode* when the user
 clicks on one of the interactive selection buttons:
-\icon{Images/pqSurfaceSelectionCellInteractive.png}
-\icon{Images/pqSurfaceSelectionPointInteractive.png}. In interactive
+|pqSurfaceSelectionCellInteractive|
+|pqSurfaceSelectionPointInteractive|. In interactive
 selection mode, the user acts on visible elements (cells or
 points). |ParaView| highlights elements of the dataset as a user moves
 the cursor over them. An element can be selected by clicking on
@@ -182,12 +204,21 @@ selection.  A user ends the interactive selection mode by clicking on
 the interactive selection button pushed in or by pressing the
 |ESC| key. This mode is also ended when the user enters a
 non-interactive selection mode. You can use
-\icon{Images/pqSurfaceSelectionCellInteractive.png} button to
+|pqSurfaceSelectionCellInteractive| button to
 interactively select cells of the dataset and use
-\icon{Images/pqSurfaceSelectionPointInteractive.png} button to
+|pqSurfaceSelectionPointInteractive| button to
 interactively select points.
 
-When there are selected elements, the \icon{Images/ClearSelection.png}
+.. |pqSurfaceSelectionCellInteractive| image:: images/pqSurfaceSelectionCellInteractive.png
+                                       :width: 0.5cm
+
+.. |pqSurfaceSelectionPointInteractive| image:: images/pqSurfaceSelectionPointInteractive.png
+                                        :width: 0.5cm
+
+.. |ClearSelection| image:: images/ClearSelection.png
+                    :width: 0.5cm
+
+When there are selected elements, the |ClearSelection|
 button can be used to clear the selection.
 
 Several of these buttons have hotkeys too, such as :kbd:`S` for visible
@@ -216,8 +247,7 @@ starting with :kbd:`S`, and are in the same order as the toolbar buttons themsel
   existing one. You can also subtract from the current selection using the
   |SHIFT|, or even toggle using |CTRL| (or |CMD|) + |SHIFT|.
   Selection modifier buttons, in the toolbar, can be used for the same effect.
-  Add : \icon{Images/pqSelectChartPlus16.png}, remove :
-  \icon{Images/pqSelectChartMinus16.png}, toggle : \icon{Images/pqSelectChartToggle16.png}.
+  Add : |pqSelectChartPlus16| , remove : |pqSelectChartMinus16|, toggle : |pqSelectChartToggle16|.
   These modifiers do not work, however, if the selection type (or the selected
   data) is different from the current selection. If so, the current selection
   will be cleared (as is the norm) and then the new selection will be created.
@@ -240,8 +270,8 @@ Selecting in Line Chart View
 plotted data values. The selection interaction is similar to  ``Render View`` :index:`\ <Render View>`\ .
 By default, you are in the interaction mode. You enter selection mode to create a
 selection by using the buttons in the view toolbar for creating a rectangular
-selection \icon{Images/pqSelectChart16.png} or a polygonal selection
-\icon{Images/pqSelectChartPolygon16.png}. Once in selection mode, you
+selection |pqSelectChart16| or a polygonal selection
+|pqSelectChartPolygon16|. Once in selection mode, you
 can click and drag to define the selection region. The selection is created once
 you release the mouse press.
 
@@ -249,13 +279,28 @@ When a new selection is created, by default, it
 will clear any existing selection in the view.
 The selection modifier buttons in the view toolbar
 can be used to control whether a new selection adds to selected elements
-\icon{Images/pqSelectChartPlus16.png}, removes
-points from the selected elements \icon{Images/pqSelectChartMinus16.png}, or
-toggles it \icon{Images/pqSelectChartToggle16.png}. These modifier
+|pqSelectChartPlus16|, removes
+points from the selected elements |pqSelectChartMinus16|, or
+toggles it |pqSelectChartToggle16|. These modifier
 buttons are mutually exclusive and modal, i.e., they remain pressed until you
 click to unpress them or until you press another modifier button.
 |CTRL| (or |CMD|) and |SHIFT| can also be used to
 add to/subtract from the selection.
+
+.. |pqSelectChart16| image:: ./images/pqSelectChart16.png
+                     :width: 0.5cm
+
+.. |pqSelectChartPlus16| image:: ./images/pqSelectChartPlus16.png
+                         :width: 0.5cm
+
+.. |pqSelectChartMinus16| image:: ./images/pqSelectChartMinus16.png
+                          :width: 0.5cm
+
+.. |pqSelectChartToggle16| image:: ./images/pqSelectChartToggle16.png
+                           :width: 0.5cm
+
+.. |pqSelectChartPolygon16| image:: ./images/pqSelectChartPolygon16.png
+                            :width: 0.5cm
 
 .. figure:: images/SelectingInLineChartView.png
     :name: fig:SelectingInLineChartView
@@ -279,8 +324,11 @@ for selecting elements matching certain criteria, you can use the  ``Find Data``
 mechanism in |paraview|.
 
 The  ``Find Data`` :index:`\ <Find Data>`\  dialog can be accessed from the :guilabel:`Edit` menu or by using the
-keyboard shortcut :kbd:`V` or the \icon{Images/pqFindData32.png}
+keyboard shortcut :kbd:`V` or the |pqFindData32|
 button on the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar.
+
+.. |pqFindData32| image:: ./images/pqFindData32.png
+                  :width: 0.5cm
 
 The  ``Find Data`` :index:`\ <Find Data>`\  dialog can be split into three components,
 reflecting how you would use this dialog. The  ``Create Selection`` :index:`\ <Create Selection>`\  component
@@ -298,7 +346,7 @@ selected elements are shown in the active view.
     The  ``Find Data`` :index:`\ <Find Data>`\  dialog in |paraview| can be used to find
     data elements matching specific conditions. In this example, we are selecting
     all *Points* in *disk_out_ref.ex2* dataset where *Pres*
-    *is $>=$* $0.02$.
+    is :math:`>= 0.02`.
 
 You can create selections or define queries in the  ``Find Data`` :index:`\ <Find Data>`\  dialog using
 the widgets under the  ``Create Selection`` :index:`\ <Create Selection>`\  group. The UI is designed to be read
@@ -313,8 +361,8 @@ operator. Options include the following:
 * ``is`` :index:`\ <is>`\  matches a single value
 * ``is between`` :index:`\ <is between>`\  matches a range of values specified by min and max
 * ``is one of`` :index:`\ <is one of>`\  matches a list of comma-separated values
-* ``is $>=$`` :index:`\ <is $>=$>`\  matches all values greater than or equal to the specified value
-* ``is $<=$`` :index:`\ <is $<=$>`\  matches all values lesser than or equal to the specified value
+* ``is :math:`>=``` :index:`\ <is :math:`>=`>`\  matches all values greater than or equal to the specified value
+* ``is :math:`<=``` :index:`\ <is :math:`<=`>`\  matches all values lesser than or equal to the specified value
 * ``is min`` :index:`\ <is min>`\  matches the minimum value for the array for the current time step
 * ``is max`` :index:`\ <is max>`\  matches the maximum value for the array for the current time step
 * ``is less than mean`` :index:`\ <is less than mean>`\  matches values lesser than or equal to the mean
@@ -347,10 +395,12 @@ future, however, it could support changing selection attributes for other views 
 The available options  allow you select the color to use to show the selected
 elements, as well as the data attributes to use to label the cells/points. For finer
 control on the label formatting, color, font, etc., use the
-\icon{Images/pqAdvanced26.png} button. That will pop up the  ``Advanced
-Selection Display Properties`` :index:`\ <Advanced
-Selection Display Properties>`\  dialog
+|pqAdvanced26|. That will pop up the  
+``Advanced Selection Display Properties`` :index:`\ <Advanced Selection Display Properties>`\  dialog
 ( :numref:`fig:AdvancedSelectionDisplayPropertiesDialog`).
+
+.. |pqAdvanced26| image:: ./images/pqAdvanced26.png
+                  :width: 0.5cm
 
 .. figure:: images/AdvancedSelectionDisplayPropertiesDialog.png
     :name: fig:AdvancedSelectionDisplayPropertiesDialog
@@ -488,15 +538,17 @@ Display Properties`` :index:`\ <Selection
 Display Properties>`\  for the selection in the active view. The same functionality
 can also be accessed using the  ``Selection Display Inspector`` :index:`\ <Selection Display Inspector>`\  panel, which is a
 dockable panel that can be shown/hidden using the :guilabel:`View > Selection Display Inspector`
-menu. Currently, selection display properties apply to  ``Render
-View`` :index:`\ <Render
-View>`\ s alone. In the future, this will be expanded to other view types, as
+menu. Currently, selection display properties apply to  ``Render View`` :index:`\ <Render View>`\ s alone. 
+In the future, this will be expanded to other view types, as
 appropriate.
 
 The  ``Current Selection`` :index:`\ <Current Selection>`\  section in the  ``Find Data`` :index:`\ <Find Data>`\  dialog shows the
 selected elements in a spreadsheet view. You can also make a regular
-``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  do the same by checking the \icon{Images/pqSelect32.png}
+``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  do the same by checking the |pqSelect32|
 button in the view toolbar to show only selected elements.
+
+.. |pqSelect32| image:: ./images/pqSelect32.png
+                :width: 0.5cm
 
 Extracting selections
 =====================
@@ -510,9 +562,9 @@ selected elements, then you need to use one of the extract selection filters.
 The  ``Extract Selection`` :index:`\ <Extract Selection>`\  and  ``Plot Selection Over Time`` :index:`\ <Plot Selection Over Time>`\  filters fall in
 this category of filters.
 
-%Using these filters not only enables further
-%processing for the extraction result, but also makes the selection concrete i.e.
-%the filter will get saved in state files.
+.. %Using these filters not only enables further
+   %processing for the extraction result, but also makes the selection concrete i.e.
+   %the filter will get saved in state files.
 
 Extract selection
 ^^^^^^^^^^^^^^^^^
@@ -571,12 +623,15 @@ View`` :index:`\ <Render
 View>`\  using the view-based selection mechanism. The selected cells are the
 highlighted elements in the left view. After having selected the cells, we
 create the  ``Plot Selection Over Time`` :index:`\ <Plot Selection Over Time>`\  filter using the :guilabel:`Filters > Data Analysis`
-menu. (You could also use the \icon{Images/pqPlotSelectionOverTime24.png}
+menu. (You could also use the |pqPlotSelectionOverTime24|
 from the  ``Data Analysis`` :index:`\ <Data Analysis>`\  toolbar.) Similar to the  ``Extract Selection`` :index:`\ <Extract Selection>`\ 
 filter, when this filter is created, it copies the active selection. You can
 change it afterwards using the  ``Copy Active Selection`` :index:`\ <Copy Active Selection>`\  button on the filter's
 ``Properties`` :index:`\ <Properties>`\  panel. On hitting  ``Apply`` :index:`\ <Apply>`\ , |paraview| will show a
 visualization similar to the one shown here.
+
+.. |pqPlotSelectionOverTime24| image:: ./images/pqPlotSelectionOverTime24.png
+                               :width: 0.5cm
 
 Instead of using the view for defining the selection, you could have used the
 ``Find Data`` :index:`\ <Find Data>`\  dialog. In that case, instead of being able to plot each element
