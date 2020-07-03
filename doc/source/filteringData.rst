@@ -1677,4 +1677,219 @@ Favorites are saved in user settings so they can be used in other subsequent Par
 
 Best practices
 ==============
-\input{FilteringRecommendations}
+
+Avoiding data explosion
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The pipeline model that |ParaView| presents is very convenient for exploratory
+visualization. The loose coupling between components provides a very flexible
+framework for building unique visualizations, and the pipeline structure allows
+you to tweak parameters quickly and easily.
+
+The downside of this coupling is that it can have a larger memory footprint.
+Each stage of this pipeline maintains its own copy of the data. Whenever
+possible, |ParaView| performs shallow copies of the data so that different stages
+of the pipeline point to the same block of data in memory. However, any filter
+that creates new data or changes the values or topology of the data must
+allocate new memory for the result. If |ParaView| is filtering a very large mesh,
+inappropriate use of filters can quickly deplete all available memory.
+Therefore, when visualizing large datasets, it is important to understand the
+memory requirements of filters.
+
+Please keep in mind that the following advice is intended only for when dealing
+with very large amounts of data and the remaining available memory is low. When
+you are not in danger of running out of memory, the following advice is not
+relevant.
+
+When dealing with structured data, it is absolutely important to know what
+filters will change the data to unstructured. Unstructured data has a much
+higher memory footprint, per cell, than structured data because the topology
+must be explicitly written out. There are many filters in |ParaView| that will
+change the topology in some way, and these filters will write out the data as an
+unstructured grid, because that is the only dataset that will handle any type of
+topology that is generated. The following list of filters will write out a new
+unstructured topology in its output that is roughly equivalent to the input.
+These filters should never be used with structured data and should be used with
+caution on unstructured data.
+
++-------------------+-------------------------+--------------------+
+| *Append Datasets* |  *Extract Edges*        |  *Subdivide*       |
++-------------------+-------------------------+--------------------+
+| *Append Geometry* |  *Linear Extrusion*     |  *Tessellate*      |
++-------------------+-------------------------+--------------------+
+| *Clean*           |  *Loop Subdivision*     |  *Tetrahedralize*  |
++-------------------+-------------------------+--------------------+
+| *Clean to Grid*   |  *Reflect*              |  *Triangle Strips* |
++-------------------+-------------------------+--------------------+
+| *Connectivity*    |  *Rotational Extrusion* |  *Triangulate*     |
++-------------------+-------------------------+--------------------+
+| *D3*              |  *Shrink*               |                    |
++-------------------+-------------------------+--------------------+
+| *Delaunay 2D/3D*  |  *Smooth*               |                    |
++-------------------+-------------------------+--------------------+
+
+
+Technically, the  ``Ribbon`` :index:`\ <Ribbon>`\  and  ``Tube`` :index:`\ <Tube>`\  filters should fall into this list.
+However, as they only work on 1D cells in poly data, the input data is usually
+small and of little concern.
+
+This similar set of filters also outputs unstructured grids, but also tends to
+reduce some of this data. Be aware though that this data reduction is often
+smaller than the overhead of converting to unstructured data. Also note that the
+reduction is often not well balanced. It is possible (often likely) that a
+single process may not lose any cells. Thus, these filters should be used with
+caution on unstructured data and extreme caution on structured data.
+
++---------------------------+----------------------+
+| *Clip*                    | *Extract Selection*  |
++---------------------------+----------------------+
+| *Decimate*                | *Quadric Clustering* |
++---------------------------+----------------------+
+| *Extract Cells by Region* | *Threshold*          |
++---------------------------+----------------------+
+
+Similar to the items in the preceding list,  ``Extract Subset`` :index:`\ <Extract Subset>`\  performs data
+reduction on a structured dataset, but also outputs a structured dataset. So the
+warning about creating new data still applies, but you do not have to worry
+about converting to an unstructured grid.
+
+This next set of filters also outputs unstructured data, but it also performs a
+reduction on the dimension of the data (for example 3D to 2D), which results in
+a much smaller output. Thus, these filters are usually safe to use with
+unstructured data and require only mild caution with structured data.
+
++-------------------------+-------------------------+
+| *Cell Centers*          | *Feature Edges*         |
++-------------------------+-------------------------+
+| *Contour*               | *Mask Points*           |
++-------------------------+-------------------------+
+| *Extract CTH Fragments* | *Outline (curvilinear)* |
++-------------------------+-------------------------+
+| *Extract CTH Parts*     | *Slice*                 |
++-------------------------+-------------------------+
+| *Extract Surface*       | *Stream Tracer*         |
++-------------------------+-------------------------+
+
+The filters below do not change the connectivity of the data at all. Instead,
+they only add field arrays to the data. All the existing data is shallow copied.
+These filters are usually safe to use on all data.
+
++----------------------------+---------------------------+
+| *Block Scalars*            | *Octree Depth Scalars*    |
++----------------------------+---------------------------+
+| *Calculator*               | *Point Data to Cell Data* |
++----------------------------+---------------------------+
+| *Cell Data to Point Data*  | *Process Id Scalars*      |
++----------------------------+---------------------------+
+| *Curvature*                | *Random Vectors*          |
++----------------------------+---------------------------+
+| *Elevation*                | *Resample with dataset*   |
++----------------------------+---------------------------+
+| *Generate Surface Normals* | *Surface Flow*            |
++----------------------------+---------------------------+
+| *Gradient*                 | *Surface Vectors*         |
++----------------------------+---------------------------+
+| *Level Scalars*            | *Texture Map to...*       |
++----------------------------+---------------------------+
+| *Median*                   | *Transform*               |
++----------------------------+---------------------------+
+| *Mesh Quality*             | *Warp (scalar)*           |
++----------------------------+---------------------------+
+| *Octree Depth Limit*       | *Warp (vector)*           |
++----------------------------+---------------------------+
+
+This final set of filters either add no data to the output (all data of
+consequence is shallow copied) or the data they add is generally independent of
+the size of the input. These are almost always safe to add under any
+circumstances (although they may take a lot of time).
+
++-----------------------+-----------------------------------+
+| *Annotate Time*       | *Outline*                         |
++-----------------------+-----------------------------------+
+| *Append Attributes*   | *Outline Corners*                 |
++-----------------------+-----------------------------------+
+| *Extract Block*       | *Plot Global Variables Over Time* |
++-----------------------+-----------------------------------+
+| *Extract Datasets*    | *Plot Over Line*                  |
++-----------------------+-----------------------------------+
+| *Extract Level*       | *Plot Selection Over Time*        |
++-----------------------+-----------------------------------+
+| *Glyph*               | *Probe Location*                  |
++-----------------------+-----------------------------------+
+| *Group Datasets*      | *Temporal Shift Scale*            |
++-----------------------+-----------------------------------+
+| *Histogram*           | *Temporal Snap-to-Time-Steps*     |
++-----------------------+-----------------------------------+
+| *Integrate Variables* | *Temporal Statistics*             |
++-----------------------+-----------------------------------+
+| *Normal Glyphs*       |                                   |
++-----------------------+-----------------------------------+
+
+There are a few special case filters that do not fit well into any of the
+previous classes. Some of the filters, currently  ``Temporal Interpolator`` :index:`\ <Temporal Interpolator>`\  and
+``Particle Tracer`` :index:`\ <Particle Tracer>`\ , perform calculations based on how data changes over time.
+Thus, these filters may need to load data for two or more instances of time,
+which can double or more the amount of data needed in memory. The  ``Temporal
+Cache`` :index:`\ <Temporal
+Cache>`\  filter will also hold data for multiple instances of time. Keep in mind
+that some of the temporal filters such as the Temporal Statistics and the
+filters that plot over time may need to iteratively load all data from disk.
+Thus, it may take an impractically long amount of time even if does not require
+any extra memory.
+
+The  ``Programmable Filter`` :index:`\ <Programmable Filter>`\  is also a special case that is impossible to
+classify. Since this filter does whatever it is programmed to do, it can fall
+into any one of these categories.
+
+Culling data
+^^^^^^^^^^^^
+
+When dealing with large data, it is best to cull out data whenever possible and
+do so as early as possible. Most large data starts as 3D geometry and the
+desired geometry is often a surface. As surfaces usually have a much smaller
+memory footprint than the volumes that they are derived from, it is best to
+convert to a surface early on. Once you do that, you can apply other filters in
+relative safety.
+
+A very common visualization operation is to extract isosurfaces from a volume
+using the Contour filter. The  ``Contour`` :index:`\ <Contour>`\  filter usually outputs geometry much
+smaller than its input. Thus, the  ``Contour`` :index:`\ <Contour>`\  filter should be applied early if
+it is to be used at all. Be careful when setting up the parameters to the
+``Contour`` :index:`\ <Contour>`\  filter because it still is possible for it to generate a lot of
+data which can happen if you specify many isosurface values. High frequencies
+such as noise around an isosurface value can also cause a large, irregular
+surface to form.
+
+Another way to peer inside of a volume is to perform a  ``Slice`` :index:`\ <Slice>`\  on it. The
+``Slice`` :index:`\ <Slice>`\  filter will intersect a volume with a plane and allow you to see the
+data in the volume where the plane intersects. If you know the relative location
+of an interesting feature in your large dataset, slicing is a good way to view
+it.
+
+If you have little *a priori* knowledge of your data and would like to
+explore the data without the long memory and processing time for the full
+dataset, you can use the  ``Extract Subset`` :index:`\ <Extract Subset>`\  filter to subsample the data. The
+subsampled data can be dramatically smaller than the original data and should
+still be well load balanced. Of course, be aware that you may miss small
+features if the subsampling steps over them and that once you find a feature you
+should go back and visualize it with the full dataset.
+
+There are also several features that can pull out a subset of a volume:
+``Clip`` :index:`\ <Clip>`\ ,  ``Threshold`` :index:`\ <Threshold>`\ ,  ``Extract Selection`` :index:`\ <Extract Selection>`\ , and  ``Extract Subset`` :index:`\ <Extract Subset>`\  can
+all extract cells based on some criterion. Be aware, however, that the extracted
+cells are almost never well balanced; expect some processes to have no cells
+removed. All of these filters, with the exception of  ``Extract Subset`` :index:`\ <Extract Subset>`\ , will
+convert structured data types to unstructured grids. Therefore, they should not
+be used unless the extracted cells are of at least an order of magnitude less
+than the source data.
+
+When possible, replace the use of a filter that extracts 3D data with one that
+will extract 2D surfaces. For example, if you are interested in a plane through
+the data, use the  ``Slice`` :index:`\ <Slice>`\  filter rather than the  ``Clip`` :index:`\ <Clip>`\  filter. If you are
+interested in knowing the location of a region of cells containing a particular
+range of values, consider using the  ``Contour`` :index:`\ <Contour>`\  filter to generate surfaces at
+the ends of the range rather than extract all of the cells with the
+``Threshold`` :index:`\ <Threshold>`\  filter. Be aware that substituting filters can have an effect on
+downstream filters. For example, running the  ``Histogram`` :index:`\ <Histogram>`\  filter after
+``Threshold`` :index:`\ <Threshold>`\  will have an entirely different effect than running it after the
+roughly equivalent  ``Contour`` :index:`\ <Contour>`\  filter.
