@@ -168,6 +168,7 @@ animation covers a particular time domain of your choosing.
 .. figure:: images/AnimationTimePrecision.png
     :width: 40%
     :align: center
+
 Animating time-varying data
 ===========================
 
