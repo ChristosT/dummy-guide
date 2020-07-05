@@ -18,6 +18,7 @@ Welcome to ParaView Users Guide!
    displayingData
    filteringData
    selectingData
+   animation
 
    references
 
