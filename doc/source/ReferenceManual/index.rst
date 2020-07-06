@@ -6,3 +6,4 @@
    colorMapping
    comparativeViews
    pythonProgrammableFilter
+   vtkNumPyIntegration
