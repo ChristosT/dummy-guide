@@ -1,3 +1,6 @@
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
+
 .. _chapter:VTKNumPyIntegration:
 
 Using NumPy for processing data

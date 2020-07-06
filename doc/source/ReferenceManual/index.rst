@@ -7,3 +7,4 @@
    comparativeViews
    pythonProgrammableFilter
    vtkNumPyIntegration
+   parallelDataVisualization
