@@ -13,5 +13,7 @@
 .. |SPACE| replace:: :kbd:`Space`
 .. |ENTER| replace:: :kbd:`Enter`
 .. |ESC| replace:: :kbd:`Esc`
+.. |DEL| replace:: :kbd:`Delete`
+.. |TAB| replace:: :kbd:`Tab ↹`
                
 .. |IMAGEPATH| replace:: ../images

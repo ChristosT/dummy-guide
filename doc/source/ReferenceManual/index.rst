@@ -3,3 +3,4 @@
    :maxdepth: 2
    
    propertiesPanel
+   colorMapping
