@@ -12,12 +12,11 @@ Welcome to ParaView Documentation !
 
    UsersGuide/index.rst
    
-.. .. toctree::
-      :numbered:
-      :maxdepth: 2
-      :caption: ParaView Reference Manual
+.. toctree::
+   :maxdepth: 2
+   :caption: ParaView Reference Manual
 
-      ReferenceManual/index.rst
+   ReferenceManual/index.rst
    
 .. toctree::
    :maxdepth: 2
