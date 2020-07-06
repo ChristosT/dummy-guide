@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:Introduction:
 
@@ -122,7 +122,7 @@ Basics of visualization in |ParaView|
 =====================================
 
 
-.. figure:: images/VTKPipeline.png
+.. figure:: ../images/VTKPipeline.png
     :name: fig-VTKPipeline
     :width: 100%
     :align: center
@@ -276,7 +276,7 @@ Let's start by looking at the various components of the UI. If you run
 dockable panels, toolbars, and the viewport -- the central portion of the
 application window.
 
-.. figure:: images/GUIOverview.png
+.. figure:: ../images/GUIOverview.png
   :name: fig-GUIOverview
   :width: 100%
   :align: center
@@ -347,7 +347,7 @@ If you click on :guilabel:`Sources > Sphere`, for example,
 you'll create a producer algorithm that generates a spherical surface, as shown in
 :numref:`fig-CreateSphere1`.
 
-.. figure:: images/GUIStep1.png
+.. figure:: ../images/GUIStep1.png
     :name: fig-CreateSphere1
     :width: 100%
     :align: center
@@ -386,7 +386,7 @@ Let's assume we are okay with the default values for all of the properties on th
 Let's assume we are okay with the default values for all of the properties on the
 ``Sphere1``. Next, click on the ``Apply`` button.
 
-.. figure:: images/GUIStep2.png
+.. figure:: ../images/GUIStep2.png
     :name: fig-CreateSphere2
     :width: 100%
     :align: center
@@ -462,7 +462,7 @@ state.
   Apply>`\ . You can also change the  ``Auto Apply`` :index:`\ <Auto Apply>`\  state using the
   |AutoApplyIcon| button from the toolbar.
 
-.. |AutoApplyIcon| image:: images/AutoApplyIcon.png
+.. |AutoApplyIcon| image:: ../images/AutoApplyIcon.png
 
 Applying filters
 ----------------
@@ -484,7 +484,7 @@ enabled filters to create a new instance of that filter type.
   Linux and Windows (not OS X, however), the status bar will provide a brief
   explanation of why that filter is not available.
 
-  .. figure:: images/StatusBarFilterInfo.png
+  .. figure:: ../images/StatusBarFilterInfo.png
     :name: fig-StatusBar
     :width: 80%
     :align: center
@@ -623,7 +623,7 @@ cause the rendering to occur. In addition, a new window will popup, showing the 
 (:numref:`fig-PythonRendering`). This is similar to the state after hitting
 ``Apply`` in the UI.
 
-.. figure:: images/PythonSphere.png
+.. figure:: ../images/PythonSphere.png
     :name: fig-PythonRendering
     :width: 80%
     :align: center
@@ -759,7 +759,7 @@ Alternatively, you could also get/set the active source using the ``GetActiveSou
 
 The result is shown in :numref:`fig-PythonRenderingShrink` .
 
-.. figure:: images/PythonShrink.png
+.. figure:: ../images/PythonShrink.png
     :name: fig-PythonRenderingShrink
     :width: 80%
     :align: center
@@ -908,7 +908,7 @@ change the active source, the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>
 update to reflect the change. If you change any properties or display properties, the
 ``Properties`` :index:`\ <Properties>`\  panel will update to reflect the change as well!
 
-.. figure:: images/PythonShell.png
+.. figure:: ../images/PythonShell.png
     :name: fig-PythonShell
     :width: 100%
     :align: center

@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:UnderstandingData:
 
@@ -42,7 +42,7 @@ The first cell is defined by vertices :math:`(0, 1, 3, 4)`, and the second cell 
 defined by vertices :math:`(1, 2, 4, 5)`. These cells are neighbors because they share
 the edge defined by the points :math:`(1, 4)`.
 
-.. figure:: images/ParaView_UG_Cells.png
+.. figure:: ../images/ParaView_UG_Cells.png
     :name: fig:ParaView_UG_Cells
     :width: 40%
     :align: center
@@ -75,7 +75,7 @@ attribute. Note that the attribute is only defined on the vertices.
 Interpolation is used to obtain the values everywhere else. The interpolation
 functions used depend on the cell type. See the VTK documentation for details.
 
-.. figure:: images/ParaView_UG_Cells_with_values.png
+.. figure:: ../images/ParaView_UG_Cells_with_values.png
     :name: fig:PointCenteredAttributes
     :width: 40%
     :align: center
@@ -91,7 +91,7 @@ Point Data>`\  filter. In |ParaView|, this filter is applied automatically, when
 necessary.
 
 
-.. figure:: images/ParaView_UG_Cells_with_cvalues.png
+.. figure:: ../images/ParaView_UG_Cells_with_cvalues.png
     :name: fig:CellCenteredAttributes
     :width: 40%
     :align: center
@@ -103,7 +103,7 @@ necessary.
 Uniform rectilinear grid (image data)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Image.png
+.. figure:: ../images/ParaView_UG_Image.png
     :name: fig:UniformRectilinearGrid
     :width: 40%
     :align: center
@@ -139,7 +139,7 @@ this property and are more efficient for image data.
 Rectilinear grid
 ^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Rectilinear.png
+.. figure:: ../images/ParaView_UG_Rectilinear.png
     :name: fig:ExampleMesh
     :width: 40%
     :align: center
@@ -170,7 +170,7 @@ vertex (0D), line (1D), pixel (2D), or voxel (3D).
 Curvilinear grid (structured grid)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Curvilinear.png
+.. figure:: ../images/ParaView_UG_Curvilinear.png
     :name: fig:CurvilinearGrid
     :width: 40%
     :align: center
@@ -198,7 +198,7 @@ vertex (0D), line (1D), quad (2D), or hexahedron (3D).
 AMR dataset
 ^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_AMR.png
+.. figure:: ../images/ParaView_UG_AMR.png
     :name: fig:AMRDataset
     :width: 40%
     :align: center
@@ -219,7 +219,7 @@ automatically generate the masking arrays for Berger-Oliger compliant meshes.
 Unstructured grid
 ^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Unstructured.png
+.. figure:: ../images/ParaView_UG_Unstructured.png
     :name: fig:UnstructuredGrid
     :width: 40%
     :align: center
@@ -303,7 +303,7 @@ documentation.
 Polygonal grid (polydata)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Polydata.png
+.. figure:: ../images/ParaView_UG_Polydata.png
     :name: fig:PolyData
     :width: 40%
     :align: center
@@ -324,7 +324,7 @@ converted to an unstructured grid using  ``Clean to Grid`` :index:`\ <Clean to G
 Table
 ^^^^^
 
-.. figure:: images/ParaView_UG_Table.png
+.. figure:: ../images/ParaView_UG_Table.png
     :name: fig:Table
     :width: 80%
     :align: center
@@ -345,7 +345,7 @@ Points>`\  and  ``Table to Structured Grid`` :index:`\ <Table to Structured Grid
 Multiblock dataset
 ^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Multiblock.png
+.. figure:: ../images/ParaView_UG_Multiblock.png
     :name: fig:MultiblockDataset
     :width: 40%
     :align: center
@@ -369,7 +369,7 @@ that attribute.
 Multipiece dataset
 ^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Multipiece.png
+.. figure:: ../images/ParaView_UG_Multipiece.png
     :name: fig:MultipieceDataset
     :width: 40%
     :align: center
@@ -405,7 +405,7 @@ The  ``Information`` :index:`\ <Information>`\  panel provides summary informati
 the active source. By default, this panel is tucked under a tab below the
 ``Properties`` :index:`\ <Properties>`\  panel. You can toggle its visibility using :guilabel:`View > Information`.
 
-.. figure:: images/InformationPanel.png
+.. figure:: ../images/InformationPanel.png
     :name: fig:InformationPanel
     :width: 50%
     :align: center
@@ -461,13 +461,13 @@ other places in |paraview|, the icons |pqCellData16|, |pqNodalData16|, and |pqGl
 to indicate cell, point, and field data arrays. Since data arrays can have multiple
 components, the range for each component of the data array is shown.
 
-.. |pqCellData16|  image:: images/pqCellData16.png
+.. |pqCellData16|  image:: ../images/pqCellData16.png
                    :width: 0.5cm
 
-.. |pqNodalData16| image:: images/pqNodalData16.png
+.. |pqNodalData16| image:: ../images/pqNodalData16.png
                    :width: 0.5cm
 
-.. |pqGlobalData16| image:: images/pqGlobalData16.png
+.. |pqGlobalData16| image:: ../images/pqGlobalData16.png
                      :width: 0.5cm
 
 
@@ -495,7 +495,7 @@ blocks or leaf nodes in a composite dataset, but not all. The  ``(partial)`` :in
 suffix to indicate partial arrays :index:`\ <partial arrays>`\  is also used by |paraview| in other
 places in the UI.
 
-.. figure:: images/InformationPanelPartialArrays.png
+.. figure:: ../images/InformationPanelPartialArrays.png
     :name: fig:InformationPanelPartialArrays
     :width: 80%
     :align: center
@@ -512,7 +512,7 @@ switches to showing the summaries for the selected sub-tree.
 By default, the root element will be selected. You can now select any block in
 the hierarchy to view the summary limited to just that sub-tree.
 
-.. figure:: images/InformationPanelDataHierarchy.png
+.. figure:: ../images/InformationPanelDataHierarchy.png
     :name: fig:InformationPanelDataHierarchy
     :width: 80%
     :align: center
@@ -549,7 +549,7 @@ need a quick summary of the data produced by all the pipeline modules, you can
 use the  ``Statistics  Inspector`` :index:`\ <Statistics  Inspector>`\  panel. It's accessible from
 :guilabel:`Views > Statistics Inspector`.
 
-.. figure:: images/StatisticsInspector.png
+.. figure:: ../images/StatisticsInspector.png
     :name: fig:StatisticsInspector
     :width: 80%
     :align: center

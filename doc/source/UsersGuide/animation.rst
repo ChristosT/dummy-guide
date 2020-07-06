@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. % This chapter is unchanged from the old user's guide. We need to rewrite it
    % entirely in near future. For lack of time, I am leaving this as is for now,
@@ -30,7 +30,7 @@ keyframes. It is modeled similar to popular animation and keyframe editing
 applications with the ability to create tracks for animating multiple parameters. The
 ``Animation View`` :index:`\ <Animation View>`\  is accessible from the :guilabel:`View` menu.
 
-.. figure:: images/ParaViewUsersGuideAnimationView.png
+.. figure:: ../images/ParaViewUsersGuideAnimationView.png
     :name: fig:AnimationView
     :width: 80%
     :align: center
@@ -60,7 +60,7 @@ the white area to the right of the track name. This will bring up the
 ``Animation Keyframes`` :index:`\ <Animation Keyframes>`\  dialog. Double-clicking in the camera entry brings up a
 dialog like the one in :numref:`fig:EditingCameraTrack`.
 
-.. figure:: images/ParaViewUsersGuideAnimationKeyframes.png
+.. figure:: ../images/ParaViewUsersGuideAnimationKeyframes.png
     :name: fig:EditingCameraTrack
     :width: 80%
     :align: center
@@ -97,11 +97,11 @@ be dragged, so you can easily adjust the time at which each keyframe occurs.
    Then, several of the animatable properties on the  ``Properties`` :index:`\ <Properties>`\  panel will have a |pqVcrPlay24| icon.
    Click this icon to add a new animation track for this property and edit it.
 
-   .. |pqVcrPlay24| image:: images/pqVcrPlay24.png
+   .. |pqVcrPlay24| image:: ../images/pqVcrPlay24.png
                     :width: 0.5cm
 
 
-.. figure:: images/AnimationShortcut.png
+.. figure:: ../images/AnimationShortcut.png
     :width: 40%
     :align: center
 
@@ -111,7 +111,7 @@ Animation View header
 The  ``Animation View`` :index:`\ <Animation View>`\  has a header-bar that lets you control some properties of the
 animation itself, as you can see in :numref:`fig:AnimationViewHeader`.
 
-.. figure:: images/ParaViewUsersGuideAnimationViewHeader.png
+.. figure:: ../images/ParaViewUsersGuideAnimationViewHeader.png
     :name: fig:AnimationViewHeader
     :width: 80%
     :align: center
@@ -165,7 +165,7 @@ animation covers a particular time domain of your choosing.
    ``Settings/Properties Panel Options/Advanced`` :index:`\ <Settings/Properties Panel Options/Advanced>`\ .
 
 
-.. figure:: images/AnimationTimePrecision.png
+.. figure:: ../images/AnimationTimePrecision.png
     :width: 40%
     :align: center
 
@@ -193,7 +193,7 @@ property in the visualization pipeline. In the example shown in
 first 15 frames of the animation, backward for the next 30, and forward
 for the final 15.
 
-.. figure:: images/ParaViewUsersGuideAnimationKeyframesTime.png
+.. figure:: ../images/ParaViewUsersGuideAnimationKeyframesTime.png
     :name: fig:ControllingDataTime
     :width: 80%
     :align: center
@@ -225,7 +225,7 @@ Playing an animation
 Once you have designed your animation, you can play through it with the VCR
 controls toolbar seen in :numref:`fig:VCRControlsToolbar`.
 
-.. figure:: images/VCRAndTimeControls.png
+.. figure:: ../images/VCRAndTimeControls.png
     :name: fig:VCRAndTimeControls
     :width: 80%
     :align: center
@@ -235,7 +235,7 @@ controls toolbar seen in :numref:`fig:VCRControlsToolbar`.
 Animating the camera
 ====================
 
-.. figure:: images/ParaViewUsersGuideAddCameraTrack.png
+.. figure:: ../images/ParaViewUsersGuideAddCameraTrack.png
     :name: fig:AddCameraTrack
     :width: 80%
     :align: center
@@ -262,7 +262,7 @@ specified locations. As with other parameters, to edit the keyframes,
 double-click on the track. It is also possible to capture the current location
 as a keyframe by using the  ``Use Current`` :index:`\ <Use Current>`\  button.
 
-.. figure:: images/ParaViewUsersGuideCameraLocations.png
+.. figure:: ../images/ParaViewUsersGuideCameraLocations.png
     :name: fig:SettingAnimationParameters
     :width: 80%
     :align: center
@@ -285,7 +285,7 @@ point on the plane where the revolution begins). By default, the ``Center`` is t
 center of the bounds of the selected objects, the ``Normal`` is the current up direction
 used by the camera, while the origin is the current camera position.
 
-.. figure:: images/ParaViewUsersGuideCameraOrbit.png
+.. figure:: ../images/ParaViewUsersGuideCameraOrbit.png
     :name: fig:CreatingCameraOrbit
     :width: 80%
     :align: center
@@ -305,7 +305,7 @@ in the 3D view that can be used to set the path. Use |CTRL| + :kbd:`Left Click` 
 insert new control points, and |SHIFT| + :kbd:`Left Click` to remove control
 points. You can also toggle when the path should be closed or not.
 
-.. figure:: images/ParaViewUsersGuideCameraPath.png
+.. figure:: ../images/ParaViewUsersGuideCameraPath.png
     :name: fig:CreatingCameraPath
     :width: 80%
     :align: center

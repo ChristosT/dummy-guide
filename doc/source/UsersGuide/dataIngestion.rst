@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:LoadingData:
 
@@ -28,10 +28,10 @@ This dialog can be accessed from the :guilabel:`File > Open` menu or by using th
 |OpenFileIcon| button in the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar. You can
 also use the keyboard shortcut |CTRL| + :kbd:`O` (or |CMD| + :kbd:`O`) to open this dialog.
 
-.. |OpenFileIcon| image:: images/OpenFileIcon.png
+.. |OpenFileIcon| image:: ../images/OpenFileIcon.png
                   :width: 0.5cm
 
-.. figure:: images/OpenFileDialog.png
+.. figure:: ../images/OpenFileDialog.png
     :name: fig-OpenFileDialog
     :width: 100%
     :align: center
@@ -68,11 +68,11 @@ If you selected multiple files using the |CTRL| (or |CMD|) key,
 ``Apply`` :index:`\ <Apply>`\ , all of the readers will be executed, and their data will be shown in the view.
 
 
-.. figure:: images/OpenFileGroupSelect.png
+.. figure:: ../images/OpenFileGroupSelect.png
     :width: 80%
     :align: center
 
-.. figure:: images/OpenFileMultiSelect.png
+.. figure:: ../images/OpenFileMultiSelect.png
     :width: 80%
     :align: center
     :name: fig:OpenFileSelectingMultipleFiles
@@ -104,7 +104,7 @@ messages either when the reader module is instantiated or after you hit
 ``Apply`` :index:`\ <Apply>`\ . In either case, you can simply  ``Delete`` :index:`\ <Delete>`\  the reader module and try
 opening the file again, this time choosing a different reader.
 
-.. figure:: images/OpenDataWithDialog.png
+.. figure:: ../images/OpenDataWithDialog.png
     :name: fig:OpenDataWithDialog
     :width: 100%
     :align: center
@@ -122,7 +122,7 @@ be attached, or docked, in the main window so that it is visible with the
 other user interface elements without covering them up.
 :index:`\ <Output Messages>`\  :index:`\ <Error Messages>`\ 
 
-.. figure:: images/OutputMessagesWindow.png
+.. figure:: ../images/OutputMessagesWindow.png
     :name: fig:OutputMessagesWindow
     :width: 100%
     :align: center
@@ -168,10 +168,10 @@ on the  ``VCR Controls`` :index:`\ <VCR Controls>`\  toolbar (:numref:`fig:VCRCo
 You can change or modify this animation and
 further customize it, as discussed in Chapter :numref:`chapter:Animation`.
 
-.. |pqVcrPlay32| image:: images/pqVcrPlay32.png
+.. |pqVcrPlay32| image:: ../images/pqVcrPlay32.png
                   :width: 0.5cm
 
-.. figure:: images/VCRControlsToolbar.png
+.. figure:: ../images/VCRControlsToolbar.png
     :name: fig:VCRControlsToolbar
     :width: 30%
     :align: center
@@ -222,7 +222,7 @@ properties commonly available in readers.
 Selecting data arrays
 ---------------------
 
-.. figure:: images/ArraySelectionWidget.png
+.. figure:: ../images/ArraySelectionWidget.png
     :name: fig:ArrayStatusWidget
     :width: 40%
     :align: center
@@ -244,7 +244,7 @@ the filters in the pipeline do not have to process them.
   selecting the  ``Load All Variables`` :index:`\ <Load All Variables>`\  checkbox under
   ``Settings/Properties Panel Options/Advanced`` :index:`\ <Settings/Properties Panel Options/Advanced>`\ .
 
-  .. figure:: images/AdvancedSettings.png
+  .. figure:: ../images/AdvancedSettings.png
     :name: fig-AdvancedSettings
     :width: 80%
     :align: center
@@ -256,10 +256,10 @@ are often
 used in this widget to give you an indication of whether the array is
 cell-centered or point-centered, respectively.
 
-.. |CellDataIcon| image:: images/pqCellData16.png
+.. |CellDataIcon| image:: ../images/pqCellData16.png
                   :width: 0.5cm
 
-.. |NodalDataIcon| image:: images/pqNodalData16.png
+.. |NodalDataIcon| image:: ../images/pqNodalData16.png
                    :width: 0.5cm
 
 If you initially de-select an array, but then as you're setting up your visualization pipeline
@@ -282,7 +282,7 @@ widget to make it get the *focus*. Then type |CTRL| + :kbd:`F` (or
 |CMD| + :kbd:`F`) to get a search widget. Now you can type in the text to
 search. Matching rows will be highlighted (:numref:`fig:SearchInLists`).
 
-.. figure:: images/SearchInLists.png
+.. figure:: ../images/SearchInLists.png
     :name: fig:SearchInLists
     :width: 40%
     :align: center
@@ -539,7 +539,7 @@ where the simulation may have modified existing file(s).
 Use  ``Find new files`` :index:`\ <Find new files>`\  to make the reader aware of any new files in the
 file series.
 
-.. figure:: images/ReloadOptions.png
+.. figure:: ../images/ReloadOptions.png
     :name: fig:ReloadOptions
     :width: 50%
     :align: center

@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:FilteringData:
 .. _ch:FilteringData:
@@ -39,7 +39,7 @@ interpolate is ingested. The other, called  ``Source`` :index:`\ <Source>`\ , is
 through which the dataset used as the mesh on which to re-sample is accepted.)
 
 
-.. figure:: images/UnderstandingFilters.png
+.. figure:: ../images/UnderstandingFilters.png
     :name: fig:UnderstandingFilters
     :width: 40%
     :align: center
@@ -84,7 +84,7 @@ does not produce data that can be transformed by this filter.
     by the filter. On Windows and Linux machines, if you hover over the disabled
     menu item, the status bar will show the reason why the filter is not available.
 
-    .. figure:: images/DisabledFilterStatusBar.png
+    .. figure:: ../images/DisabledFilterStatusBar.png
       :width: 70%
       :align: center
 
@@ -105,7 +105,7 @@ accept multiple connections on their input ports will be enabled in the
   browser explaining how to interpret pipelines in the Pipeline browser and how to
   use it e.g. right clicking, selections etc.}
 
-.. figure:: images/PipelineBrowserMultipleConnections.png
+.. figure:: ../images/PipelineBrowserMultipleConnections.png
     :name: fig:PipelineBrowserMultipleConnections
     :width: 30%
     :align: center
@@ -129,7 +129,7 @@ This dialog allows you to select the pipeline modules to be
 connected to each of the input ports. The active source(s) is connected by
 default to the first input port. You are free to change those as well.
 
-.. figure:: images/ChangeInputDialog.png
+.. figure:: ../images/ChangeInputDialog.png
     :name: fig:ChangeInputDialog
     :width: 80%
     :align: center
@@ -153,7 +153,7 @@ Input...>`\ . This will pop up the same  ``Change Input Dialog`` :index:`\ <Chan
 filter with multiple input ports. You can use this dialog to set new inputs
 for this filter.
 
-.. figure:: images/ChangeInputContextMenu.png
+.. figure:: ../images/ChangeInputContextMenu.png
     :name: fig:ChangeInputContextMenu
     :width: 80%
     :align: center
@@ -184,7 +184,7 @@ for this filter.
   creating the filter and then clicking the  ``Apply`` :index:`\ <Apply>`\  button.
 
 
-  .. figure:: images/QuickLaunchDialog.png
+  .. figure:: ../images/QuickLaunchDialog.png
        :width: 50%
        :align: center
 
@@ -360,7 +360,7 @@ datasets.
 Clip in ``paraview``
 --------------------
 
-.. figure:: images/CrinkleClipComparison.png
+.. figure:: ../images/CrinkleClipComparison.png
     :name: fig:CrinkleClipComparison
     :width: 80%
     :align: center
@@ -376,10 +376,10 @@ the :guilabel:`Filters > Alphabetical` menu. This filter is also accessible from
 ``Common`` :index:`\ <Common>`\  filters toolbar. You can click the |pqClip24| button to create
 this filter.
 
-.. |pqClip24| image:: images/pqClip24.png
+.. |pqClip24| image:: ../images/pqClip24.png
               :width: 0.5cm
 
-.. figure:: images/CommonFiltersToolbar.png
+.. figure:: ../images/CommonFiltersToolbar.png
     :name: fig:CommonFiltersToolbar
     :width: 80%
     :align: center
@@ -524,7 +524,7 @@ in |pvpython|.
 Slice
 ^^^^^
 
-.. figure:: images/SliceComparisons.png
+.. figure:: ../images/SliceComparisons.png
     :name: fig:SliceComparisons
     :width: 80%
     :align: center
@@ -572,13 +572,13 @@ In |paraview|, this filter can be created using the
 |pqSlice24| button on the  ``Common`` :index:`\ <Common>`\  filters toolbar, besides the
 :guilabel:`Filters` menu.
 
-.. |pqSlice24| image:: images/pqSlice24.png
+.. |pqSlice24| image:: ../images/pqSlice24.png
                :width: 0.5cm
 
 Extract Subset
 ^^^^^^^^^^^^^^
 
-.. figure:: images/ExtractSubsetPanel.png
+.. figure:: ../images/ExtractSubsetPanel.png
     :name: fig:ExtractSubsetPanel
     :width: 80%
     :align: center
@@ -611,13 +611,13 @@ and  ``Sample Rate K`` :index:`\ <Sample Rate K>`\  specify the sub-sampling rat
 included in the extracted result, if the sub-sampling rate along that dimension
 is greater than 1, and the boundary slab would otherwise have been skipped.
 
-.. |pqExtractGrid24| image:: images/pqExtractGrid24.png
+.. |pqExtractGrid24| image:: ../images/pqExtractGrid24.png
                      :width: 0.5cm
 
 Threshold
 ^^^^^^^^^
 
-.. figure:: images/ThresholdResult.png
+.. figure:: ../images/ThresholdResult.png
     :name: fig:ThresholdResult
     :width: 80%
     :align: center
@@ -640,7 +640,7 @@ that passes the thresholding criteria are passed through.
 Threshold in ``paraview``
 -------------------------
 
-.. figure:: images/ThresholdPanel.png
+.. figure:: ../images/ThresholdPanel.png
     :name: fig:ThresholdPanel
     :width: 40%
     :align: center
@@ -655,13 +655,13 @@ in the input boxes. The values are deliberately not clamped to the current data
 range. The  ``Scalars`` :index:`\ <Scalars>`\  combo-box uses icons to help you differentiate between
 point data arrays |pqNodalData16| and cell data arrays |pqCellData16|
 
-.. |pqThreshold24| image:: images/pqThreshold24.png
+.. |pqThreshold24| image:: ../images/pqThreshold24.png
                    :width: 0.5cm
 
-.. |pqNodalData16| image:: images/pqNodalData16.png
+.. |pqNodalData16| image:: ../images/pqNodalData16.png
                    :width: 0.5cm
 
-.. |pqCellData16| image:: images/pqCellData16.png
+.. |pqCellData16| image:: ../images/pqCellData16.png
                   :width: 0.5cm
 
 Threshold in ``pvpython``
@@ -752,7 +752,7 @@ Once created, you can set the transform as the translation, rotation, and scale
 to use utilizing the  ``Properties`` :index:`\ <Properties>`\  panel. Similar to  ``Clip`` :index:`\ <Clip>`\ , this filter also
 supports using a 3D widget to interactively set the transformation.
 
-.. figure:: images/TransformWithWidget.png
+.. figure:: ../images/TransformWithWidget.png
     :name: fig:TransformWithWidget
     :width: 40%
     :align: center
@@ -776,7 +776,7 @@ Transform  in ``pvpython``
 Reflect
 ^^^^^^^
 
-.. figure:: images/ReflectFilter.png
+.. figure:: ../images/ReflectFilter.png
     :name: fig:ReflectFilter
     :width: 40%
     :align: center
@@ -798,7 +798,7 @@ datasets.
 Warp By Vector
 ^^^^^^^^^^^^^^
 
-.. figure:: images/WarpByVector.png
+.. figure:: ../images/WarpByVector.png
     :name: fig:WarpByVector
     :width: 40%
     :align: center
@@ -846,7 +846,7 @@ will result in the glyphs not being oriented). Similarly, you select a point arr
 to serve as the glyph  ``Scale Array`` :index:`\ <Scale Array>`\  (no scaling is performed if  ``No scale array`` :index:`\ <No scale array>`\ 
 is chosen).
 
-.. |pqGlyph24| image:: images/pqGlyph24.png
+.. |pqGlyph24| image:: ../images/pqGlyph24.png
                :width: 0.5cm
 
 If the  ``Scale Array`` :index:`\ <Scale Array>`\  is set to a vector array, the  ``Vector Scale Mode`` :index:`\ <Vector Scale Mode>`\ 
@@ -856,7 +856,7 @@ at a point will be scaled by the magnitude of the vector at that point. If
 ``Scale by Components`` :index:`\ <Scale by Components>`\  is chosen, glyphs will be scaled separately in each
 dimension by the vector component in that dimension.
 
-.. figure:: images/GlyphPropertiesPanel.png
+.. figure:: ../images/GlyphPropertiesPanel.png
     :name: fig:GlyphPropertiesPanel
     :width: 80%
     :align: center
@@ -873,7 +873,7 @@ button next to the  ``Scale Factor`` :index:`\ <Scale Factor>`\  widget to have 
 pick a usually reasonable scale factor value based on the current dataset and
 scaling properties.
 
-.. |ReloadButton| image:: images/ReloadButton.png
+.. |ReloadButton| image:: ../images/ReloadButton.png
                   :width: 0.5cm
 
 The  ``Masking`` :index:`\ <Masking>`\  properties control which points from the input
@@ -898,7 +898,7 @@ glyphs (:numref:`fig:GlyphModesComparison`). The available options are as follow
   generate the sample points. This ensures that the random sample points are
   reproducible and consistent.
 
-.. figure:: images/GlyphModesComparison.png
+.. figure:: ../images/GlyphModesComparison.png
     :name: fig:GlyphModesComparison
     :width: 80%
     :align: center
@@ -928,7 +928,7 @@ Browser>`\ . To use this filter, select the data source you wish to glyph in the
 where you can set the  ``Input`` :index:`\ <Input>`\  (which defaults to the source you selected) and
 the  ``Glyph Source`` :index:`\ <Glyph Source>`\ .
 
-.. figure:: images/GlyphWithCustomSourceInputDialog.png
+.. figure:: ../images/GlyphWithCustomSourceInputDialog.png
     :width: 80%
     :align: center
     
@@ -937,7 +937,7 @@ the  ``Glyph Source`` :index:`\ <Glyph Source>`\ .
 Stream Tracer
 ^^^^^^^^^^^^^
 
-.. figure:: images/StreamlinesInParaView.png
+.. figure:: ../images/StreamlinesInParaView.png
     :name: fig:StreamlinesInParaView
     :width: 80%
     :align: center
@@ -969,10 +969,10 @@ integration, including specifying the step size and others. You use the
 ``Maximum Streamline Length`` :index:`\ <Maximum Streamline Length>`\  to limit the maximum length for the streamline --
 the longer the length, the longer the generated streamlines.
 
-.. |pqStreamTracer24| image:: images/pqStreamTracer24.png
+.. |pqStreamTracer24| image:: ../images/pqStreamTracer24.png
                       :width: 0.5cm
 
-.. figure:: images/StreamlinesPropertiesPanel.png
+.. figure:: ../images/StreamlinesPropertiesPanel.png
     :width: 80%
     :align: center
     
@@ -1037,7 +1037,7 @@ another data producer, use the  ``Stream Tracer With Custom Source`` :index:`\ <
 ``Glyph With Custom Source`` :index:`\ <Glyph With Custom Source>`\ , this filter allows you to pick a second input
 connection to use as the seed points.
 
-.. figure:: images/StreamTracerWithCustomSource.png
+.. figure:: ../images/StreamTracerWithCustomSource.png
     :name: fig:StreamTracerWithCustomSource
     :width: 80%
     :align: center
@@ -1048,7 +1048,7 @@ connection to use as the seed points.
 Resample With Dataset
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ResampleWithDataset.png
+.. figure:: ../images/ResampleWithDataset.png
     :name: fig:ResampleWithDatasetExample
     :width: 80%
     :align: center
@@ -1076,14 +1076,14 @@ uniform grid of points. The bounds and extents of the uniform grid can be
 specified using the properties panel. By default, the bounds are set to the
 bounds of the input dataset. The output of the filter is an Image dataset.
 
-.. figure:: images/ResampleToImageProperties.png
+.. figure:: ../images/ResampleToImageProperties.png
     :name: fig:ResampleToImageProperties
     :width: 80%
     :align: center
     
     The  ``Properties`` :index:`\ <Properties>`\  panel for  ``Resample To Image`` :index:`\ <Resample To Image>`\  filter.
 
-.. figure:: images/ResampleToImageExample.png
+.. figure:: ../images/ResampleToImageExample.png
     :name: fig:ResampleToImageExample
     :width: 80%
     :align: center
@@ -1109,7 +1109,7 @@ specified using the interactive 3D widget shown in the active  ``Render View`` :
 Plot over line
 ^^^^^^^^^^^^^^
 
-.. figure:: images/PlotOverLineInParaView.png
+.. figure:: ../images/PlotOverLineInParaView.png
     :name: fig:PlotOverLineInParaView
     :width: 80%
     :align: center
@@ -1193,7 +1193,7 @@ A common use-case is to convert three input scalars into a vector array. For tha
 the  ``Function`` :index:`\ <Function>`\  would look something like:
 :math:`scalar_x * iHat + scalar_y * jHat +  scalar_z * kHat`.
 
-.. figure:: images/CalculatorInParaView.png
+.. figure:: ../images/CalculatorInParaView.png
     :name: fig:CalculatorInParaView
     :width: 80%
     :align: center
@@ -1217,7 +1217,7 @@ property.
 Python calculator
 ^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ParaView_UG_Python_calculator.png
+.. figure:: ../images/ParaView_UG_Python_calculator.png
     :name: fig:PythonCalculator
     :width: 80%
     :align: center
@@ -1668,7 +1668,7 @@ subcategories. It supports drag'n'drop operation to sort and move filters and ca
 Moreover,  ``Favorites`` :index:`\ <Favorites>`\  are highlighted in the other filter submenus on supported platforms.
 Favorites are saved in user settings so they can be used in other subsequent ParaView sessions.
 
-.. figure:: images/FavoritesManager.png
+.. figure:: ../images/FavoritesManager.png
     :name: fig:FavoritesManager
     :width: 60%
     :align: center

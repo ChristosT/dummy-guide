@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:SavingResults:
 
@@ -31,10 +31,10 @@ will allow you to select the filename and the file format.
 The available list of file formats depends on the type of the dataset you are
 trying to save.
 
-.. |pqSave32| image:: images/pqSave32.png
+.. |pqSave32| image:: ../images/pqSave32.png
               :width: 0.5cm
 
-.. figure:: images/SaveFileDialog.png
+.. figure:: ../images/SaveFileDialog.png
     :name: fig:SaveFileDialog
     :width: 80%
     :align: center
@@ -48,7 +48,7 @@ writing process. The properties shown in this dialog depend on the selected file
 format and range from enabling you to  ``Write All Time Steps`` :index:`\ <Write All Time Steps>`\ , to selecting
 the attributes to write in the output file.
 
-.. figure:: images/ConfigureWriterDialogCSV.png
+.. figure:: ../images/ConfigureWriterDialogCSV.png
     :name: fig:ConfigureWriterDialogCSV
     :width: 80%
     :align: center
@@ -100,7 +100,7 @@ and format to which the screenshot should be saved. After selecting the image fi
 be shown. This dialog allows you to select various parameters that controls what
 image is saved out and how.
 
-.. figure:: images/SaveScreenshotOptions.png
+.. figure:: ../images/SaveScreenshotOptions.png
     :name: fig:SaveScreenshotOptions
     :width: 80%
     :align: center
@@ -149,7 +149,7 @@ Screenshot Options`` :index:`\ <Save
 Screenshot Options>`\  dialog has a few more options as shown in
 :numref:`fig:SaveScreenshotOptionsMultiView`.
 
-.. figure:: images/SaveScreenshotOptionsMultiView.png
+.. figure:: ../images/SaveScreenshotOptionsMultiView.png
     :name: fig:SaveScreenshotOptionsMultiView
     :width: 80%
     :align: center
@@ -218,7 +218,7 @@ easiest way).
 Saving animation
 ================
 
-.. figure:: images/SaveAnimationOptions.png
+.. figure:: ../images/SaveAnimationOptions.png
     :name: fig:SaveAnimationOptions
     :width: 80%
     :align: center
@@ -286,7 +286,7 @@ Python script. Python state files, on the other hand, save the entire current st
 application as a Python script that you can use in |paraview| or the
 ``Python Shell`` :index:`\ <Python Shell>`\ .
 
-.. figure:: images/SaveStateDialog.png
+.. figure:: ../images/SaveStateDialog.png
     :name: fig:SaveStateDialog
     :width: 80%
     :align: center
@@ -296,7 +296,7 @@ application as a Python script that you can use in |paraview| or the
 To load a state file, you use the :guilabel:`File > Load State...` menu.
 Note that loading a state file will affect the current visualization state.
 
-.. figure:: images/LoadStateOptions.png
+.. figure:: ../images/LoadStateOptions.png
     :name: fig:LoadStateOptions
     :width: 80%
     :align: center
@@ -315,7 +315,7 @@ location of the state file to make sharing state files between computers easier.
 ``Choose File Names`` :index:`\ <Choose File Names>`\  then you will be given a list of file names in the state file and can override
 each one individually.
 
-.. figure:: images/LoadStateOptionsDataDirectory.png
+.. figure:: ../images/LoadStateOptionsDataDirectory.png
     :name: fig:LoadStateOptionsDataDirectory
     :width: 80%
     :align: center

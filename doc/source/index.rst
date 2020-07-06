@@ -3,23 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ParaView Users Guide!
-================================================
-.. include:: macros.hrst
+Welcome to ParaView Documentation !
+===================================
 
 .. toctree::
-   :numbered:
    :maxdepth: 2
-   :caption: Contents:
+   :caption: ParaView User's Guide
 
-   introduction
-   dataIngestion
-   understandingData
-   displayingData
-   filteringData
-   selectingData
-   animation
-   savingResults
+   UsersGuide/index.rst
+   
+.. .. toctree::
+      :numbered:
+      :maxdepth: 2
+      :caption: ParaView Reference Manual
+
+      ReferenceManual/index.rst
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Appendix
 
    references
 

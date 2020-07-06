@@ -1,5 +1,5 @@
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:SelectingData:
 
@@ -43,7 +43,7 @@ selection means that you select an element from a dataset in a specific view.
 All other views that are showing the *same* dataset will also highlight the
 selected elements.
 
-.. figure:: images/UnderstandingLinkedSelections.png
+.. figure:: ../images/UnderstandingLinkedSelections.png
     :name: fig:UnderstandingLinkedSelections
     :width: 80%
     :align: center
@@ -148,25 +148,25 @@ release the mouse,
 |ParaView| will attempt to create a selection for any elements in the selection
 region and will go back to default interaction mode.
 
-.. |pqSurfaceSelectionCell24| image:: images/pqSurfaceSelectionCell24.png
+.. |pqSurfaceSelectionCell24| image:: ../images/pqSurfaceSelectionCell24.png
                               :width: 0.5cm
 
-.. |pqSurfaceSelectionPoint24| image:: images/pqSurfaceSelectionPoint24.png
+.. |pqSurfaceSelectionPoint24| image:: ../images/pqSurfaceSelectionPoint24.png
                                :width: 0.5cm
 
-.. |pqSelectBlock24| image:: images/pqSelectBlock24.png
+.. |pqSelectBlock24| image:: ../images/pqSelectBlock24.png
                      :width: 0.5cm
 
-.. |pqFrustumSelectionCell24| image:: images/pqFrustumSelectionCell24.png
+.. |pqFrustumSelectionCell24| image:: ../images/pqFrustumSelectionCell24.png
                               :width: 0.5cm
 
-.. |pqFrustumSelectionPoint24| image:: images/pqFrustumSelectionPoint24.png
+.. |pqFrustumSelectionPoint24| image:: ../images/pqFrustumSelectionPoint24.png
                                :width: 0.5cm
 
-.. |pqPolygonSelectSurfaceCell24| image:: images/pqPolygonSelectSurfaceCell24.png
+.. |pqPolygonSelectSurfaceCell24| image:: ../images/pqPolygonSelectSurfaceCell24.png
                                   :width: 0.5cm
 
-.. |pqPolygonSelectSurfacePoint24| image:: images/pqPolygonSelectSurfacePoint24.png
+.. |pqPolygonSelectSurfacePoint24| image:: ../images/pqPolygonSelectSurfacePoint24.png
                                    :width: 0.5cm
 
 
@@ -209,13 +209,13 @@ interactively select cells of the dataset and use
 |pqSurfaceSelectionPointInteractive| button to
 interactively select points.
 
-.. |pqSurfaceSelectionCellInteractive| image:: images/pqSurfaceSelectionCellInteractive.png
+.. |pqSurfaceSelectionCellInteractive| image:: ../images/pqSurfaceSelectionCellInteractive.png
                                        :width: 0.5cm
 
-.. |pqSurfaceSelectionPointInteractive| image:: images/pqSurfaceSelectionPointInteractive.png
+.. |pqSurfaceSelectionPointInteractive| image:: ../images/pqSurfaceSelectionPointInteractive.png
                                         :width: 0.5cm
 
-.. |ClearSelection| image:: images/ClearSelection.png
+.. |ClearSelection| image:: ../images/ClearSelection.png
                     :width: 0.5cm
 
 When there are selected elements, the |ClearSelection|
@@ -227,7 +227,7 @@ frustum-based cell selection, and :kbd:`G` for frustum-based point selection. If
 you notice, these are keys are right next to each other on the keyboard,
 starting with :kbd:`S`, and are in the same order as the toolbar buttons themselves.
 
-.. figure:: images/FrustumCellSelection.png
+.. figure:: ../images/FrustumCellSelection.png
     :name: fig:FrustumCellSelection
     :width: 80%
     :align: center
@@ -287,22 +287,22 @@ click to unpress them or until you press another modifier button.
 |CTRL| (or |CMD|) and |SHIFT| can also be used to
 add to/subtract from the selection.
 
-.. |pqSelectChart16| image:: ./images/pqSelectChart16.png
+.. |pqSelectChart16| image:: ./../images/pqSelectChart16.png
                      :width: 0.5cm
 
-.. |pqSelectChartPlus16| image:: ./images/pqSelectChartPlus16.png
+.. |pqSelectChartPlus16| image:: ./../images/pqSelectChartPlus16.png
                          :width: 0.5cm
 
-.. |pqSelectChartMinus16| image:: ./images/pqSelectChartMinus16.png
+.. |pqSelectChartMinus16| image:: ./../images/pqSelectChartMinus16.png
                           :width: 0.5cm
 
-.. |pqSelectChartToggle16| image:: ./images/pqSelectChartToggle16.png
+.. |pqSelectChartToggle16| image:: ./../images/pqSelectChartToggle16.png
                            :width: 0.5cm
 
-.. |pqSelectChartPolygon16| image:: ./images/pqSelectChartPolygon16.png
+.. |pqSelectChartPolygon16| image:: ./../images/pqSelectChartPolygon16.png
                             :width: 0.5cm
 
-.. figure:: images/SelectingInLineChartView.png
+.. figure:: ../images/SelectingInLineChartView.png
     :name: fig:SelectingInLineChartView
     :width: 80%
     :align: center
@@ -327,7 +327,7 @@ The  ``Find Data`` :index:`\ <Find Data>`\  dialog can be accessed from the :gui
 keyboard shortcut :kbd:`V` or the |pqFindData32|
 button on the  ``Main Controls`` :index:`\ <Main Controls>`\  toolbar.
 
-.. |pqFindData32| image:: ./images/pqFindData32.png
+.. |pqFindData32| image:: ./../images/pqFindData32.png
                   :width: 0.5cm
 
 The  ``Find Data`` :index:`\ <Find Data>`\  dialog can be split into three components,
@@ -338,7 +338,7 @@ results from the most recent selection results in a spreadsheet. Finally, the
 ``Selection Display Properties`` :index:`\ <Selection Display Properties>`\  component allows you to control how the
 selected elements are shown in the active view.
 
-.. figure:: images/FindDataDialog.png
+.. figure:: ../images/FindDataDialog.png
     :name: fig:FindDataDialog
     :width: 80%
     :align: center
@@ -399,10 +399,10 @@ control on the label formatting, color, font, etc., use the
 ``Advanced Selection Display Properties`` :index:`\ <Advanced Selection Display Properties>`\  dialog
 ( :numref:`fig:AdvancedSelectionDisplayPropertiesDialog`).
 
-.. |pqAdvanced26| image:: ./images/pqAdvanced26.png
+.. |pqAdvanced26| image:: ./../images/pqAdvanced26.png
                   :width: 0.5cm
 
-.. figure:: images/AdvancedSelectionDisplayPropertiesDialog.png
+.. figure:: ../images/AdvancedSelectionDisplayPropertiesDialog.png
     :name: fig:AdvancedSelectionDisplayPropertiesDialog
     :width: 60%
     :align: center
@@ -547,7 +547,7 @@ selected elements in a spreadsheet view. You can also make a regular
 ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  do the same by checking the |pqSelect32|
 button in the view toolbar to show only selected elements.
 
-.. |pqSelect32| image:: ./images/pqSelect32.png
+.. |pqSelect32| image:: ./../images/pqSelect32.png
                 :width: 0.5cm
 
 Extracting selections
@@ -569,7 +569,7 @@ this category of filters.
 Extract selection
 ^^^^^^^^^^^^^^^^^
 
-.. figure:: images/ExtractSelectionPanel.png
+.. figure:: ../images/ExtractSelectionPanel.png
     :name: fig:ExtractSelectionPanel
     :width: 60%
     :align: center
@@ -602,7 +602,7 @@ check box on the  ``Properties`` :index:`\ <Properties>`\  panel.
 Plot selection over time
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/PlotSelectionOverTime.png
+.. figure:: ../images/PlotSelectionOverTime.png
     :name: fig:PlotSelectionOverTime
     :width: 80%
     :align: center
@@ -630,7 +630,7 @@ change it afterwards using the  ``Copy Active Selection`` :index:`\ <Copy Active
 ``Properties`` :index:`\ <Properties>`\  panel. On hitting  ``Apply`` :index:`\ <Apply>`\ , |paraview| will show a
 visualization similar to the one shown here.
 
-.. |pqPlotSelectionOverTime24| image:: ./images/pqPlotSelectionOverTime24.png
+.. |pqPlotSelectionOverTime24| image:: ./../images/pqPlotSelectionOverTime24.png
                                :width: 0.5cm
 
 Instead of using the view for defining the selection, you could have used the

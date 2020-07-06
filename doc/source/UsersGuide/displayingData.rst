@@ -1,6 +1,6 @@
 
-.. include:: macros.hrst
-.. include:: abbreviations.hrst
+.. include:: ../macros.hrst
+.. include:: ../abbreviations.hrst
 
 .. _chapter:DisplayingData:
 .. _ch:DisplayingData:
@@ -37,7 +37,7 @@ and how to use these views for displaying data.
 Multiple views
 ==============
 
-.. figure:: images/MultipleViewsInParaView.png
+.. figure:: ../images/MultipleViewsInParaView.png
     :name: fig:MultipleViewsInParaView
     :width: 70%
     :align: center
@@ -94,13 +94,13 @@ To pop out an entire tab as a
 separate window, use the |SP_TitleBarMaxButton| button on the
 tab bar.
 
-.. |TabWidgetPlus| image:: images/TabWidgetPlus.png
+.. |TabWidgetPlus| image:: ../images/TabWidgetPlus.png
                    :width: 0.5cm 
 
-.. |SP_TitleBarCloseButton| image:: images/SP_TitleBarCloseButton.png
+.. |SP_TitleBarCloseButton| image:: ../images/SP_TitleBarCloseButton.png
                             :width: 0.5cm 
 
-.. |SP_TitleBarMaxButton| image:: images/SP_TitleBarMaxButton.png
+.. |SP_TitleBarMaxButton| image:: ../images/SP_TitleBarMaxButton.png
                           :width: 0.5cm 
 
 The active view is always present in the active tab. Thus, if you change the
@@ -410,7 +410,7 @@ mapping columns in the table to positions to construct a point cloud, for
 example.
 
 
-.. figure:: images/RenderViewInParaView.png
+.. figure:: ../images/RenderViewInParaView.png
     :name: fig:RenderViewInParaView
     :width: 80%
     :align: center
@@ -525,7 +525,7 @@ Several of the view properties in  ``Render View`` :index:`\ <Render View>`\  co
 in the view (:numref:`fig:RenderViewPropertiesPanel`).
 
 
-.. figure:: images/RenderViewPropertiesPanel.png
+.. figure:: ../images/RenderViewPropertiesPanel.png
     :name: fig:RenderViewPropertiesPanel
     :width: 40%
     :align: center
@@ -539,7 +539,7 @@ this annotation. To control the annotation formatting, labels, etc.,
 click on the  ``Edit Axes Grid...`` :index:`\ <Edit Axes Grid...>`\  button. The  ``Axes Grid`` :index:`\ <Axes Grid>`\  is
 described in Chapter :numref:`chapter:AxesGrid`.
 
-.. figure:: images/RenderViewAxesGrid.png
+.. figure:: ../images/RenderViewAxesGrid.png
     :name: fig:RenderViewAxesGrid
     :width: 50%
     :align: center
@@ -574,7 +574,7 @@ Display properties
 
 .. _sec:RenderView:DisplayProperties:
 
-.. figure:: images/RenderViewDisplayPropertiesRepresentation.png
+.. figure:: ../images/RenderViewDisplayPropertiesRepresentation.png
     :width: 40%
     :align: center
 
@@ -585,7 +585,7 @@ the plugins loaded. While all display properties are accessible from the
 advanced view for the  ``Properties`` :index:`\ <Properties>`\  panel, certain properties may be
 shown/hidden from the default view based on the chosen representation type.
 
-.. figure:: images/WaveletRepresentations.png
+.. figure:: ../images/WaveletRepresentations.png
     :width: 70%
     :name: fig:WaveletRepresentations
     :align: center
@@ -649,10 +649,10 @@ either toggle the panel to show advanced properties using the
 |pqAdvanced26| button or search for it by name using the search
 box.
 
-.. |pqAdvanced26| image:: images/pqAdvanced26.png
+.. |pqAdvanced26| image:: ../images/pqAdvanced26.png
                   :width: 0.5cm
 
-.. figure:: images/RenderViewDisplayPropertiesColoringGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesColoringGroup.png
     :width: 50%
     :align: center
 
@@ -694,7 +694,7 @@ on a per-pixel basis. If off, color mapping occurs at polygon points, and colors
 are interpolated, which is generally less accurate. Refer to the Kitware blog
 :cite:`ColorInterpolationBlogPost` for a detailed explanation of this option.
 
-.. figure:: images/UnderstandingMapScalars.png
+.. figure:: ../images/UnderstandingMapScalars.png
     :name: fig:UnderstandingMapScalars
     :width: 80%
     :align: center
@@ -702,12 +702,12 @@ are interpolated, which is generally less accurate. Refer to the Kitware blog
     The  ``Map Scalars`` :index:`\ <Map Scalars>`\  property can be used to avoid using a transfer function and directly interpreting the array values as colors, if possible.
 
 
-.. figure:: images/PolarAxesCheckbox.png
+.. figure:: ../images/PolarAxesCheckbox.png
     :width: 50%
     :align: center
 
 
-.. figure:: images/PolarAxesEdit.png
+.. figure:: ../images/PolarAxesEdit.png
     :width: 50%
     :align: center
 
@@ -717,7 +717,7 @@ The parameters include angles, tick range, labels, logarithmic mode,
 ellipse ratio and more.
 
 
-.. figure:: images/PolarAxes.png
+.. figure:: ../images/PolarAxes.png
     :name: fig:PolarAxes
     :width: 70%
     :align: center
@@ -725,7 +725,7 @@ ellipse ratio and more.
     A  ``Polar Axes`` :index:`\ <Polar Axes>`\  usage example.
 
 
-.. figure:: images/RenderViewDisplayPropertiesStylingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesStylingGroup.png
     :width: 50%
     :align: center
 
@@ -735,7 +735,7 @@ geometries),  ``Point Size`` :index:`\ <Point Size>`\  (used to control size of 
 of lines when rendering as  ``Wireframe`` :index:`\ <Wireframe>`\  or that of the edges when rendering as
 ``Surface With Edges`` :index:`\ <Surface With Edges>`\ .
 
-.. figure:: images/RenderViewDisplayPropertiesLightingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesLightingGroup.png
     :width: 50%
     :align: center
 
@@ -757,11 +757,11 @@ render shiny, metallic surfaces.
   solid color and not on those using scalar coloring (or
   pseduocoloring).
 
-  .. figure:: images/ScalarColoringAndSpecularHighlights.png
+  .. figure:: ../images/ScalarColoringAndSpecularHighlights.png
       :width: 70%
       :align: center
 
-.. figure:: images/RenderViewDisplayPropertiesEdgeStylingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesEdgeStylingGroup.png
     :width: 50%
     :align: center
 
@@ -769,7 +769,7 @@ render shiny, metallic surfaces.
 ``Edge Styling`` :index:`\ <Edge Styling>`\  allows you to set the  ``Edge Color`` :index:`\ <Edge Color>`\  with which to color the edges
 when using  ``Surface With Edges`` :index:`\ <Surface With Edges>`\  representation.
 
-.. figure:: images/RenderViewDisplayPropertiesBackfaceStylingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesBackfaceStylingGroup.png
     :width: 50%
     :align: center
 
@@ -779,7 +779,7 @@ camera, while a back face is the one facing away from the camera. By choosing to
 ``Cull Frontface`` :index:`\ <Cull Frontface>`\  or  ``Cull Backface`` :index:`\ <Cull Backface>`\ , or by selecting a specific representation
 type to use for the backface, you can customize your visualizations.
 
-.. figure:: images/RenderViewDisplayPropertiesTransformingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesTransformingGroup.png
     :width: 80%
     :align: center
 
@@ -788,7 +788,7 @@ scene without affecting the raw data itself. Thus, if you apply filters on the
 data source, it will indeed be working with the untransformed data. To transform
 the data itself, you should use the  ``Transform`` :index:`\ <Transform>`\  filter.
 
-.. figure:: images/RenderViewDisplayPropertiesMiscellaneousGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesMiscellaneousGroup.png
     :width: 50%
     :align: center
 
@@ -807,7 +807,7 @@ The  ``Triangulate`` :index:`\ <Triangulate>`\  option is useful for rendering o
 non-convex polygons. It comes with some additional processing cost for
 converting polygons to triangles, so it should be used only when necessary.
 
-.. figure:: images/NonLinearSubdivision.png
+.. figure:: ../images/NonLinearSubdivision.png
     :name: fig:NonLinearSubdivision
     :width: 50%
     :align: center
@@ -829,7 +829,7 @@ partitions are used, and the cost of data restribution is avoided. However, if
 the partitions are not sortable in back-to-front order, rendering artifacts may
 occur.
 
-.. figure:: images/RenderViewDisplayPropertiesVolumeRenderingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesVolumeRenderingGroup.png
     :width: 50%
     :align: center
 
@@ -839,7 +839,7 @@ default ( ``Smart`` :index:`\ <Smart>`\ ) should work in most cases, since it at
 volume rendering mode suitable for your data and graphics setup. To enable
 gradient-based shading, check  ``Shade`` :index:`\ <Shade>`\ , if available.
 
-.. figure:: images/RenderViewDisplayPropertiesSlicingGroup.png
+.. figure:: ../images/RenderViewDisplayPropertiesSlicingGroup.png
     :width: 50%
     :align: center
 
@@ -1006,7 +1006,7 @@ properties on a display properties object.
 Line Chart View
 ===============
 
-.. figure:: images/LineChartViewInParaView.png
+.. figure:: ../images/LineChartViewInParaView.png
     :name: fig:LineChartViewInParaView
     :width: 80%
     :align: center
@@ -1135,7 +1135,7 @@ e.g.,  ``Left Axis Use Log Scale`` :index:`\ <Left Axis Use Log Scale>`\  to use
 scale should only be used for an axis with a non-zero positive range, since the log of a
 number less than or equal to 0 is undefined.
 
-.. figure:: images/LineChartViewUsingLogScale.png
+.. figure:: ../images/LineChartViewUsingLogScale.png
     :name: fig:LineChartViewUsingLogScale
     :width: 80%
     :align: center
@@ -1145,7 +1145,7 @@ number less than or equal to 0 is undefined.
 Display properties
 ------------------
 
-.. figure:: images/LineChartViewDisplayPropertiesAttributeType.png
+.. figure:: ../images/LineChartViewDisplayPropertiesAttributeType.png
     :width: 50%
     :align: center
 
@@ -1157,7 +1157,7 @@ different associations cannot be plotted together. You may need to apply filters
 such as  ``Cell Data to Point Data`` :index:`\ <Cell Data to Point Data>`\  or  ``Point Data to Cell Data`` :index:`\ <Point Data to Cell Data>`\  to convert
 arrays between different associations for that.
 
-.. figure:: images/LineChartViewDisplayPropertiesXAxisParametersGroup.png
+.. figure:: ../images/LineChartViewDisplayPropertiesXAxisParametersGroup.png
     :width: 50%
     :align: center
 
@@ -1166,7 +1166,7 @@ variable plotted on the X axis by choosing the  ``X Array Name`` :index:`\ <X Ar
 arrays are appropriate, you can choose to use the element index in the array as
 the X axis by checking  ``Use Index for XAxis`` :index:`\ <Use Index for XAxis>`\ .
 
-.. figure:: images/LineChartViewDisplayPropertiesSeriesParametersGroup.png
+.. figure:: ../images/LineChartViewDisplayPropertiesSeriesParametersGroup.png
     :width: 50%
     :align: center
 
@@ -1270,7 +1270,7 @@ The following script demonstrates the typical usage:
 Bar Chart View
 ==============
 
-.. figure:: images/BarChartViewInParaView.png
+.. figure:: ../images/BarChartViewInParaView.png
     :name: fig:BarChartViewInParaView
     :width: 70%
     :align: center
@@ -1286,7 +1286,7 @@ under the display properties, the  ``Series Parameters`` :index:`\ <Series Param
 Box Chart View
 ==============
 
-.. figure:: images/BoxChartViewInParaView.png
+.. figure:: ../images/BoxChartViewInParaView.png
     :name: fig:BoxChartViewInParaView
     :width: 70%
     :align: center
@@ -1308,7 +1308,7 @@ the view to draw the box plots.
 Plot Matrix View
 ================
 
-.. figure:: images/PlotMatrixViewInParaView.png
+.. figure:: ../images/PlotMatrixViewInParaView.png
     :name: fig:PlotMatrixViewInParaView
     :width: 80%
     :align: center
@@ -1356,7 +1356,7 @@ table. \fixme{add images}
 Parallel Coordinates View
 =========================
 
-.. figure:: images/ParallelCoordinatesViewInParaView.png
+.. figure:: ../images/ParallelCoordinatesViewInParaView.png
     :name: fig:ParallelCoordinatesViewInParaView
     :width: 80%
     :align: center
@@ -1371,7 +1371,7 @@ the factors influencing the data. e.g., with a table of three variables, one bei
 the other two being the potential factor influencing the first, selecting only the output will enable you
 to see if none, one, or both of the factors are actually influencing the output.
 
-.. figure:: images/ParallelCoordinatesViewInParaViewSelection.png
+.. figure:: ../images/ParallelCoordinatesViewInParaViewSelection.png
     :name: fig:ParallelCoordinatesViewInParaViewSelection
     :width: 70%
     :align: center
@@ -1381,7 +1381,7 @@ to see if none, one, or both of the factors are actually influencing the output.
 Spreadsheet View
 ================
 
-.. figure:: images/SpreadSheetViewInParaView.png
+.. figure:: ../images/SpreadSheetViewInParaView.png
     :name: fig:SpreadSheetViewInParaView
     :width: 80%
     :align: center
@@ -1410,10 +1410,10 @@ columns to show/hide.
 If showing  ``Cell Data`` :index:`\ <Cell Data>`\ , the |pqProgrammableFilter24| button, when
 checked, enables you to see the point ids that form each of the cells.
 
-.. |pqRectilinearGrid16| image:: images/pqRectilinearGrid16.png
+.. |pqRectilinearGrid16| image:: ../images/pqRectilinearGrid16.png
                          :width: 0.5cm
 
-.. |pqProgrammableFilter24| image:: images/pqProgrammableFilter24.png
+.. |pqProgrammableFilter24| image:: ../images/pqProgrammableFilter24.png
                             :width: 0.5cm
 
 :numref:`sec:UnderstandingSelection` discusses how selections can be made in
@@ -1423,7 +1423,7 @@ in other views, this  ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  will 
 of the selected elements (as long as the dataset selected in are indeed being shown
 in the view).
 
-.. |pqSelectChart16| image:: images/pqSelectChart16.png
+.. |pqSelectChart16| image:: ../images/pqSelectChart16.png
                      :width: 0.5cm
 
 .. admonition:: **Did you know?**
@@ -1436,7 +1436,7 @@ in the view).
 Slice View
 ==========
 
-.. figure:: images/SliceViewInParaView.png
+.. figure:: ../images/SliceViewInParaView.png
     :name: fig:SliceViewInParaView
     :width: 70%
     :align: center
@@ -1540,7 +1540,7 @@ View`` :index:`\ <Python
 View>`\ . The current datasets loaded into |ParaView| may be accessed
 through the view object.
 
-.. figure:: images/PythonViewInParaView.png
+.. figure:: ../images/PythonViewInParaView.png
     :name: fig:PythonViewInParaView
     :width: 70%
     :align: center
