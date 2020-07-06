@@ -887,3 +887,356 @@ data on each process in the first stage. The results are then assembled with the
 
 The second filter must be able to accept multiple connections and handle the output
 dataset type from the first filter.
+
+.. _sec:Rendering:
+
+Rendering
+=========
+
+Rendering is the process of synthesizing the images that you see based on
+your data.  The ability to effectively interact with your data depends
+highly on the speed of the rendering.  Thanks to advances in 3D hardware
+acceleration, fueled by the computer gaming market, we have the ability to
+render 3D quickly even on moderately-priced computers.  But, of course, the
+speed of rendering is proportional to the amount of data being rendered.
+As data gets bigger, the rendering process naturally gets slower.
+
+.. %\index{rendering!interactive|see{interactive render}}
+   %\index{rendering!still|see{still render}}
+
+To ensure that your visualization session remains interactive, ParaView
+supports two modes of rendering that are automatically flipped as
+necessary.  In the first mode,  **still render** :index:`\ <still render>`\ , the data is rendered
+at the highest level of detail.  This rendering mode ensures that all of
+the data is represented accurately.  In the second mode,
+**interactive render** :index:`\ <interactive render>`\ , speed takes precedence over accuracy.  This
+rendering mode endeavors to provide a quick rendering rate regardless of
+data size.
+
+While you are interacting with a 3D view (for example, rotating, panning, or
+zooming with the mouse), ParaView uses an interactive render.  This is
+because, during the interaction, a high frame rate is necessary to make these
+features usable and because each frame is immediately replaced with a new
+rendering while the interaction is occurring so that fine details are less
+important during this mode.  At any time when interaction of the 3D view is
+not taking place, ParaView uses a still render so that the full detail of
+the data is available as you study it.  As you drag your mouse in a 3D view
+to move the data, you may see an approximate rendering.
+The full detail will be presented as soon as you release the
+mouse button.
+
+The interactive render is a compromise between speed and accuracy.  As
+such, many of the rendering parameters concern when and how lower levels of
+detail are used.
+
+.. _sec:BasicRenderingSettings:
+
+Basic Rendering Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some of the most important rendering options are the LOD parameters.
+During interactive rendering, the geometry may be replaced with a lower
+**level of detail** :index:`\ <level of detail>`\  ( **LOD** :index:`\ <LOD>`\ ), an approximate geometry with
+fewer polygons.
+
+|LODFULL| |LOD50| |LOD10|
+
+.. |LODFULL| image:: ../images/GeometricLODFull.png
+    :width: 30%
+
+.. |LOD50| image:: ../images/GeometricLOD50.png
+    :width: 30%
+
+.. |LOD10| image:: ../images/GeometricLOD10.png
+    :width: 30%
+
+The resolution of the geometric approximation can be controlled. In the
+proceeding images, the left image is the full resolution, the middle image
+is the default decimation for interactive rendering, and the right image is
+ParaView's maximum decimation setting.
+
+The 3D rendering parameters are located in the settings dialog box, which is
+accessed in the menu from the :guilabel:`Edit > Settings` menu
+(:guilabel:`ParaView > Preferences` on the Mac).  The rendering options in the dialog
+are in the  ``Render View`` :index:`\ <Render View>`\  tab.
+
+.. figure:: ../images/SettingsRendering.png
+    :width: 80%
+    :align: center
+
+
+The options pertaining to the geometric decimation for interactive
+rendering are located in a section labeled  ``Interactive Rendering Options`` :index:`\ <Interactive Rendering Options>`\ .
+Some of these options are considered advanced, so to access
+them, you have to either toggle on the advanced options with the
+|pqAdvanced26| button or search for the option using the edit box at
+the top of the dialog. The interactive rendering options include the
+following.
+
+.. |pqAdvanced26| image:: ../images/pqAdvanced26.png
+                  :width: 0.5cm
+
+* ``LOD Threshold`` :index:`\ <LOD Threshold>`\ : Set the data size at which to use a decimated
+  geometry in interactive rendering. If the geometry size is under this
+  threshold, ParaView always renders the full geometry. Increase this value
+  if you have a decent graphics card that can handle larger data. Try
+  decreasing this value if your interactive renders are too slow.
+* ``LOD Resolution`` :index:`\ <LOD Resolution>`\ : Set the factor that controls how large the
+  decimated geometry should be. This control is set to a value between 0
+  and 1. 0 produces a very small number of triangles but, possibly, with a
+  lot of distortion. 1 produces more detailed surfaces but with larger
+  geometry. |pqAdvanced26| 
+* ``Non Interactive Render Delay`` :index:`\ <Non Interactive Render Delay>`\ : Add a delay between an interactive
+  render and a still render. ParaView usually performs a still render
+  immediately after an interactive motion is finished (for example,
+  releasing the mouse button after a rotation). This option can add a delay
+  that can give you time to start a second interaction before the still
+  render starts, which is helpful if the still render takes a long time to
+  complete. |pqAdvanced26|
+* ``Use Outline For LOD Rendering`` :index:`\ <Use Outline For LOD Rendering>`\ : Use an outline in place of
+  decimated geometry. The outline is an alternative for when the geometry
+  decimation takes too long or still produces too much geometry. However, it
+  is more difficult to interact with just an outline.
+
+ParaView contains many more rendering settings. Here is a summary of some
+other settings that can effect the rendering performance regardless of
+whether ParaView is run in client-server mode or not. These options are
+spread among several categories, and several are considered advanced.
+
+* ``Translucent Rendering Options`` :index:`\ <Translucent Rendering Options>`\
+    * ``Depth Peeling`` :index:`\ <Depth Peeling>`\ : Enable or disable depth peeling. Depth
+      peeling is a technique ParaView uses to properly render translucent
+      surfaces. With it, the top surface is rendered and then "peeled away"
+      so that the next lower surface can be rendered and so on.  If you find
+      that making surfaces transparent really slows things down or renders
+      completely incorrectly, then your graphics hardware may not be
+      implementing the depth peeling extensions well; try shutting off depth
+      peeling. |pqAdvanced26|
+
+    * ``Depth Peeling for Volumes`` :index:`\ <Depth Peeling for Volumes>`\ : Include volumes in depth peeling to
+      correctly intermix volumes and translucent polygons.
+
+    * ``Maximum Number Of Peels`` :index:`\ <Maximum Number Of Peels>`\ : Set the maximum number of peels to use with depth peeling. Using
+      more peels allows more depth complexity, but allowing less peels runs
+      faster. You can try adjusting this parameter if translucent geometry
+      renders too slow or translucent images do not look correct. |pqAdvanced26|
+* ``Miscellaneous`` :index:`\ <Miscellaneous>`\ 
+    * ``Outline Threshold`` :index:`\ <Outline Threshold>`\ : When creating very large datasets, default to the outline
+      representation. Surface representations usually require ParaView to
+      extract geometry of the surface, which takes time and memory. For data
+      with sizes above this threshold, use the outline representation, which
+      has very little overhead, by default instead.
+
+    * ``Show Annotation`` :index:`\ <Show Annotation>`\ : Show or hide annotation providing
+      rendering performance information. This information is handy when
+      diagnosing performance problems. |pqAdvanced26|
+
+Note that this is not a complete list of ParaView rendering settings. We
+have left out settings that do not significantly affect rendering
+performance. We have also left out settings that are only valid for
+parallel client-server rendering, which are discussed in
+:numref:`sec:ParallelRenderParameters`.
+
+Basic Parallel Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. %\index{rendering!parallel|(}
+
+When performing parallel visualization, we are careful to ensure that the
+data remains partitioned among all of the processes up to and including
+the rendering processes.  ParaView uses a parallel rendering library called
+**IceT** :index:`\ <IceT>`\ .  IceT uses a  **sort-last** :index:`\ <sort-last>`\  algorithm for parallel
+rendering.  This parallel rendering algorithm has each process
+independently render its partition of the geometry and then
+**composites** :index:`\ <composites>`\  the partial images together to form the final image.
+
+.. figure:: ../images/ParallelRendering.png
+    :width: 80%
+    :align: center
+
+The preceding diagram is an oversimplification.  IceT contains multiple
+parallel image compositing algorithms such as  **binary tree** :index:`\ <binary tree>`\ ,
+**binary swap** :index:`\ <binary swap>`\ , and  **radix-k** :index:`\ <radix-k>`\  that efficiently divide work
+among processes using multiple phases.
+
+.. figure:: ../images/ParallelRenderingDetail.png
+    :width: 80%
+    :align: center
+
+The wonderful thing about sort-last parallel rendering is that its
+efficiency is completely insensitive to the amount of data being rendered.
+This makes it a very scalable algorithm and well suited to large data.
+However, the parallel rendering overhead does increase linearly with the
+number of pixels in the image.  Consequently, some of the rendering
+parameters deal with the image size.
+
+.. figure:: ../images/ParallelRenderingTiles.png
+    :width: 80%
+    :align: center
+
+IceT also has the ability to drive tiled displays, which are large, high-resolution
+displays comprising an array of monitors or projectors.  Using a sort-last
+algorithm on a tiled display is a bit counterintuitive because the number
+of pixels to composite is so large.  However, IceT is designed to take
+advantage of spatial locality in the data on each process to drastically
+reduce the amount of compositing necessary.  This spatial locality can be
+enforced by applying the :guilabel:`Filters > Alphabetical > D3`
+filter to your data.
+
+Because there is an overhead associated with parallel rendering, ParaView
+has the ability to turn off parallel rendering at any time.  When parallel
+rendering is turned off, the geometry is shipped to the location where
+display occurs.  Obviously, this should only happen when the data being
+rendered is small.
+
+Image Level of Detail
+^^^^^^^^^^^^^^^^^^^^^
+
+The overhead incurred by the parallel rendering algorithms is proportional
+to the size of the images being generated.  Also, images generated on a
+server must be transfered to the client, a cost that is also proportional
+to the image size.  To help increase the frame rate during interaction,
+ParaView introduces a new LOD parameter that controls the size of the
+images.
+
+During interaction while parallel rendering, ParaView can optionally
+**subsample** :index:`\ <subsample>`\  the image.  That is, ParaView will reduce the
+resolution of the image in each dimension by a factor during interaction.
+Reduced images will be rendered, composited, and transfered.  On the
+client, the image is inflated to the size of the available space in the
+GUI.
+
+.. |ImageLODFull| image:: ../images/ImageLODFull.png
+                  :width: 24%
+
+.. |ImageLOD2| image:: ../images/ImageLOD2.png
+               :width: 24%
+
+.. |ImageLOD4| image:: ../images/ImageLOD4.png
+               :width: 24%
+
+.. |ImageLOD8| image:: ../images/ImageLOD8.png
+               :width: 24%
+
+|ImageLODFull| |ImageLOD2| |ImageLOD4| |ImageLOD8|
+
+The resolution of the reduced images is controlled by the factor with which
+the dimensions are divided.  In the proceeding images, the left image has
+the full resolution.  The following images were rendered with the
+resolution reduced by a factor of 2, 4, and 8, respectively.
+
+ParaView also has the ability to compress images before transferring them
+from server to client. Compression, of course, reduces the amount of data
+transferred and, therefore, makes the most of the available bandwidth.
+However, the time it takes to compress and decompress the images adds to
+the latency.
+
+ParaView contains several different image compression algorithms for
+client-server rendering. The first uses LZ4 compression that is designed
+for high-speed compression and decompression. The second
+option is a custom algorithm called
+**Squirt** :index:`\ <Squirt>`\ , which stands for Sequential Unified Image Run Transfer.
+Squirt is a run-length encoding compression that reduces color depth to
+increase run lengths. The third algorithm uses the  **Zlib** :index:`\ <Zlib>`\ 
+compression library, which implements a variation of the Lempel-Ziv
+algorithm. Zlib typically provides better compression than Squirt, but
+it takes longer to perform and, hence, adds to the latency. |paraview| Windows
+and Linux executables include a compression option that uses NVIDIA's
+NVPipe library for hardware-accelerated compression and decompression if
+a Kepler-class or higher NVIDIA GPU is available.
+
+.. _sec:ParallelRenderParameters:
+
+Parallel Render Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: ../images/SettingsServer.png
+    :width: 60%
+    :align: center
+
+Like the other 3D rendering parameters, the parallel rendering parameters
+are located in the  ``Settings`` :index:`\ <Settings>`\  dialog.
+The parallel rendering options in the dialog are in the  
+``Render View`` :index:`\ <Render View>`\  tab (intermixed with several other rendering options such as those
+described in  :numref:`sec:BasicRenderingSettings`). The parallel and
+client-server options are divided among several categories, and several are
+considered advanced.
+
+* ``Remote/Parallel Rendering Options`` :index:`\ <Remote/Parallel Rendering Options>`\ 
+
+  * ``Remote Render Threshold`` :index:`\ <Remote Render Threshold>`\ : Set the data size at which to
+    render remotely in parallel or to render locally. If the geometry is
+    over this threshold (and ParaView is connected to a remote server), the
+    data is rendered in parallel remotely, and images are sent back to the
+    client. If the geometry is under this threshold, the geometry is sent
+    back to the client, and images are rendered locally on the client.
+  * ``Still Render Image Reduction Factor`` :index:`\ <Still Render Image Reduction Factor>`\ :
+    Set the sub-sampling factor for still (non-interactive) rendering.
+    Some large displays have more resolution than is really necessary, so
+    this sub-sampling reduces the resolution of all images displayed.
+    |pqAdvanced26|
+
+* ``Client/Server Rendering Options`` :index:`\ <Client/Server Rendering Options>`\ 
+
+  * ``Image Reduction Factor`` :index:`\ <Image Reduction Factor>`\ : Set the
+    interactive subsampling factor. The overhead of parallel rendering is
+    proportional to the size of the images generated.  Thus, you can speed
+    up interactive rendering by specifying an image subsampling rate.  When
+    this box is checked, interactive renders will create smaller images,
+    which are then magnified when displayed.  This parameter is only used
+    during interactive renders. |pqAdvanced26|
+
+* ``Image Compression`` :index:`\ <Image Compression>`\ 
+
+  * Before images are shipped from server to client, they can optionally
+    be compressed using one of three available compression algorithms:
+    LZ4 :index:`\ <LZ4>`\ , Squirt :index:`\ <Squirt>`\ , or Zlib :index:`\ <Zlib>`\ . To make the
+    compression more effective, either algorithm can reduce the color resolution
+    of the image before compression. The sliders determine the amount of color
+    bits saved. Full color resolution is always used during a still
+    render. |pqAdvanced26|
+  * Suggested image compression presets are provided for several common
+    network types. When attempting to select the best image compression
+    options, try starting with the presets that best match your connection.
+    |pqAdvanced26|
+
+.. %\index{rendering!parallel|)}
+
+Parameters for Large Data
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The default rendering parameters are suitable for most users.  However,
+when dealing with very large data, it can help to tweak the rendering
+parameters.  While the optimal parameters depend on your data and the hardware
+on which ParaView is running, here are several pieces of advice that you
+should follow.
+
+* If there is a long pause before the first interactive render of a
+  particular dataset, it might be the creation of the decimated
+  geometry. Try using an outline instead of decimated geometry for
+  interaction. You could also try lowering the factor of the decimation to
+  0 to create smaller geometry.
+* Avoid shipping large geometry back to the client. The remote
+  rendering will use the power of the entire server to render and ship images
+  to the client.  If remote rendering is off, geometry is shipped back to
+  the client.  When you have large data, it is always faster to ship images
+  than to ship data. (Although, if your network has a high latency, this
+  could become problematic for interactive frame rates.)
+* Adjust the interactive image sub-sampling for client-server rendering
+  as needed.  If image compositing is slow, if the connection between
+  client and server has low bandwidth, or if you are rendering very large
+  images, then a higher subsample rate can greatly improve your interactive
+  rendering performance.
+* Make sure  ``Image Compression`` :index:`\ <Image Compression>`\  is on.  It has a tremendous effect
+  on desktop delivery performance, and the artifacts it introduces, which
+  are only there during interactive rendering, are minimal.  Lower
+  bandwidth connections can try using Zlib instead of Squirt compression.
+  Zlib will create smaller images at the cost of longer
+  compression/decompression times.
+* If the network connection has a high latency, adjust the parameters
+  to avoid remote rendering during interaction. In this case, you can try
+  turning up the remote rendering threshold a bit, and this is a place
+  where using the outline for interactive rendering is effective.
+* If the still (non-interactive) render is slow, try turning on the
+  delay between interactive and still rendering to avoid unnecessary
+  renders.
