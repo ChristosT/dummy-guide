@@ -4,3 +4,4 @@
    
    propertiesPanel
    colorMapping
+   comparativeViews
