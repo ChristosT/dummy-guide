@@ -5,3 +5,4 @@
    propertiesPanel
    colorMapping
    comparativeViews
+   pythonProgrammableFilter
