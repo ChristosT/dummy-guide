@@ -8,3 +8,4 @@
    pythonProgrammableFilter
    vtkNumPyIntegration
    parallelDataVisualization
+   memoryInspector
