@@ -161,11 +161,11 @@ the |pqConnect32| icon in the toolbar to bring up the
 .. admonition:: **Common Errors**
    :class: error
 
-  If your server is behind a firewall and you are attempting to connect
-  to it from outside the firewall, the connection may not be established
-  successfully. You may also try reverse connections ( :numref:`sec:ReverseConnections`)
-  as a workaround for firewalls. Please consult your
-  network manager if you have network connection problems.
+   If your server is behind a firewall and you are attempting to connect
+   to it from outside the firewall, the connection may not be established
+   successfully. You may also try reverse connections ( :numref:`sec:ReverseConnections`)
+   as a workaround for firewalls. Please consult your
+   network manager if you have network connection problems.
 
 Figure :numref:`fig:server_connect_dialog` shows the  ``Choose Server
 Configuration`` :index:`\ <Choose Server
@@ -224,12 +224,12 @@ with others to access the same remote servers.
 .. admonition:: **Did you know?**
    :class: tip
 
-  Visualization centers can provide system-wide server configurations on
-  web servers to allow non-experts to simply select an already
-  configured |ParaView| server. The format of the XML file for saving the
-  server configurations is discussed online on the |ParaView| Wiki at
-  http://paraview.org/Wiki/Server_Configuration. These site-wide
-  settings can be loaded with the  ``Fetch Servers`` :index:`\ <Fetch Servers>`\  button.
+   Visualization centers can provide system-wide server configurations on
+   web servers to allow non-experts to simply select an already
+   configured |ParaView| server. The format of the XML file for saving the
+   server configurations is discussed online on the |ParaView| Wiki at
+   http://paraview.org/Wiki/Server_Configuration. These site-wide
+   settings can be loaded with the  ``Fetch Servers`` :index:`\ <Fetch Servers>`\  button.
 
 .. _subsec:ConnectToRemoteServer:
 
@@ -716,7 +716,7 @@ Parallel processing in ``paraview`` and ``pvpython``
 To leverage parallel processing capabilities in |paraview| or |pvpython|, one has
 to use remote visualization, i.e., one has to connect to a |pvserver|. The
 processing for connecting to this |pvserver| is not different from what we
-say in s :numref:`sec:RemoteVisualization`
+say in :numref:`sec:RemoteVisualization`
 and :numref:`sec:RemoteVisualizationPython`. The only thing that changes is how the
 |pvserver| is launched.
 
