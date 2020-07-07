@@ -11,11 +11,9 @@
    memoryInspector
    multiblockInspector
    annotations
+   axesGrid
 
 ..    
-      \chapter{Axes Grid}
-      \label{chapter:AxesGrid}
-      \input{AxesGrid.tex}
       \chapter{Customizing ParaView}
       \label{chapter:CustomizingParaView}
       \input{CustomizingParaView.tex}
