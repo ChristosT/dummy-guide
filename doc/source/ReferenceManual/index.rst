@@ -10,11 +10,9 @@
    parallelDataVisualization
    memoryInspector
    multiblockInspector
+   annotations
 
 ..    
-      \chapter{Annotations}
-      \label{chapter:Annotations}
-      \input{Annotations.tex}
       \chapter{Axes Grid}
       \label{chapter:AxesGrid}
       \input{AxesGrid.tex}
