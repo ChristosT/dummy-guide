@@ -1,25 +1,27 @@
-.. ParaView Users Guide documentation master file, created by
-   sphinx-quickstart on Thu Sep 27 10:23:06 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. include:: macros.hrst
 
 Welcome to ParaView Documentation !
 ===================================
 
+This guide can be split into two volumes. 
+The **User's Guide** covers  various aspects of data analysis and visualization with |ParaView|.
+
+**Reference Manual** provides details on various components in the UI and the scripting API.
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: ParaView User's Guide
 
    UsersGuide/index.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: ParaView Reference Manual
 
    ReferenceManual/index.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Appendix
 
    references

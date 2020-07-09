@@ -829,9 +829,10 @@ Filters for sampling
 These filters compute new datasets that represent some essential features from
 the datasets that they take as input.
 
+.. _sec:Glyph:
+
 Glyph
 ^^^^^
-.. _sec:Glyph:
 
 ``Glyph`` :index:`\ <Glyph>`\  is used to place markers or glyphs at point locations in the input
 dataset. The glyphs can be oriented or scaled based on vector and

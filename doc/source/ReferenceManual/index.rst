@@ -1,3 +1,7 @@
+
+Paraview Reference Manual
+=========================
+
 .. toctree::
    :numbered:
    :maxdepth: 2

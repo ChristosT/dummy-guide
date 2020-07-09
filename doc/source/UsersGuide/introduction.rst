@@ -58,11 +58,11 @@ that help make the tool and the documentation better are always welcome.
   analysis framework. |ParaView| 3.0 was released in May 2007.
 
 ..
-  \begin{didyouknow}
-  Catalyst is the name for |ParaView| libraries that are designed to be embedded in
-  simulation codes for insitu analysis. |ParaView| Catalyst User's Guide is available for
-  download at http://catalyst.paraview.org.
-  \end{didyouknow}
+  %\begin{didyouknow}
+  %Catalyst is the name for |ParaView| libraries that are designed to be embedded in
+  %simulation codes for insitu analysis. |ParaView| Catalyst User's Guide is available for
+  %download at http://catalyst.paraview.org.
+  %\end{didyouknow}
 
 In this guide
 -------------
@@ -88,7 +88,7 @@ guides for getting started that are available on the Internet.
 This guide can be split into two volumes. :numref:`chapter:Introduction` to
 :numref:`chapter:SavingResults` can be considered the user's guide, where various
 aspects of data analysis and visualization with |ParaView| are covered.
-:numref:`chapter:PropertiesPanel` to :numref:`chapter:CustomizingParaView` in Reference manual partprovide details on various components in the UI and the
+:numref:`chapter:PropertiesPanel` to :numref:`chapter:CustomizingParaView` in Reference manual part provide details on various components in the UI and the
 scripting API.
 
 Getting help
