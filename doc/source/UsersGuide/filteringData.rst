@@ -302,7 +302,7 @@ changing the input connections
   class Shrink(SourceProxy)
    |  The Shrink filter
    |  causes the individual cells of a dataset to break apart
-   |  from each other by moving each cell's points toward the
+   |  from each other by moving each cell\'s points toward the
    |  centroid of the cell. (The centroid of a cell is the
    |  average position of its points.) This filter operates on
    |  any type of dataset and produces unstructured grid
@@ -1423,7 +1423,7 @@ can be accomplished with the following:
   Normals[:, 0]
 
 The expression above extracts the first component of the Normals vector. Here,
-``:`` is a placeholder for ``all elements''. One element can be extracted by replacing
+``:`` is a placeholder for "all elements". One element can be extracted by replacing
 ``:`` with an index. For example, the following creates a constant array from the
 first component of the normal of the first point:
 
@@ -1475,7 +1475,7 @@ single values or arrays as argument.
 
 * ``abs(x)`` :index:`\ <abs(x)>`\ : Returns the absolute value(s) of :math:`x`.
 
-* ``add(x, y)`` :index:`\ <add(x, y)>`\ : Returns the sum of two values. :math:`x` and :math:`y` can be single values or arrays. This is the same as :math:`x+y`.
+* ``add(x, y)`` :index:`\ <add(x y)>`\ : Returns the sum of two values. :math:`x` and :math:`y` can be single values or arrays. This is the same as :math:`x+y`.
 
 * ``area(dataset)`` :index:`\ <area(dataset)>`\ : Returns the surface area of each cell in a mesh.
 
@@ -1485,13 +1485,13 @@ single values or arrays as argument.
 
 * ``condition(dataset)`` :index:`\ <condition(dataset)>`\ : Returns the condition number of each cell in a mesh.
 
-* ``cross(x, y)`` :index:`\ <cross(x, y)>`\ : Returns the cross product for two 3D vectors from two arrays of 3D vectors.
+* ``cross(x, y)`` :index:`\ <cross(x y)>`\ : Returns the cross product for two 3D vectors from two arrays of 3D vectors.
 
 * ``curl(array)`` :index:`\ <curl(array)>`\ : Returns the curl of an array of 3D vectors.
 
 * ``divergence(array)`` :index:`\ <divergence(array)>`\ : Returns the divergence of an array of 3D vectors.
 
-* ``divide(x, y)`` :index:`\ <divide(x, y)>`\ : Element-by-element division. :math:`x` and :math:`y` can be single
+* ``divide(x, y)`` :index:`\ <divide(x y)>`\ : Element-by-element division. :math:`x` and :math:`y` can be single
   values or arrays. This is the same as math:`\frac{x}{y}`.
 
 * ``det(array)`` :index:`\ <det(array)>`\ : Returns the determinant of an array of 2D square matrices.
@@ -1500,7 +1500,7 @@ single values or arrays as argument.
 
 * ``diagonal(dataset)`` :index:`\ <diagonal(dataset)>`\ : Returns the diagonal length of each cell in a dataset.
 
-* ``dot(a1, a2)`` :index:`\ <dot(a1, a2)>`\ : Returns the dot product of two scalars/vectors of two array of scalars/vectors.
+* ``dot(a1, a2)`` :index:`\ <dot(a1 a2)>`\ : Returns the dot product of two scalars/vectors of two array of scalars/vectors.
 
 * ``eigenvalue(array)`` :index:`\ <eigenvalue(array)>`\ : Returns the eigenvalue of an array of 2D square matrices.
 
@@ -1537,9 +1537,9 @@ single values or arrays as argument.
 
 * ``log10(array)`` :index:`\ <log10(array)>`\ : Returns the base 10 logarithm of an array of scalars/vectors/tensors.
 
-* ``make_point_mask_from_NaNs(dataset, array)`` :index:`\ <make_point_mask_from_NaNs(dataset, array)>`\ : This function will create a ghost array corresponding to an input with NaN values. For each NaN value, the output array will have a corresponding value of  ``vtk.vtkDataSetAttributes.HIDDENPOINT`` :index:`\ <vtk.vtkDataSetAttributes.HIDDENPOINT>`\ . These values are also combined with any ghost values that the dataset may have.
+* ``make_point_mask_from_NaNs(dataset, array)`` :index:`\ <make_point_mask_from_NaNs(dataset array)>`\ : This function will create a ghost array corresponding to an input with NaN values. For each NaN value, the output array will have a corresponding value of  ``vtk.vtkDataSetAttributes.HIDDENPOINT`` :index:`\ <vtk.vtkDataSetAttributes.HIDDENPOINT>`\ . These values are also combined with any ghost values that the dataset may have.
 
-* ``make_cell_mask_from_NaNs(dataset, array)`` :index:`\ <make_cell_mask_from_NaNs(dataset, array)>`\ : This function will create a ghost array corresponding to an input with NaN values. For each NaN value, the output array will have a corresponding value of  ``vtk.vtkDataSetAttributes.HIDDENCELL`` :index:`\ <vtk.vtkDataSetAttributes.HIDDENCELL>`\ . These values are also combined with any ghost values that the dataset may have.
+* ``make_cell_mask_from_NaNs(dataset, array)`` :index:`\ <make_cell_mask_from_NaNs(dataset array)>`\ : This function will create a ghost array corresponding to an input with NaN values. For each NaN value, the output array will have a corresponding value of  ``vtk.vtkDataSetAttributes.HIDDENCELL`` :index:`\ <vtk.vtkDataSetAttributes.HIDDENCELL>`\ . These values are also combined with any ghost values that the dataset may have.
 
 * ``max(array)`` :index:`\ <max(array)>`\ : Returns the maximum value of the array as a single value. Note that this function returns the maximum within a block for AMR and multi-block datasets, not across blocks/grids. Also, this returns the maximum within each process when running in parallel.
 
@@ -1553,9 +1553,9 @@ single values or arrays as argument.
 
 * ``min_angle(dataset)`` :index:`\ <min_angle(dataset)>`\ : Returns the minimum angle of each cell in a dataset.
 
-* ``mod(x, y)`` :index:`\ <mod(x, y)>`\ : Same as remainder :math:`(x, y)`.
+* ``mod(x, y)`` :index:`\ <mod(x y)>`\ : Same as remainder :math:`(x, y)`.
 
-* ``multiply(x, y)`` :index:`\ <multiply(x, y)>`\ : Returns the product of :math:`x` and :math:`y`. :math:`x` and :math:`y` can be
+* ``multiply(x, y)`` :index:`\ <multiply(x y)>`\ : Returns the product of :math:`x` and :math:`y`. :math:`x` and :math:`y` can be
   single values or arrays. Note that this is an element-by-element operation when
   :math:`x` and :math:`y` are both arrays. This is the same as :math:`x \times y`.
 
@@ -1563,13 +1563,13 @@ single values or arrays as argument.
 
 * ``norm(a)`` :index:`\ <norm(a)>`\ : Returns the normalized values of an array of scalars/vectors.
 
-* ``power(x, a)`` :index:`\ <power(x, a)>`\ : Exponentiation of :math:`x` with :math:`a`. Here, both :math:`x` and :math:`a` can
+* ``power(x, a)`` :index:`\ <power(x a)>`\ : Exponentiation of :math:`x` with :math:`a`. Here, both :math:`x` and :math:`a` can
   either be a single value or an array. If :math:`x` and :math:`y` are both arrays, a one-by-one
   mapping is used between two arrays.
 
 * ``reciprocal(x)`` :index:`\ <reciprocal(x)>`\ : Returns :math:`\frac{1}{x}`.
 
-* ``remainder(x, y)`` :index:`\ <remainder(x, y)>`\ : Returns :math:`x - y \times floor(\frac{x}{y})`. :math:`x` and :math:`y` can be single values or arrays.
+* ``remainder(x, y)`` :index:`\ <remainder(x y)>`\ : Returns :math:`x - y \times floor(\frac{x}{y})`. :math:`x` and :math:`y` can be single values or arrays.
 
 * ``rint(x)`` :index:`\ <rint(x)>`\ : Rounds :math:`x` to the nearest integer(s).
 
@@ -1583,7 +1583,7 @@ single values or arrays as argument.
 
 * ``strain(array)`` :index:`\ <strain(array)>`\ : Returns the strain of an array of 3D vectors.
 
-* ``subtract(x, y)`` :index:`\ <subtract(x, y)>`\ : Returns the difference between two values. :math:`x` and
+* ``subtract(x, y)`` :index:`\ <subtract(x y)>`\ : Returns the difference between two values. :math:`x` and
   `y` can be single values or arrays. This is the same as :math:`x - y`.
 
 * ``surface_normal(dataset)`` :index:`\ <surface_normal(dataset)>`\ : Returns the surface normal of each cell in a dataset.
@@ -1606,7 +1606,7 @@ Below is a list of supported trigonometric functions:
 +---------------------------------------+-----------------------------------------------++----------------------------------------+-----------------------------------------+
 | ``cos(x)`` :index:`\ <cos(x)>`\       | ``arctan(x)`` :index:`\ <arctan(x)>`\         | ``tanh(x)`` :index:`\ <tanh(x)>`\       |                                         |
 +---------------------------------------+-----------------------------------------------++----------------------------------------+-----------------------------------------+
-| ``tan(x)`` :index:`\ <tan(x)>`\       | ``hypot(x1, x2)`` :index:`\ <hypot(x1, x2)>`\ | ``arcsinh(x)`` :index:`\ <arcsinh(x)>`\ |                                         |
+| ``tan(x)`` :index:`\ <tan(x)>`\       | ``hypot(x1, x2)`` :index:`\ <hypot(x1 x2)>`\ | ``arcsinh(x)`` :index:`\ <arcsinh(x)>`\ |                                         |
 +---------------------------------------+-----------------------------------------------++----------------------------------------+-----------------------------------------+
 | ``arcsin(x)`` :index:`\ <arcsin(x)>`\ | ``sinh(x)`` :index:`\ <sinh(x)>`\             | ``arccosh(x)`` :index:`\ <arccosh(x)>`\ |                                         |
 +---------------------------------------+-----------------------------------------------++----------------------------------------+-----------------------------------------+

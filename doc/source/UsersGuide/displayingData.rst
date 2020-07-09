@@ -1596,24 +1596,24 @@ data arrays to copy:
   the view. (The data object will have an open eye next to it in the
   pipeline browser.)
 
-* ``GetNumberOfAttributeArrays(visibleObjectIndex, attributeType)`` :index:`\ <GetNumberOfAttributeArrays(visibleObjectIndex, attributeType)>`\  -
+* ``GetNumberOfAttributeArrays(visibleObjectIndex, attributeType)`` :index:`\ <GetNumberOfAttributeArrays(visibleObjectIndex attributeType)>`\  -
   This returns the number of attribute arrays for
   the  ``visibleObjectIndex'th`` :index:`\ <visibleObjectIndex'th>`\  visible object and the
   given ``attributeType`` :index:`\ <attributeType>`\ 
   (e.g.,  ``vtkDataObject.POINT`` :index:`\ <vtkDataObject.POINT>`\ ,  ``vtkDataObject.CELL`` :index:`\ <vtkDataObject.CELL>`\ , etc.).
  
-* ``GetAttributeArrayName(visibleObjectIndex, attributeType, arrayIndex)`` :index:`\ <GetAttributeArrayName(visibleObjectIndex, attributeType, arrayIndex)>`\  -
+* ``GetAttributeArrayName(visibleObjectIndex, attributeType, arrayIndex)`` :index:`\ <GetAttributeArrayName(visibleObjectIndex attributeType arrayIndex)>`\  -
   This returns the name of the array of the given attribute type at the
   given array index for the ``visibleObjectIndex'th`` :index:`\ <visibleObjectIndex'th>`\  object.
 
-* ``SetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density", 1)`` :index:`\ <SetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density", 1)>`\  -
+* ``SetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density", 1)``  -
   This sets the array status of an attribute array. The first argument is
   the visible object index, the second object is the attribute
   association of the array, the third argument is the name of the
   array, and the last argument specifies if the array is to be copied
   (1) or not (0).
 
-* ``GetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density")`` :index:`\ <GetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density")>`\  -
+* ``GetAttributeArrayStatus(visibleObjectIndex, vtkDataObject.POINT, "Density")`` :index:`\ <GetAttributeArrayStatus(visibleObjectIndex vtkDataObject.POINT Density)>`\  -
   This retrieves the array status for the object with the given visible
   index with a given attribute association (second argument) and a name
   (last argument).
@@ -1637,18 +1637,17 @@ Plotting data in Python
 
 After the  ``setup_data(view)`` :index:`\ <setup_data(view)>`\  function has been called, |ParaView|
 will transfer the data object and selected arrays to the client. When
-that is done, it will call the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\ 
+that is done, it will call the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\ 
 function you have defined in your script.
 
-The  ``view`` :index:`\ <view>`\  argument to the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\ 
+The  ``view`` :index:`\ <view>`\  argument to the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\ 
 function is the  ``vtkPythonView`` :index:`\ <vtkPythonView>`\  object on the
 client. The  ``width`` :index:`\ <width>`\  and  ``height`` :index:`\ <height>`\  arguments are the width and
 height of the viewport, respectively. The  ``render(view, width,
-height)`` :index:`\ <render(view, width,
-height)>`\  function uses the data available through the view, along with
+height)`` :index:`\ <render(view width height)>`\  function uses the data available through the view, along with
 the width and height, to generate a  ``vtkImageData`` :index:`\ <vtkImageData>`\  object that will
 be displayed in the viewport. This  ``vtkImageData`` :index:`\ <vtkImageData>`\  object must be
-returned from the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\  function. If no
+returned from the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\  function. If no
 ``vtkImageData`` :index:`\ <vtkImageData>`\  is returned, the viewport will be black. If the size of the
 image does not match the size of the viewport, the image will be
 stretched to fit the viewport.
@@ -1673,13 +1672,12 @@ solid red image to display in the viewport.
     return image
 
 This example does not produce an interesting visualization, but serves
-as a minimal example of how the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\ 
+as a minimal example of how the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\ 
 function should be implemented. Typically, we expect that the Python
 plotting library you use has some utilities to expose the generated
 plot image pixel data. You need to copy that pixel data to
-the  ``vtkImageData`` :index:`\ <vtkImageData>`\  object returned by the  ``render(view, width,
-height)`` :index:`\ <render(view, width,
-height)>`\  function. Exactly how you do this is up to you, but |ParaView|
+the  ``vtkImageData`` :index:`\ <vtkImageData>`\  object returned by the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\  
+function. Exactly how you do this is up to you, but |ParaView|
 comes with some utilities to make this task easier for matplotlib.
 
 Set up a matplotlib Figure
@@ -1723,12 +1721,12 @@ plotting commands to plot data as in the following:
   
     return python_view.figure_to_image(figure)
 
-This definition of the  ``render(view, width, height)`` :index:`\ <render(view, width, height)>`\  function
+This definition of the  ``render(view, width, height)`` :index:`\ <render(view width height)>`\  function
 creates a histogram of a point data array named  ``X`` :index:`\ <X>`\  from the first
 visible object in the pipeline browser. Note the conversion
 function,  ``python_view.figure_to_image(figure)`` :index:`\ <python_view.figure_to_image(figure)>`\ , in the last line.
 This converts the matplotlib  ``Figure`` :index:`\ <Figure>`\  object created
-with  ``python_view.matplotlib_figure(width, height)`` :index:`\ <python_view.matplotlib_figure(width, height)>`\  into a
+with  ``python_view.matplotlib_figure(width, height)`` :index:`\ <python_view.matplotlib_figure(width height)>`\  into a
 ``vtkImageData`` :index:`\ <vtkImageData>`\  object suitable for display in the viewport.
 
 Comparative Views

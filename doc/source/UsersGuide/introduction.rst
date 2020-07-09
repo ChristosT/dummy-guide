@@ -294,8 +294,7 @@ managing plugins and favorites.
 
 Panels provide you with the ability to peek into the application's state. For example, you can
 inspect the visualization pipeline that has been set up ( ``Pipeline
-Browser`` :index:`\ <Pipeline
-Browser>`\ ), as well as the memory that is being used ( ``Memory Inspector`` :index:`\ <Memory Inspector>`\ ) and the parameters or properties
+Browser`` :index:`\ <Pipeline Browser>`\ ), as well as the memory that is being used ( ``Memory Inspector`` :index:`\ <Memory Inspector>`\ ) and the parameters or properties
 for a processing module ( ``Properties`` :index:`\ <Properties>`\  panel). Several of the panels also
 allow you to change the values that are displayed, e.g., the  ``Properties`` :index:`\ <Properties>`\  panel not only
 shows the processing module parameters, but it also allows you to change them.

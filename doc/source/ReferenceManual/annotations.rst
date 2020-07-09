@@ -245,7 +245,7 @@ through a modified version of the array name. This sanitized version of the
 array name consists of the subset of characters in the array name that are
 letters, numbers, or underscore (``_``) joined together without spaces in the
 order in which they appear in the original array name. For example, an array
-named ``\#Velocity X`` :index:`\ <\#Velocity X>`\  will be made available in the variable  ``VelocityX`` :index:`\ <VelocityX>`\ .
+named ``Velocity X`` :index:`\ <Velocity X>`\  will be made available in the variable  ``VelocityX`` :index:`\ <VelocityX>`\ .
 
 Point and cell data in composite datasets such as multiblock datasets is
 accessed somewhat differently than point or cell data in non-composite datasets.
