@@ -292,7 +292,7 @@ update every timestep`` :index:`\ <Clamp and update every timestep>`\  option. N
 range each time you hit  ``Apply`` :index:`\ <Apply>`\  on the  ``Properties`` :index:`\ <Properties>`\  panel or when the
 timestep changes. The initial value for the  ``Automatic Rescale Range Mode`` :index:`\ <Automatic Rescale Range Mode>`\ 
 is controlled by the  ``General`` :index:`\ <General>`\  setting  ``Transfer Function Reset Mode`` :index:`\ <Transfer Function Reset Mode>`\  in the
-``Settings`` :index:`\ <Settings>`\  dialog (see  :numref:`sec:GeneralSettings`).
+``Settings`` :index:`\ <Settings>`\  dialog (see  :numref:`sec:GeneralSettings` ).
 
 Transfer function editor
 ^^^^^^^^^^^^^^^^^^^^^^^^

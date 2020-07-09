@@ -432,10 +432,10 @@ will potentially change, and the panel will reflect those changes.
   Any text on this panel is *copy*-able. For example, if want to copy the
   number of points value to use it as a property value on the  ``Properties`` :index:`\ <Properties>`\ 
   panel, simply double-click on the number or click-and-drag to select the
-  number and use the common keyboard shortcut :kbd:`\ctrl+C` (or
-  :kbd:`\cmdmac+C`) to copy that value to the clipboard. Now, you can paste it
+  number and use the common keyboard shortcut |CTRL| + kbd:`C` (or
+  |CMD| + :kbd:`C`) to copy that value to the clipboard. Now, you can paste it
   in an input widget in |paraview| or any other application, such as an
-  editor, by using :kbd:`\ctrl+V` (or :kbd:`\cmdmac+V`) or the application-specific
+  editor, by using |CTRL| + :kbd:`V` (or |CMD| + :kbd:`V`) or the application-specific
   shortcut for pasting text from the clipboard. The same is true for numbers shown in
   lists, such as the  ``Data Ranges`` :index:`\ <Data Ranges>`\ .
 

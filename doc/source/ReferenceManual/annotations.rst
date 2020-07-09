@@ -357,7 +357,7 @@ annotation sources and filters, as shown below.
   to ``Value is:``, write  ``'Value is: %.12f' % (inputs[0].CellData['EQPS'][0])`` :index:`\ <'Value is: %.12f' % (inputs[0].CellData['EQPS'][0])>`\ .
 
 * ``Annotate Global Data`` :index:`\ <Annotate Global Data>`\  filter: To produce the same annotation as setting
-  ``Select Arrays`` :index:`\ <Select Arrays>`\  to ``KE``,  ``Prefix`` :index:`\ <Prefix>`\  to  ``Value is: `` :index:`\ <Value is: >`\ ,  ``Format`` :index:`\ <Format>`\  to ``%7.5g``,
+  ``Select Arrays`` :index:`\ <Select Arrays>`\  to ``KE``,  ``Prefix`` :index:`\ <Prefix>`\  to  ``Value is:`` :index:`\ <Value is: >`\ ,  ``Format`` :index:`\ <Format>`\  to ``%7.5g``,
   and empty suffix, write  ``"Value is: %7.5g" % (inputs[0].FieldData['KE'].Arrays[0][time_index])`` :index:`\ <"Value is: %7.5g" % (inputs[0].FieldData['KE'].Arrays[0][time_index])>`\ 
 * ``Annotate Time Filter`` :index:`\ <Annotate Time Filter>`\ : To produce the equivalent of setting  ``Format`` :index:`\ <Format>`\  to ``Time: %f``,
   ``Shift`` :index:`\ <Shift>`\  to 3, and  ``Scale`` :index:`\ <Scale>`\  to 2, write  ``"Time: %f" % (2*time_value + 3)`` :index:`\ <"Time: %f" % (2*time_value + 3)>`\ .

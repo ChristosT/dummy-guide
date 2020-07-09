@@ -16,7 +16,7 @@ to customize the view itself. In this chapter, we take a closer look at the
 
 .. figure:: ../images/PropertiesPanelComponents.png
     :name: fig:PropertiesPanel
-    :width: 80%
+    :width: 70%
     :align: center
 
     ``Properties`` :index:`\ <Properties>`\  Panel in |paraview|
@@ -35,7 +35,7 @@ Buttons
 reject your changes to the panel or  ``Delete`` :index:`\ <Delete>`\  the active source.
 
 .. admonition:: **Did you know?**
-   :class: tip
+  :class: tip
 
   You can delete multiple sources by selecting them using the
   |CTRL| (or |CMD|) key when selecting in the  ``Pipeline
@@ -69,7 +69,7 @@ properties that match the search text will be shown.
 
 
 .. admonition:: **Did you know?**
-   :class: tip
+  :class: tip
 
   The  ``Search`` :index:`\ <Search>`\  box is a recurring widget in |paraview|. Several other panels
   and dialog boxes, including the  ``Settings`` :index:`\ <Settings>`\  dialog and the  ``Color Map Editor`` :index:`\ <Color Map Editor>`\ ,

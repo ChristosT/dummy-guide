@@ -369,7 +369,7 @@ you can use the  ``help`` :index:`\ <help>`\  function.
    |  ...
 
 .. admonition:: **Did you know?**
-   :class: tip
+  :class: tip
 
   The  ``help`` :index:`\ <help>`\  function can be used to get information about properties available on
   any source or filter instance. It not only lists the properties, but also

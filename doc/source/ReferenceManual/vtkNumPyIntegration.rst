@@ -77,6 +77,7 @@ kind of magic makes the following possible?
   print(data.VTKObject)
 
 The output here is:
+
 .. code-block:: python
 
   0.7932546138763428

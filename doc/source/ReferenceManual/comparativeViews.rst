@@ -78,7 +78,7 @@ background.
 
 .. figure:: ../images/ComparativeViewInspector.png
     :name: fig:ComparativeViewInspector
-    :width: 60%
+    :width: 50%
     :align: center
 
     ``Comparative View Inspector`` :index:`\ <Comparative View Inspector>`\  in |paraview| used to configure the active comparative view.

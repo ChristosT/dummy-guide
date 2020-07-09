@@ -59,8 +59,9 @@ Multiple views in ``paraview``
 
 |paraview| shows all views in the central part of the application
 window. When |paraview| starts up, the  ``Render View`` :index:`\ <Render View>`\  is created
-and shown in the application window by default.\fixme{add image with the
-viewport window with components labeled}
+and shown in the application window by default.
+
+.. \fixme{add image with the viewport window with components labeled}
 
 New views can be created by splitting the
 view frame using the  ``Split View`` :index:`\ <Split View>`\  controls at the top-right corner of the
@@ -755,7 +756,7 @@ render shiny, metallic surfaces.
   will not correspond to any color on the color transfer function. Hence, it is
   generally advisable to use specular highlights on surfaces colored with a single
   solid color and not on those using scalar coloring (or
-  pseduocoloring).
+  pseudocoloring).
 
   .. figure:: ../images/ScalarColoringAndSpecularHighlights.png
       :width: 70%
@@ -801,7 +802,8 @@ doesn't have texture coordinates, you can create them by applying one of
 ``Texture Map to Cylinder`` :index:`\ <Texture Map to Cylinder>`\ ,  ``Texture Map to Sphere`` :index:`\ <Texture Map to Sphere>`\ , or  ``Texture Map To
 Plane`` :index:`\ <Texture Map To
 Plane>`\  filters, or using the filters  ``Calculator`` :index:`\ <Calculator>`\  or  ``Programmable Filter`` :index:`\ <Programmable Filter>`\ .
-\fixme{Add section on Use Shader Replacements property}
+
+.. \fixme{Add section on Use Shader Replacements property}
 
 The  ``Triangulate`` :index:`\ <Triangulate>`\  option is useful for rendering objects with
 non-convex polygons. It comes with some additional processing cost for
@@ -1070,9 +1072,9 @@ automatically created if you apply a filter that needs this view, e.g., the
   ``Load No Chart Variables`` :index:`\ <Load No Chart Variables>`\  checkbox under
   ``Settings/General/Properties Panel Options`` :index:`\ <Settings/General/Properties Panel Options>`\ .
 
-  \begin{center}
-  \includegraphics[width=0.4\linewidth]{Images/ChartNoVarSetting.png}
-  \end{center}
+  .. figure:: ../images/ChartNoVarSetting.png
+     :width: 60%
+     :align: center
 
 Interactions
 ------------
@@ -1090,9 +1092,9 @@ View properties
 The view properties for  ``Line Chart View`` :index:`\ <Line Chart View>`\  are grouped as properties that
 affect the view and those that affect each of the potential four axes.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/LineChartViewPropertiesTitleGroup.png}
-\end{center}
+.. figure:: ../images/LineChartViewPropertiesTitleGroup.png
+    :width: 50%
+    :align: center
 
 To set a title, use  ``Chart Title`` :index:`\ <Chart Title>`\ . Title text properties such as font, size,
 style, and alignment with respect to the chart can be set under  ``Chart Title
@@ -1102,9 +1104,9 @@ you cannot interactively place the legend in this view, you can use  ``Legend
 Location`` :index:`\ <Legend
 Location>`\  to place it at one of the corners.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{Images/LineChartViewPropertiesLeftAxisGroup.png}
-\end{center}
+.. figure:: ../images/LineChartViewPropertiesLeftAxisGroup.png
+    :width: 60%
+    :align: center
 
 There are four axes possible in this view: left, bottom, top, and right. The top
 and right axes are shown only when some series is set to use those. (We will
@@ -1351,7 +1353,9 @@ Similar to  ``Line Chart View`` :index:`\ <Line Chart View>`\ , you select the  
 arrays to plot. Since, in a scatter plot matrix, the order in which the selected
 series are rendered can make it easier to understand correlations, you can
 change the order by clicking and dragging the rows in the  ``Series Parameters`` :index:`\ <Series Parameters>`\ 
-table. \fixme{add images}
+table. 
+
+.. \fixme{add images}
 
 Parallel Coordinates View
 =========================
@@ -1386,7 +1390,7 @@ Spreadsheet View
     :width: 80%
     :align: center
 
-    |paraview| using  ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  to plot raw data values for the $can.ex2$ dataset.
+    |paraview| using  ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  to plot raw data values for the *can.ex2* dataset.
 
 ``SpreadSheet View`` :index:`\ <SpreadSheet View>`\  is used to inspect raw data values in a tabular form.
 Unlike most other views, this view is primarily intended to be used in the

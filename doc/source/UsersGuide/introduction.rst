@@ -88,8 +88,7 @@ guides for getting started that are available on the Internet.
 This guide can be split into two volumes. :numref:`chapter:Introduction` to
 :numref:`chapter:SavingResults` can be considered the user's guide, where various
 aspects of data analysis and visualization with |ParaView| are covered.
-Chapter :ref:`chapter:PropertiesPanel` to Chapter :ref:`chapter:CustomizingParaView` are the
-user's manual sections, which provide details on various components in the UI and the
+:numref:`chapter:PropertiesPanel` to :numref:`chapter:CustomizingParaView` in Reference manual partprovide details on various components in the UI and the
 scripting API.
 
 Getting help
@@ -172,7 +171,7 @@ computational science world. To efficiently represent data from various fields
 with varying characteristics, VTK provides a rich data model that |ParaView| uses.
 The data model can be thought of simply as ways of representing data in memory.
 We will cover the different data types in more detail in
-Section :ref:`sec:VTKDataModel`. Readers produce a data type suitable for
+:numref:`sec:VTKDataModel`. Readers produce a data type suitable for
 representing the information the files contain. Based on the data type, |ParaView|
 allows you to create and apply filters to transform the data. You can also show the data
 in a view to produce images or renderings. Just as there are several types of
@@ -224,7 +223,7 @@ interpreter that runs Python scripts for |ParaView|. The one difference is that,
 |pvpython| is meant to run interactive scripts, |pvbatch|
 is designed for batch processing. Additionally, when running on computing
 resources with MPI capabilities, |pvbatch| can be run in parallel. We
-will cover this in more detail in Section :ref:`sec:UsingPVBatch`.
+will cover this in more detail in :numref:`sec:UsingPVBatch`.
 
 |pvserver|
 ------------
@@ -329,7 +328,7 @@ Creating a source
 ------------------
 
 The visualization process in |ParaView| begins by bringing your data into the
-application. Chapter :ref:`chapter:LoadingData` explains how to read data from
+application. :numref:`chapter:LoadingData` explains how to read data from
 various file formats. Besides reading files to bring in data into the
 application, |ParaView| also provides a collection of data sources that can
 produce sample datasets. These are available under the :guilabel:`Sources` menu. To
@@ -365,7 +364,7 @@ A few things to note:
 
 Let's take a closer look at what has happened. When we clicked on
 :guilabel:`Sources > Sphere`, referring to
-Section :ref:`sec:BasicsOfVisualization`, we created an instance of a source that
+:numref:`sec:BasicsOfVisualization`, we created an instance of a source that
 can produce a spherical surface mesh -- that's what is reflected in the
 ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ .
 This instance receives a name, which is used by the  ``Sphere1`` :index:`\ <Sphere1>`\  and the  ``Pipeline Browser`` :index:`\ <Pipeline Browser>`\ , as well as other
@@ -418,7 +417,7 @@ the data is displayed in the view are now shown on the  ``Properties`` :index:`\
 the  ``Display`` :index:`\ <Display>`\  section. Things such as the surface color, rendering type or
 representation, shading parameters, etc., are shown under this newly updated
 section. We will look at display properties in more detail in
-Chapter :ref:`ch:DisplayingData`.
+:numref:`ch:DisplayingData`.
 
 Some of the properties that are commonly used are also duplicated in the
 toolbar. These properties include the data array with which the surface is colored and the representation
@@ -594,7 +593,7 @@ Understanding the visualization process
 ---------------------------------------
 
 Let's try to understand the workflow by looking at the same use-case as we did
-in Section :ref:`sec:UnderstandingVisualizationGUI`.
+in :numref:`sec:UnderstandingVisualizationGUI`.
 
 Creating a source
 -----------------
@@ -625,7 +624,7 @@ cause the rendering to occur. In addition, a new window will popup, showing the 
 
 .. figure:: ../images/PythonSphere.png
     :name: fig-PythonRendering
-    :width: 80%
+    :width: 60%
     :align: center
     
     Window showing result from the Python code.
@@ -761,7 +760,7 @@ The result is shown in :numref:`fig-PythonRenderingShrink` .
 
 .. figure:: ../images/PythonShrink.png
     :name: fig-PythonRenderingShrink
-    :width: 80%
+    :width: 60%
     :align: center
     
     Window showing result from the Python code after applying the shrink filter.
@@ -873,7 +872,7 @@ until the active source, i.e., anything downstream from it, won't be updated).
   (-9.749279022216797, 9.749279022216797, -9.749279022216797, 9.749279022216797, -10.0, 10.0)
 
 We will look at the  ``sphere.GetDataInformation`` :index:`\ <sphere.GetDataInformation>`\  API in
-Section :ref:`sec:DataInformationInPython` in more detail.
+:numref:`sec:DataInformationInPython` in more detail.
 
 For temporal datasets,  ``UpdatePipeline`` :index:`\ <UpdatePipeline>`\  takes in a time argument, which is the
 time for which the pipeline must be updated.

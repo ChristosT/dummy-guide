@@ -27,7 +27,7 @@ operations useful for data transformation.
 
 In this chapter, we will explore how to use Python to add new data processing
 modules to ParaView through examples. For additional explanation of the data
-processing API, see Chapter :numref:`chapter:VTKNumPyIntegration`.
+processing API, see :numref:`chapter:VTKNumPyIntegration`.
 
 
 .. admonition:: **Common Errors**
@@ -169,8 +169,8 @@ to  ``vtkTable`` :index:`\ <vtkTable>`\ .
      output.RowData.append(array, name)
 
 
-% TODO: Add a did you know or something to indicate how to read only on the root
-% node.
+..  % TODO: Add a did you know or something to indicate how to read only on the root
+    % node.
 
 .. _sec:ReadingACSVFileSeries:
 
@@ -463,7 +463,7 @@ Typically, for such cases, ensure that the  ``Output DataSet Type`` :index:`\ <O
 
 The thing to note about this code is that it will work as expected even when
 the input dataset is a composite dataset such as a Multiblock dataset
-( :numref:`sec:MultiblockDataset`). Refer to Chapter :numref:`chapter:VTKNumPyIntegration`
+( :numref:`sec:MultiblockDataset`). Refer to :numref:`chapter:VTKNumPyIntegration`
 for details on how this works. There are cases, however, when you may want to
 explicitly iterate over blocks in an input multiblock dataset. For that, you can
 use the following snippet.

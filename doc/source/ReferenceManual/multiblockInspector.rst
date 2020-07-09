@@ -6,7 +6,7 @@
 Multiblock Inspector
 ####################
 
-Composite datasets :numref:`chapter:UnderstandingData` such as multiblock datasets
+Composite datasets (:numref:`chapter:UnderstandingData`) such as multiblock datasets
 and AMR are often encountered when visualizing results from several
 scientific simulation codes e.g. OpenFOAM, Exodus, etc. Readers for several of
 these simulation file formats support selecting which blocks to read.

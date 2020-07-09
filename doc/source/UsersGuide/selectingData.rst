@@ -361,8 +361,8 @@ operator. Options include the following:
 * ``is`` :index:`\ <is>`\  matches a single value
 * ``is between`` :index:`\ <is between>`\  matches a range of values specified by min and max
 * ``is one of`` :index:`\ <is one of>`\  matches a list of comma-separated values
-* ``is :math:`>=``` :index:`\ <is :math:`>=`>`\  matches all values greater than or equal to the specified value
-* ``is :math:`<=``` :index:`\ <is :math:`<=`>`\  matches all values lesser than or equal to the specified value
+* ``is >=`` :index:`\ <is >=>`\  matches all values greater than or equal to the specified value
+* ``is <=`` :index:`\ <is <= >`\  matches all values lesser than or equal to the specified value
 * ``is min`` :index:`\ <is min>`\  matches the minimum value for the array for the current time step
 * ``is max`` :index:`\ <is max>`\  matches the maximum value for the array for the current time step
 * ``is less than mean`` :index:`\ <is less than mean>`\  matches values lesser than or equal to the mean
@@ -550,9 +550,10 @@ button in the view toolbar to show only selected elements.
 .. |pqSelect32| image:: ./../images/pqSelect32.png
                 :width: 0.5cm
 
+.. _sec:ExtractingSelections:
+
 Extracting selections
 =====================
-.. _sec:ExtractingSelections:
 
 All the types of selections created through mechanisms discussed so far are
 transient and primarily used for highlighting data. If you want to do further

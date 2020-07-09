@@ -38,8 +38,7 @@ in this dialog.
 The  ``Settings`` :index:`\ <Settings>`\  dialog is split into several tabs. The  ``General`` :index:`\ <General>`\  tab
 consolidates most of the miscellaneous settings. The  ``Camera`` :index:`\ <Camera>`\  tab enables you
 to change the mouse interaction mappings for the  ``Render View`` :index:`\ <Render View>`\  and similar
-views. The  ``Render View`` :index:`\ <Render View>`\  tab, which we saw earlier in
-s :numref:`sec:BasicRenderingSettings`
+views. The  ``Render View`` :index:`\ <Render View>`\  tab, which we saw earlier in :numref:`sec:BasicRenderingSettings`
 and :numref:`sec:ParallelRenderParameters`, provides options in regards to rendering in
 ``Render View`` :index:`\ <Render View>`\  and similar views. The  ``Color Palette`` :index:`\ <Color Palette>`\  tab is used to change
 the active color palette.
@@ -66,12 +65,13 @@ available in the advanced mode are indicated as such using the
 advanced options with the |pqAdvanced26| button or search for the
 option using the  ``Search`` :index:`\ <Search>`\  box.
 
+
 .. _sec:GeneralSettings:
 
-``General`` settings
-^^^^^^^^^^^^^^^^^^^^
+General settings
+^^^^^^^^^^^^^^^^
 
-:index:`\ <General Settings>`\ 
+.. :index:`\ <General Settings>`\ 
 
 .. figure:: ../images/SettingsDialog.png
     :name: fig:SettingsDialog
@@ -93,7 +93,7 @@ option using the  ``Search`` :index:`\ <Search>`\  box.
     save a backup state file as you make changes in the visualization pipeline.
     If |paraview| crashes for some reason, then when you relaunch |paraview|, it
     will provide you with a choice to load the backup state saved before the crash
-    occurred. This is not $100\%$ reliable, but some users may find it useful to
+    occurred. This is not :math:`100\%` reliable, but some users may find it useful to
     avoid losing their visualization state due to a crash. |pqAdvanced26|
 
   - ``Force Single Column Menus`` :index:`\ <Force Single Column Menus>`\ : On platforms that support multicolumn menus,

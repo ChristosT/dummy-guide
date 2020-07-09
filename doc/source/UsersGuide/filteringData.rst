@@ -239,9 +239,10 @@ connections, except that you need to ensure that you name the input ports proper
   
   >>> resampleWithDataSet = ResampleWithDataset(Input=sphere, Source=wavelet)
 
+.. _subsection:ChangingInputConnectionsPython:
+
 Changing input connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. _subsection:ChangingInputConnectionsPython:
 
 Changing inputs in Python is as simple as setting any other property on the
 filter.
@@ -515,7 +516,7 @@ in |pvpython|.
   :class: error
 
   It is very easy to forget that clipping a structured dataset such as image
-  data can dramtically increase the memory requirements, since this filter will
+  data can dramatically increase the memory requirements, since this filter will
   convert the structured dataset into an unstructured grid due to the nature of
   the clipping operation itself. For structured dataset, think about using
   ``Slice`` :index:`\ <Slice>`\  or  ``Extract Subset`` :index:`\ <Extract Subset>`\  filters instead, whenever appropriate. Those
@@ -580,7 +581,7 @@ Extract Subset
 
 .. figure:: ../images/ExtractSubsetPanel.png
     :name: fig:ExtractSubsetPanel
-    :width: 80%
+    :width: 60%
     :align: center
     
     The  ``Properties`` :index:`\ <Properties>`\  panel for the  ``Extract Subset`` :index:`\ <Extract Subset>`\  filter showing all
