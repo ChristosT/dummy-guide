@@ -26,8 +26,4 @@ The **User's Guide** covers  various aspects of data analysis and visualization 
 
    references
 
-Indices and tables
-==================
-
 * :ref:`genindex`
-* :ref:`search`
