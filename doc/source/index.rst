@@ -9,13 +9,13 @@ The **User's Guide** covers  various aspects of data analysis and visualization 
 **Reference Manual** provides details on various components in the UI and the scripting API.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: ParaView User's Guide
 
    UsersGuide/index.rst
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: ParaView Reference Manual
 
    ReferenceManual/index.rst
